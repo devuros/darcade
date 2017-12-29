@@ -7,8 +7,11 @@ class DatabaseSeeder extends Seeder
 	private $tables = [
 
 		'games',
-        'genres',
         'game_genre',
+        'wishes',
+        'screenshots',
+        'reviews',
+        'carts'
 
 	];
 
@@ -24,13 +27,23 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UsersTableSeeder::class);
 
-    	$this->call([
+        // $this->call(GenresTableSeeder::class);
 
-            GamesTableSeeder::class,
-            GenresTableSeeder::class,
-            GameGenreTableSeeder::class,
+        // $this->call(DevelopersTableSeeder::class);
 
-        ]);
+        // $this->call(PublishersTableSeeder::class);
+
+        $this->call(GamesTableSeeder::class);
+
+        $this->call(GameGenreTableSeeder::class);
+
+        $this->call(WishesTableSeeder::class);
+
+        $this->call(ScreenshotsTableSeeder::class);
+
+        // $this->call(ReviewsTableSeeder::class);
+
+        $this->call(CartsTableSeeder::class);
 
     }
 

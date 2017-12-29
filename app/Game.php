@@ -9,4 +9,18 @@ class Game extends Model
 
     //
 
+    public function genres()
+    {
+
+    	return $this->belongsToMany('App\Genre');
+
+    }
+
+    public function screenshots()
+    {
+
+    	return $this->hasMany('App\Screenshot');
+
+    }
+
 }

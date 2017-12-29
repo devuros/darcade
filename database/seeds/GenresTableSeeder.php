@@ -28,20 +28,17 @@ class GenresTableSeeder extends Seeder
 
 		];
 
-		$time = Carbon::now();
-
 		foreach ($tags as $tag)
 		{
 
-			DB::table('genres')->insert(
+			factory('App\Genre')->create([
 
-				['genre'=> $tag, 'created_at'=> $time, 'updated_at'=> $time]
+				'genre'=> $tag,
 
-			);
+			]);
 
 		}
 
-		// factory('App\Genre', 10)->create();
 
     }
 }
