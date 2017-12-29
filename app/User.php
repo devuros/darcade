@@ -27,4 +27,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //
+
+    /**
+     * Get the games that the user added to his cart
+     */
+    public function cart()
+    {
+
+        return $this->belongsToMany('App\Game', 'carts');
+
+    }
+
 }

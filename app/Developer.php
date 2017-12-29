@@ -10,7 +10,7 @@ class Developer extends Model
     //
 
     /**
-     *
+     * Get all the games of the developer
      */
     public function games()
     {

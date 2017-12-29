@@ -10,7 +10,7 @@ class Game extends Model
     //
 
     /**
-     *
+     * Get the games developer
      */
     public function developer()
     {
@@ -20,7 +20,7 @@ class Game extends Model
     }
 
     /**
-     *
+     * Get the games publisher
      */
     public function publisher()
     {
@@ -30,7 +30,7 @@ class Game extends Model
     }
 
     /**
-     *
+     * Get all the genres assosiated with the game
      */
     public function genres()
     {
@@ -40,7 +40,7 @@ class Game extends Model
     }
 
     /**
-     *
+     * Get all the game's screenshots
      */
     public function screenshots()
     {

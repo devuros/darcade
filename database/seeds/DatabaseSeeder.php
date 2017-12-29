@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
 		'games',
         'game_genre',
         'screenshots',
+        'carts',
 
 	];
 
@@ -40,6 +41,8 @@ class DatabaseSeeder extends Seeder
         $this->call(GameGenreTableSeeder::class);
 
         $this->call(ScreenshotsTableSeeder::class);
+
+        $this->call(CartsTableSeeder::class);
 
     }
 

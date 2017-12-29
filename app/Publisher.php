@@ -10,7 +10,7 @@ class Publisher extends Model
     //
 
     /**
-     *
+     * Get all the games of the publisher
      */
     public function games()
     {

@@ -10,7 +10,7 @@ class Screenshot extends Model
     //
 
 	/**
-	 *
+	 * Get the game the screenshot belongs to
 	 */
     public function game()
     {
