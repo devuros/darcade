@@ -3,9 +3,13 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Game::class, function (Faker $faker) {
+
+    $base_price = $faker->randomFloat(2, 0.99, 69.99);
+    $sale_price = $faker->randomFloat(2, $base_price*0.9, $base_price*0.25);
+
 	return [
 
-    	'title'=> $faker->words(3, true),
+    	'title'=> $faker->unique()->words(2, true),
 
     	'image'=> 'image.jpg',
 
@@ -15,13 +19,21 @@ $factory->define(App\Game::class, function (Faker $faker) {
 
     	'about'=> $faker->paragraphs(4, true),
 
-    	'developer_id'=> $faker->randomDigitNotNull(),
+    	'developer_id'=> function () {
 
-    	'publisher_id'=> $faker->randomDigitNotNull(),
+            return factory('App\Developer')->create()->id;
 
-    	'base_price'=> $faker->randomFloat(2, 0.99, 69.99),
+        },
 
-    	'sale_price'=> $faker->randomFloat(2, 0.99, 69.99),
+    	'publisher_id'=> function () {
+
+            return factory('App\Publisher')->create()->id;
+
+        },
+
+    	'base_price'=> $base_price,
+
+    	'sale_price'=> $sale_price,
 
     	'is_on_sale'=> $faker->boolean(50),
 

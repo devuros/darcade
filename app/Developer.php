@@ -9,4 +9,14 @@ class Developer extends Model
 
     //
 
+    /**
+     *
+     */
+    public function games()
+    {
+
+    	return $this->hasMany('App\Game');
+
+    }
+
 }

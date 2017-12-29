@@ -5,7 +5,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Developer::class, function (Faker $faker) {
     return [
 
-        'name'=> $faker->company()
+        'developer'=> $faker->company()
 
     ];
 });

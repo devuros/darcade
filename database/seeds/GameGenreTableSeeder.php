@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
 use App\Game;
 use App\Genre;
@@ -14,7 +13,7 @@ class GameGenreTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
 
     	$games = Game::pluck('id')->all();
@@ -26,9 +25,10 @@ class GameGenreTableSeeder extends Seeder
 	        DB::table('game_genre')->insert([
 
 				'game_id'=> $game,
-				'genre_id'=> $faker->randomElement($genres),
+				'genre_id'=> array_random($genres),
 
 			]);
+
 		}
 
     }

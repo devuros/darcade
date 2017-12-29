@@ -12,13 +12,13 @@ class PublishersTableSeeder extends Seeder
     public function run()
     {
 
-        factory('App\Publisher', 9)->create();
+        factory('App\Publisher', 10)->create();
 
-        factory('App\Publisher')->create([
+        // factory('App\Publisher')->create([
 
-        	'name'=> 'Cvetkovic Nemanja'
+        // 	'publisher'=> 'Cvetkovic Nemanja'
 
-        ]);
+        // ]);
 
     }
 }

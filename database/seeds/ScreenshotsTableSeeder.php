@@ -15,16 +15,19 @@ class ScreenshotsTableSeeder extends Seeder
 
         $games = Game::pluck('id')->all();
 
+
         foreach ($games as $game)
         {
 
-        	factory('App\Screenshot', 2)->create([
+            factory('App\Screenshot', 2)->create([
 
-				'game_id'=> $game,
+                'game_id'=> $game,
 
-			]);
+            ]);
 
         }
+
+        // factory('App\Screenshot', 2)->create();
 
     }
 }

@@ -18,6 +18,7 @@ class CreateGameGenreTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('game_id');
+
             $table->unsignedInteger('genre_id');
 
         });

@@ -9,6 +9,29 @@ class Game extends Model
 
     //
 
+    /**
+     *
+     */
+    public function developer()
+    {
+
+    	return $this->belongsTo('App\Developer');
+
+    }
+
+    /**
+     *
+     */
+    public function publisher()
+    {
+
+    	return $this->belongsTo('App\Publisher');
+
+    }
+
+    /**
+     *
+     */
     public function genres()
     {
 
@@ -16,6 +39,9 @@ class Game extends Model
 
     }
 
+    /**
+     *
+     */
     public function screenshots()
     {
 

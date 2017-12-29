@@ -17,7 +17,7 @@ class CreatePublishersTable extends Migration
 
             $table->increments('id');
 
-            $table->string('name');
+            $table->string('publisher');
 
             $table->timestamps();
 

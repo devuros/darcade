@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
 use App\Developer;
 use App\Publisher;
@@ -13,35 +12,33 @@ class GamesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
 
 		$developers = Developer::pluck('id')->all();
 		$publishers = Publisher::pluck('id')->all();
 
-		foreach (range(1, 19) as $index)
+		foreach (range(1, 20) as $index)
 		{
-			$base_price = $faker->randomFloat(2, 0.99, 69.99);
-			$sale_price = $faker->randomFloat(2, $base_price*0.9, $base_price*0.25);
 
 			factory('App\Game')->create([
 
-				'developer_id'=> $faker->randomElement($developers),
-				'publisher_id'=> $faker->randomElement($publishers),
-				'base_price'=> $base_price,
-				'sale_price'=> $sale_price,
+				'developer_id'=> array_random($developers),
+				'publisher_id'=> array_random($publishers),
 
 			]);
 
 		}
 
-        factory('App\Game')->states('image', 'sale')->create([
+		// factory('App\Game')->create();
 
-        	'title'=> 'Ninja and Samurai',
-        	'base_price'=> 7.99,
-			'sale_price'=> 4.56,
+		// factory('App\Game')->states('image', 'sale')->create([
 
-        ]);
+		// 	'title'=> 'Ninja and Samurai',
+		// 	'base_price'=> 7.99,
+		// 	'sale_price'=> 4.56,
+
+		// ]);
 
     }
 }

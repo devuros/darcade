@@ -9,6 +9,9 @@ class Screenshot extends Model
 
     //
 
+	/**
+	 *
+	 */
     public function game()
     {
 

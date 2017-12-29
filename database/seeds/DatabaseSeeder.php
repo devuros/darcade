@@ -8,10 +8,7 @@ class DatabaseSeeder extends Seeder
 
 		'games',
         'game_genre',
-        'wishes',
         'screenshots',
-        'reviews',
-        'carts'
 
 	];
 
@@ -25,25 +22,24 @@ class DatabaseSeeder extends Seeder
 
         $this->cleanDatabase();
 
+        //
+        // These tables will be seeded only once
+        //
+
         // $this->call(UsersTableSeeder::class);
-
         // $this->call(GenresTableSeeder::class);
-
         // $this->call(DevelopersTableSeeder::class);
-
         // $this->call(PublishersTableSeeder::class);
+
+        //
+        // These tables will be seeded everytime
+        //
 
         $this->call(GamesTableSeeder::class);
 
         $this->call(GameGenreTableSeeder::class);
 
-        $this->call(WishesTableSeeder::class);
-
         $this->call(ScreenshotsTableSeeder::class);
-
-        // $this->call(ReviewsTableSeeder::class);
-
-        $this->call(CartsTableSeeder::class);
 
     }
 

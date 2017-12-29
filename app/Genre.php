@@ -9,6 +9,9 @@ class Genre extends Model
 
     //
 
+	/**
+	 *
+	 */
     public function games()
     {
 
