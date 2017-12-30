@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Developer extends Model
 {
 
-    //
-
     /**
-     * Get all the games of the developer
+     * Get all the games made by the developer
      */
     public function games()
     {

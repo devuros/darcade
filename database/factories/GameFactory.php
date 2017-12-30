@@ -9,7 +9,12 @@ $factory->define(App\Game::class, function (Faker $faker) {
 
 	return [
 
-    	'title'=> $faker->unique()->words(2, true),
+    	'title'=> $faker->words(
+
+            $faker->numberBetween(2, 3),
+            true
+
+        ),
 
     	'image'=> 'image.jpg',
 

@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
 
-    //
-
     /**
-     * Get the games developer
+     * Get the game's developer
      */
     public function developer()
     {
@@ -20,7 +18,7 @@ class Game extends Model
     }
 
     /**
-     * Get the games publisher
+     * Get the game's publisher
      */
     public function publisher()
     {
@@ -30,7 +28,7 @@ class Game extends Model
     }
 
     /**
-     * Get all the genres assosiated with the game
+     * Get the genres assosiated with the game
      */
     public function genres()
     {
@@ -40,12 +38,22 @@ class Game extends Model
     }
 
     /**
-     * Get all the game's screenshots
+     * Get the game's screenshots
      */
     public function screenshots()
     {
 
     	return $this->hasMany('App\Screenshot');
+
+    }
+
+    /**
+     * Get all the game's reviews
+     */
+    public function reviews()
+    {
+
+        return $this->hasMany('App\Review');
 
     }
 

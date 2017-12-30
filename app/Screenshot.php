@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Screenshot extends Model
 {
 
-    //
-
 	/**
-	 * Get the game the screenshot belongs to
+	 * Get the parent of the screenshot
 	 */
     public function game()
     {

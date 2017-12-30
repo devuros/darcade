@@ -19,7 +19,7 @@ class ScreenshotsTableSeeder extends Seeder
         foreach ($games as $game)
         {
 
-            factory('App\Screenshot', 2)->create([
+            factory('App\Screenshot', rand(2, 4))->create([
 
                 'game_id'=> $game,
 

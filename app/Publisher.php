@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Publisher extends Model
 {
 
-    //
-
     /**
-     * Get all the games of the publisher
+     * Get all of the publisher's games
      */
     public function games()
     {

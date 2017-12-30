@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
         'orders',
         'game_order',
         'game_user',
+        'wishes',
+        'reviews',
 
 	];
 
@@ -48,6 +50,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CartsTableSeeder::class);
 
         $this->call(OrdersTableSeeder::class);
+
+        $this->call(WishesTableSeeder::class);
+
+        $this->call(ReviewsTableSeeder::class);
 
     }
 

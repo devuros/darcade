@@ -31,12 +31,52 @@ class User extends Authenticatable
     //
 
     /**
-     * Get the games that the user added to his cart
+     * Get the games in the user's cart
      */
     public function cart()
     {
 
         return $this->belongsToMany('App\Game', 'carts');
+
+    }
+
+    /**
+     * Get the games the user ownes
+     */
+    public function library()
+    {
+
+        return $this->belongsToMany('App\Game');
+
+    }
+
+    /**
+     * Get the games the user wishes to own
+     */
+    public function wishes()
+    {
+
+        return $this->belongsToMany('App\Game', 'wishes');
+
+    }
+
+    /**
+     * Get all the user's reviews
+     */
+    public function reviews()
+    {
+
+        return $this->hasMany('App\Review');
+
+    }
+
+    /**
+     * Get the user's purchase history
+     */
+    public function orders()
+    {
+
+        //
 
     }
 
