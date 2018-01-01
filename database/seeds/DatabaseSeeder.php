@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
         'screenshots',
         'carts',
         'orders',
-        'game_order',
+        'purchases',
         'game_user',
         'wishes',
         'reviews',

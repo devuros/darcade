@@ -18,7 +18,18 @@ class WishesTableSeeder extends Seeder
         $games = Game::pluck('id')->all();
 		$users = User::pluck('id')->all();
 
-		$wishes = array();
+		$rows = DB::table('game_user')
+        	->select('game_id', 'user_id')
+        	->get();
+
+    	$wishes = array();
+
+    	foreach ($rows as $row)
+    	{
+
+    		$wishes[$row->user_id.$row->game_id] = 0;
+
+    	}
 
 		foreach (range(1, 30) as $index)
 		{

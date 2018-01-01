@@ -71,12 +71,22 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the user's purchase history
+     * Get all of the user's orders
      */
     public function orders()
     {
 
-        //
+        return $this->hasMany('App\Order');
+
+    }
+
+    /**
+     * Get all purchases for all orders made by the user
+     */
+    public function purchases()
+    {
+
+        return $this->hasManyThrough('App\Purchase', 'App\Order');
 
     }
 

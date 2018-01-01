@@ -15,7 +15,7 @@ class OrdersTableSeeder extends Seeder
     public function run()
     {
 
-        // Seed tables: orders, game_order, game_user
+        // Seed tables: orders, purchases, game_user
 
         $games = Game::all('id', 'base_price', 'sale_price', 'is_on_sale')->toArray();
 		$users = User::pluck('id')->all();
@@ -58,7 +58,7 @@ class OrdersTableSeeder extends Seeder
 
         		}
 
-	            DB::table('game_order')->insert([
+	            DB::table('purchases')->insert([
 
 	                'game_id'=> $random_game['id'],
 	                'order_id'=> $order_id,
