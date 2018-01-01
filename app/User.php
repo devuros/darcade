@@ -85,8 +85,10 @@ class User extends Authenticatable
      */
     public function purchases()
     {
-
-        return $this->hasManyThrough('App\Purchase', 'App\Order');
+        return $this->hasManyThrough('App\Purchase', 'App\Order')
+            ->join('games', 'purchases.game_id', '=', 'games.id')
+            ->latest()
+            ->select('purchases.*', 'orders.created_at', 'games.title');
 
     }
 
