@@ -31,7 +31,7 @@ class User extends Authenticatable
     //
 
     /**
-     * Get the games in the user's cart
+     * Get the content of the user's cart
      */
     public function cart()
     {
@@ -61,7 +61,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get all the user's reviews
+     * Get all the reviews the user wrote
      */
     public function reviews()
     {

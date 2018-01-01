@@ -18,7 +18,7 @@ class Purchase extends Model
 	}
 
 	/**
-	 * Get the game which was purchased
+	 * Get the name of the game which was purchased
 	 */
 	public function game()
 	{

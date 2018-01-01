@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 });
 
+// Routes registered by laravel-passport
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
