@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Game;
-use App\Http\Resources\GameResource;
-use App\Http\Resources\GameCollection;
+use App\Developer;
+use App\Http\Resources\DeveloperResource;
+use App\Http\Resources\DeveloperCollection;
 
-class GameController extends ApiController
+class DeveloperController extends ApiController
 {
 
     /**
@@ -19,9 +19,9 @@ class GameController extends ApiController
     public function index()
     {
 
-        $games = Game::all();
+        $developers = Developer::all();
 
-        return GameResource::collection($games);
+        return DeveloperResource::collection($developers);
 
     }
 
@@ -36,7 +36,6 @@ class GameController extends ApiController
         //
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -46,16 +45,16 @@ class GameController extends ApiController
     public function show($id)
     {
 
-        $game = Game::find($id);
+        $developer = Developer::find($id);
 
-        if (empty($game))
+        if (empty($developer))
         {
 
-            return $this->respondNotFound('Sorry, the requested game was not found');
+            return $this->respondNotFound('Sorry, the requested developer was not found');
 
         }
 
-        return new GameResource($game);
+        return new DeveloperResource($developer);
 
     }
 

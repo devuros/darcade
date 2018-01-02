@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('games', 'GameController');
+
+Route::apiResource('developers', 'DeveloperController');
