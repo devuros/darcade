@@ -4,8 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GameController extends Controller
+use App\Game;
+use App\Http\Resources\GameResource;
+use App\Http\Resources\GameCollection;
+
+class GameController extends ApiController
 {
+
+    /**
+     *
+     */
+    public function __construct()
+    {
+        //
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,9 @@ class GameController extends Controller
     public function index()
     {
 
-        //
+        $games = Game::all();
+
+        return GameResource::collection($games);
 
     }
 
@@ -28,6 +43,7 @@ class GameController extends Controller
     {
 
         //
+
     }
 
 

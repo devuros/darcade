@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
 
+    protected $casts = [
+
+        'is_on_sale'=> 'boolean',
+
+    ];
+
     /**
      * Get the game's developer
      */
