@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 });
 
-// Routes registered by laravel-passport
+// Route registered by laravel-passport
 
 Auth::routes();
 
