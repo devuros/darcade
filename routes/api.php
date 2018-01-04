@@ -32,5 +32,6 @@ Route::apiResource('genres', 'GenreController');
 
 Route::apiResource('screenshots', 'ScreenshotController');
 
-Route::delete('cart', 'CartController@empty')->name('cart.empty');
 Route::apiResource('cart', 'CartController')->only(['index', 'store', 'destroy']);
+Route::delete('cart', 'CartController@empty')->name('cart.empty');
+Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');

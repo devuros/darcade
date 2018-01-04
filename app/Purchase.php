@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Purchase extends Model
 {
 
+	public $timestamps = false;
+
 	/**
 	 * Get the order of the purchase
 	 */
