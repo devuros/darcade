@@ -14,8 +14,8 @@ class ApiController extends Controller
 	const http_unauthorized = 401; //	User did not authenticate
 	const http_forbidden = 403; //	Does not have the permission
 	const http_not_found = 404; //	Resource not found
+	const http_conflict = 409; //	Can not delete a resource because it does not exist
 	const http_unprocessable_entity = 422; //	Failed validation
-
 
 	const http_internal_error = 500; // Do not let this happen
 
@@ -124,12 +124,32 @@ class ApiController extends Controller
 	}
 
 	/**
+	 * Specific error method: http_forbidden
+	 */
+	public function respondForbidden($message = 'Request forbidden')
+	{
+
+		return $this->setStatusCode(self::http_forbidden)->respondWithError($message);
+
+	}
+
+	/**
 	 * Specific error method: http_not_found
 	 */
 	public function respondNotFound($message = 'Resource not found')
 	{
 
 		return $this->setStatusCode(self::http_not_found)->respondWithError($message);
+
+	}
+
+	/**
+	 * Specific error method: http_conflict
+	 */
+	public function respondConflict($message = 'Resource does not exist')
+	{
+
+		return $this->setStatusCode(self::http_conflict)->respondWithError($message);
 
 	}
 
