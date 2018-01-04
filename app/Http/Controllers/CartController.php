@@ -191,6 +191,10 @@ class CartController extends ApiController
 
         $order->save();
 
+        Cart::where('user_id', $user_id)->delete();
+
+        return $this->respondSuccess('Items successfully purchased, enjoy!');
+
     }
 
 }
