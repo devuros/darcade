@@ -14,7 +14,7 @@ class ApiController extends Controller
 	const http_unauthorized = 401; //	User did not authenticate
 	const http_forbidden = 403; //	Does not have the permission
 	const http_not_found = 404; //	Resource not found
-	const http_conflict = 409; //	Can not delete a resource because it does not exist
+	const http_conflict = 409; //	Resource cannot be deleted, because it does not exist
 	const http_unprocessable_entity = 422; //	Failed validation
 
 	const http_internal_error = 500; // Do not let this happen

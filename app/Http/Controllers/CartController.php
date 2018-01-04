@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends ApiController
 {
 
-    public function __construct(Request $request)
+    public function __construct()
     {
 
         $this->middleware('auth:api');

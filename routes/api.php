@@ -35,3 +35,5 @@ Route::apiResource('screenshots', 'ScreenshotController');
 Route::apiResource('cart', 'CartController')->only(['index', 'store', 'destroy']);
 Route::delete('cart', 'CartController@empty')->name('cart.empty');
 Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
+
+Route::apiResource('purchases', 'PurchaseController')->only(['index', 'show']);
