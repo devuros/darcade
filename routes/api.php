@@ -37,3 +37,6 @@ Route::delete('cart', 'CartController@empty')->name('cart.empty');
 Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
 
 Route::apiResource('purchases', 'PurchaseController')->only(['index', 'show']);
+
+Route::apiResource('library', 'LibraryController')->only('index');
+Route::get('users/{id}/games', 'LibraryController@showUserGames')->name('user.games');

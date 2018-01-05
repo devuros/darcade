@@ -23,7 +23,7 @@ class CartController extends ApiController
     }
 
     /**
-     * Display a listing of the resource.
+     * Get the cart content
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,7 +46,7 @@ class CartController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Add an item to cart
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -74,7 +74,7 @@ class CartController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove an item from cart
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

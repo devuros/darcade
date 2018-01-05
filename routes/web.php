@@ -15,7 +15,7 @@ Route::get('/', function () {
 
     return view('welcome');
 
-});
+})->name('root');
 
 // Route registered by laravel-passport
 
