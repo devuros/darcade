@@ -21,8 +21,6 @@ class LibraryController extends ApiController
 
     /**
      * Get current user's games
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {

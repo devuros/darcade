@@ -12,9 +12,7 @@ class GameController extends ApiController
 {
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get all games
      */
     public function index()
     {
@@ -38,10 +36,7 @@ class GameController extends ApiController
 
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get one game
      */
     public function show($id)
     {

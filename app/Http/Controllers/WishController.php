@@ -20,9 +20,7 @@ class WishController extends ApiController
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get the authenticated user's wishes
      */
     public function index()
     {

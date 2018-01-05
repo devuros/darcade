@@ -24,8 +24,6 @@ class CartController extends ApiController
 
     /**
      * Get the cart content
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -47,9 +45,6 @@ class CartController extends ApiController
 
     /**
      * Add an item to cart
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -75,9 +70,6 @@ class CartController extends ApiController
 
     /**
      * Remove an item from cart
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

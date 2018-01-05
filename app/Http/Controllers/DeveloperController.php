@@ -12,9 +12,7 @@ class DeveloperController extends ApiController
 {
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get all developers
      */
     public function index()
     {
@@ -37,10 +35,7 @@ class DeveloperController extends ApiController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get a single developer
      */
     public function show($id)
     {

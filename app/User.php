@@ -29,7 +29,9 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
+
         'created_at'=> 'string'
+
     ];
 
     //

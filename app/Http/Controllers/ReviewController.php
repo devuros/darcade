@@ -22,8 +22,6 @@ class ReviewController extends ApiController
 
     /**
      * Get the reviews of the authenticated user
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {

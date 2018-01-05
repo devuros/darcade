@@ -12,9 +12,7 @@ class PublisherController extends ApiController
 {
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get all publishers
      */
     public function index()
     {
@@ -37,10 +35,7 @@ class PublisherController extends ApiController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get one publisher
      */
     public function show($id)
     {

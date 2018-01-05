@@ -22,9 +22,7 @@ class PurchaseController extends ApiController
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get the authenticated user's purchase history
      */
     public function index(Request $request)
     {
@@ -56,10 +54,7 @@ class PurchaseController extends ApiController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get the authenticated user's purchase details
      */
     public function show($id)
     {
