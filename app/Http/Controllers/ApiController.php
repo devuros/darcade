@@ -22,14 +22,6 @@ class ApiController extends Controller
 	protected $statusCode;
 
 	/**
-	 *
-	 */
-	public function __construct()
-	{
-		//
-	}
-
-	/**
 	 * Getter for statusCode
 	 */
 	public function getStatusCode()

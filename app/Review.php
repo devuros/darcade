@@ -9,6 +9,13 @@ class Review extends Pivot
 
     protected $table = 'reviews';
 
+    protected $casts = [
+
+        'created_at'=> 'string',
+        'recommended'=> 'boolean'
+
+    ];
+
     /**
      * Get the game this review belongs to
      */
