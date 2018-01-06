@@ -98,4 +98,24 @@ class User extends Authenticatable
 
     }
 
+    /**
+     * Get user's recommended reviews
+     */
+    public function recommendedReviews()
+    {
+
+        return $this->reviews()->where('recommended', 1);
+
+    }
+
+    /**
+     * Get purchases under the given price
+     */
+    public function purchasesUnder($price)
+    {
+
+        return $this->purchases()->where('actual_price', '<', $price)->get();
+
+    }
+
 }
