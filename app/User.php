@@ -126,4 +126,14 @@ class User extends Authenticatable
 
     }
 
+    /**
+     * Check if user has administrator role
+     */
+    public function isAdmin()
+    {
+
+        return $this->roles()->where('role', 'admin')->exists();
+
+    }
+
 }

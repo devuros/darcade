@@ -25,8 +25,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('games', 'GameController');
 
 Route::apiResource('developers', 'DeveloperController');
+Route::get('developers/{id}/games', 'DeveloperController@showDeveloperGames')->name('developer.games');
 
 Route::apiResource('publishers', 'PublisherController');
+Route::get('publishers/{id}/games', 'PublisherController@showPublisherGames')->name('publisher.games');
 
 Route::apiResource('genres', 'GenreController');
 

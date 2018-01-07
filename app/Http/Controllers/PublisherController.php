@@ -8,6 +8,8 @@ use App\Publisher;
 use App\Http\Resources\PublisherResource;
 use App\Http\Resources\PublisherCollection;
 
+use App\Http\Resources\GameResource;
+
 class PublisherController extends ApiController
 {
 
@@ -75,4 +77,33 @@ class PublisherController extends ApiController
     {
         //
     }
+
+    /**
+     * Get the requested publisher's games
+     */
+    public function showPublisherGames($id)
+    {
+
+        $publisher = Publisher::find($id);
+
+        if (empty($publisher))
+        {
+
+            return $this->respondNotFound('Requested publisher not found');
+
+        }
+
+        $games = $publisher->games;
+
+        if ($games->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no games');
+
+        }
+
+        return GameResource::collection($games);
+
+    }
+
 }

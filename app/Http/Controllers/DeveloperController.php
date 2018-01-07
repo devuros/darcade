@@ -8,6 +8,8 @@ use App\Developer;
 use App\Http\Resources\DeveloperResource;
 use App\Http\Resources\DeveloperCollection;
 
+use App\Http\Resources\GameResource;
+
 class DeveloperController extends ApiController
 {
 
@@ -75,4 +77,33 @@ class DeveloperController extends ApiController
     {
         //
     }
+
+    /**
+     * Get the requested developer's games
+     */
+    public function showDeveloperGames($id)
+    {
+
+        $developer = Developer::find($id);
+
+        if (empty($developer))
+        {
+
+            return $this->respondNotFound('Requested developer not found');
+
+        }
+
+        $games = $developer->games;
+
+        if ($games->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no games');
+
+        }
+
+        return GameResource::collection($games);
+
+    }
+
 }
