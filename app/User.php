@@ -35,7 +35,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the user's role(s)
+     * Get user's role(s)
      */
     public function roles()
     {

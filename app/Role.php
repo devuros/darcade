@@ -8,7 +8,7 @@ class Role extends Model
 {
 
 	/**
-	 * Get the users who the given role
+	 * Get users for the given role
 	 */
     public function users()
     {
