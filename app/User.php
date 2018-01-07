@@ -34,7 +34,15 @@ class User extends Authenticatable
 
     ];
 
-    //
+    /**
+     * Get the user's role(s)
+     */
+    public function roles()
+    {
+
+        return $this->belongsToMany('App\Role');
+
+    }
 
     /**
      * Get the content of the user's cart

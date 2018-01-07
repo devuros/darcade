@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(GenresTableSeeder::class);
         // $this->call(DevelopersTableSeeder::class);
         // $this->call(PublishersTableSeeder::class);
+        // $this->call(RolesTableSeeder::class);
 
         //
         // These tables will be seeded everytime
