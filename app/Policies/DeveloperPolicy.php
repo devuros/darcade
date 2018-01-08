@@ -10,6 +10,18 @@ class DeveloperPolicy
 {
     use HandlesAuthorization;
 
+    public function before($user, $ability)
+    {
+
+        if ($user->isAdmin())
+        {
+
+            return true;
+
+        }
+
+    }
+
     /**
      * Determine whether the user can view the developer.
      *
@@ -31,7 +43,7 @@ class DeveloperPolicy
     public function store(User $user)
     {
 
-        return $user->isAdmin();
+        return false;
 
     }
 
@@ -44,7 +56,9 @@ class DeveloperPolicy
      */
     public function update(User $user, Developer $developer)
     {
-        //
+
+        return false;
+
     }
 
     /**
@@ -56,6 +70,8 @@ class DeveloperPolicy
      */
     public function delete(User $user, Developer $developer)
     {
-        //
+
+        return false;
+
     }
 }

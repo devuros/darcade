@@ -93,7 +93,35 @@ class DeveloperController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+
+        if (Auth::user()->cant('update', 'App\Developer'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $developer = Developer::find($id);
+
+        if (empty($developer))
+        {
+
+            return $this->respondNotFound('Sorry, the requested developer was not found');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'developer'=> 'required|string'
+
+        ]);
+
+        $developer->developer = $validatedData['developer'];
+
+        $developer->save();
+
+        return $this->respondSuccess('Developer updated successfully');
+
     }
 
     /**
