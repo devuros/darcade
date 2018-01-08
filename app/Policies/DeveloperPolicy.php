@@ -23,14 +23,16 @@ class DeveloperPolicy
     }
 
     /**
-     * Determine whether the user can create developers.
+     * Determine whether the user can store developers.
      *
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function store(User $user)
     {
-        //
+
+        return $user->isAdmin();
+
     }
 
     /**

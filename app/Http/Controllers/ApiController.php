@@ -116,6 +116,16 @@ class ApiController extends Controller
 	}
 
 	/**
+	 * Specific error method: http_unauthorized
+	 */
+	public function respondUnauthorized($message = 'Unauthorized')
+	{
+
+		return $this->setStatusCode(self::http_unauthorized)->respondWithError($message);
+
+	}
+
+	/**
 	 * Specific error method: http_forbidden
 	 */
 	public function respondForbidden($message = 'Request forbidden')

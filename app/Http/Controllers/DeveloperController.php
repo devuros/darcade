@@ -9,9 +9,17 @@ use App\Http\Resources\DeveloperResource;
 use App\Http\Resources\DeveloperCollection;
 
 use App\Http\Resources\GameResource;
+use Illuminate\Support\Facades\Auth;
 
 class DeveloperController extends ApiController
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy']);
+
+    }
 
     /**
      * Get all developers
@@ -33,7 +41,28 @@ class DeveloperController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+
+        if (Auth::user()->cant('store', 'App\Developer'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'developer'=> 'required|string'
+
+        ]);
+
+        $developer = new Developer;
+
+        $developer->developer = $validatedData['developer'];
+
+        $developer->save();
+
+        return $this->respondCreated('Developer successfully created');
+
     }
 
     /**
