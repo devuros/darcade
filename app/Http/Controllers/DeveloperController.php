@@ -94,7 +94,7 @@ class DeveloperController extends ApiController
     public function update(Request $request, $id)
     {
 
-        if (Auth::user()->cant('update', 'App\Developer'))
+        if (!Auth::user()->can('update', $id))
         {
 
             return $this->respondForbidden('You dont have the permissions');
