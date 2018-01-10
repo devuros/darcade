@@ -91,18 +91,10 @@ class DeveloperController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Developer $id)
+    public function update(Request $request, $id)
     {
 
-        if (Auth::user()->cant('update', $id))
-        {
-
-            return $this->respondForbidden('You dont have the permissions');
-
-        }
-
-        // proveri da li developer sa tim id-em postoji
-        $developer = Developer::find(100);
+        $developer = Developer::find($id);
 
         if (empty($developer))
         {
@@ -110,6 +102,14 @@ class DeveloperController extends ApiController
             return $this->respondNotFound('Sorry, the requested developer was not found');
 
         }
+
+        if (Auth::user()->cant('update', $developer))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
 
         $validatedData = $request->validate([
 
