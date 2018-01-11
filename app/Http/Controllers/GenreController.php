@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 use App\Genre;
 use App\Http\Resources\GenreResource;
 use App\Http\Resources\GenreCollection;
+use Illuminate\Support\Facades\Auth;
 
 class GenreController extends ApiController
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy']);
+
+    }
 
     /**
      * Get all genres
@@ -31,7 +39,28 @@ class GenreController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+
+        if (Auth::user()->cant('store', 'App\Genre'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'genre'=> 'required|string'
+
+        ]);
+
+        $genre = new Genre;
+
+        $genre->genre = $validatedData['genre'];
+
+        $genre->save();
+
+        return $this->respondCreated('Genre successfully created');
+
     }
 
     /**
