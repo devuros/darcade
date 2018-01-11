@@ -132,7 +132,27 @@ class DeveloperController extends ApiController
      */
     public function destroy($id)
     {
-        //
+
+        $developer = Developer::find($id);
+
+        if (empty($developer))
+        {
+
+            return $this->respondNotFound('Sorry, the requested developer was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $developer))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $developer->delete();
+
+        return $this->respondSuccess('Developer successfully deleted');
+
     }
 
     /**

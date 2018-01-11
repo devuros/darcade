@@ -9,9 +9,17 @@ use App\Http\Resources\PublisherResource;
 use App\Http\Resources\PublisherCollection;
 
 use App\Http\Resources\GameResource;
+use Illuminate\Support\Facades\Auth;
 
 class PublisherController extends ApiController
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy']);
+
+    }
 
     /**
      * Get all publishers
@@ -33,7 +41,28 @@ class PublisherController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+
+        if (Auth::user()->cant('store', 'App\Publisher'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'publisher'=> 'required|string'
+
+        ]);
+
+        $publisher = new Publisher;
+
+        $publisher->publisher = $validatedData['publisher'];
+
+        $publisher->save();
+
+        return $this->respondCreated('Publisher successfully created');
+
     }
 
     /**
@@ -64,7 +93,35 @@ class PublisherController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $publisher = Publisher::find($id);
+
+        if (empty($publisher))
+        {
+
+            return $this->respondNotFound('Sorry, the requested publisher was not found');
+
+        }
+
+        if (Auth::user()->cant('update', $publisher))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'publisher'=> 'required|string'
+
+        ]);
+
+        $publisher->publisher = $validatedData['publisher'];
+
+        $publisher->save();
+
+        return $this->respondSuccess('Publisher updated successfully');
+
     }
 
     /**
@@ -75,7 +132,27 @@ class PublisherController extends ApiController
      */
     public function destroy($id)
     {
-        //
+
+        $publisher = Publisher::find($id);
+
+        if (empty($publisher))
+        {
+
+            return $this->respondNotFound('Sorry, the requested publisher was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $publisher))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $publisher->delete();
+
+        return $this->respondSuccess('Publisher successfully deleted');
+
     }
 
     /**
