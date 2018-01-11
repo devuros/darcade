@@ -110,7 +110,6 @@ class DeveloperController extends ApiController
 
         }
 
-
         $validatedData = $request->validate([
 
             'developer'=> 'required|string'
