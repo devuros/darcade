@@ -15,14 +15,14 @@ class WishController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only('index');
+        $this->middleware('auth:api')->only('showCurrentUserWishes');
 
     }
 
     /**
      * Get the authenticated user's wishes
      */
-    public function index()
+    public function showCurrentUserWishes()
     {
 
         $wishes = User::find(Auth::id())->wishes;
@@ -36,6 +36,14 @@ class WishController extends ApiController
 
         return GameResource::collection($wishes);
 
+    }
+
+    /**
+     *
+     */
+    public function index()
+    {
+        //
     }
 
     /**

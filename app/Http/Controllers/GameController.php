@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Genre;
 use App\Game;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
@@ -76,4 +77,33 @@ class GameController extends ApiController
     {
         //
     }
+
+    /**
+     * Get games for the requested genre
+     */
+    public function showGenreGames($id)
+    {
+
+        $genre = Genre::find($id);
+
+        if (empty($genre))
+        {
+
+            return $this->respondNotFound('Requested genre not found');
+
+        }
+
+        $games = $genre->games;
+
+        if ($games->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no games');
+
+        }
+
+        return GameResource::collection($games);
+
+    }
+
 }

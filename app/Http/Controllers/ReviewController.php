@@ -16,14 +16,14 @@ class ReviewController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only('index');
+        $this->middleware('auth:api')->only('showCurrentUserReviews');
 
     }
 
     /**
-     * Get the reviews of the authenticated user
+     * Get the authenticated user's reviews
      */
-    public function index()
+    public function showCurrentUserReviews()
     {
 
         $reviews = User::find(Auth::id())->reviews;
@@ -37,6 +37,14 @@ class ReviewController extends ApiController
 
         return ReviewResource::collection($reviews);
 
+    }
+
+    /**
+     *
+     */
+    public function index()
+    {
+        //
     }
 
     /**

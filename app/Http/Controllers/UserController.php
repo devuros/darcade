@@ -20,7 +20,7 @@ class UserController extends ApiController
     }
 
     /**
-     * Get the current authenticated user
+     * Get the authenticated user
      */
     public function showCurrentUser()
     {
@@ -105,6 +105,26 @@ class UserController extends ApiController
      */
     public function destroy($id)
     {
-        //
+
+        $user = User::find($id);
+
+        if (empty($user))
+        {
+
+            return $this->respondNotFound('Sorry, the requested user was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $user))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $user->delete();
+
+        return $this->respondSuccess('User successfully deleted');
+
     }
 }

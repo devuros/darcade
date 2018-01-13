@@ -15,14 +15,14 @@ class LibraryController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only('index');
+        $this->middleware('auth:api')->except('showUserLibrary');
 
     }
 
     /**
-     * Get current user's games
+     * Get current user's library (owned games)
      */
-    public function index()
+    public function showCurrentUserLibrary()
     {
 
         $library = User::find(Auth::id())->library;
@@ -39,6 +39,14 @@ class LibraryController extends ApiController
     }
 
     /**
+     *
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -46,7 +54,7 @@ class LibraryController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        // finish this
     }
 
     /**
@@ -84,9 +92,9 @@ class LibraryController extends ApiController
     }
 
     /**
-     * Get the requested user's games
+     * Get the requested user's library (owned games)
      */
-    public function showUserGames($id)
+    public function showUserLibrary($id)
     {
 
         $user = User::find($id);
