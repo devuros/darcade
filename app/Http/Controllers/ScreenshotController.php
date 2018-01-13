@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Game;
 use App\Screenshot;
 use App\Http\Resources\ScreenshotResource;
 use App\Http\Resources\ScreenshotCollection;
@@ -75,4 +76,33 @@ class ScreenshotController extends ApiController
     {
         //
     }
+
+    /**
+     * Get the requested game's screenshots
+     */
+    public function showGameScreenshots($id)
+    {
+
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Requested game not found');
+
+        }
+
+        $screenshots = $game->screenshots;
+
+        if ($screenshots->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no screenshots');
+
+        }
+
+        return ScreenshotResource::collection($screenshots);
+
+    }
+
 }

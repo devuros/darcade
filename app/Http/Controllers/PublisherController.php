@@ -35,10 +35,7 @@ class PublisherController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created publisher
      */
     public function store(Request $request)
     {
@@ -86,11 +83,7 @@ class PublisherController extends ApiController
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update the specified publisher
      */
     public function update(Request $request, $id)
     {
@@ -126,10 +119,7 @@ class PublisherController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified publisher
      */
     public function destroy($id)
     {

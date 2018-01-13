@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Game;
 use App\User;
 use App\Review;
 use App\Http\Resources\ReviewResource;
@@ -108,6 +109,34 @@ class ReviewController extends ApiController
         }
 
         $reviews = $user->reviews;
+
+        if ($reviews->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no reviews');
+
+        }
+
+        return ReviewResource::collection($reviews);
+
+    }
+
+    /**
+     * Get the requested game's reviews
+     */
+    public function showGameReviews($id)
+    {
+
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Requested game not found');
+
+        }
+
+        $reviews = $game->reviews;
 
         if ($reviews->isEmpty())
         {

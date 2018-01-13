@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Screenshot;
 use App\Publisher;
 use App\Developer;
 use App\Genre;
@@ -81,7 +82,7 @@ class GameController extends ApiController
     }
 
     /**
-     * Get games for the requested genre
+     * Get the requested genre games
      */
     public function showGenreGames($id)
     {
@@ -161,6 +162,34 @@ class GameController extends ApiController
         }
 
         return GameResource::collection($games);
+
+    }
+
+    /**
+     * Get the requested screenshot's game
+     */
+    public function showScreenshotGame($id)
+    {
+
+        $screenshot = Screenshot::find($id);
+
+        if (empty($screenshot))
+        {
+
+            return $this->respondNotFound('Requested screenshot not found');
+
+        }
+
+        $game = $screenshot->game;
+
+        if (empty($game))
+        {
+
+            return $this->respondSuccess('There is no game');
+
+        }
+
+        return new GameResource($game);
 
     }
 
