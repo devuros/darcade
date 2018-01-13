@@ -1,13 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use App\Http\Resources\UserResource;
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-
-    return new UserResource($request->user());
-
-});
+Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
+Route::get('/user', 'UserController@showCurrentUser');
 
 Route::apiResource('games', 'GameController');
 

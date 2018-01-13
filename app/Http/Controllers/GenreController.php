@@ -155,6 +155,9 @@ class GenreController extends ApiController
 
     }
 
+    /**
+     * Get games for the requested genre
+     */
     public function showGenreGames($id)
     {
 
