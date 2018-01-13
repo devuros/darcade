@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Game;
 use App\Publisher;
 use App\Http\Resources\PublisherResource;
 use App\Http\Resources\PublisherCollection;
@@ -156,30 +157,30 @@ class PublisherController extends ApiController
     }
 
     /**
-     * Get the requested publisher's games
+     * Get the requested game's publisher
      */
-    public function showPublisherGames($id)
+    public function showGamePublisher($id)
     {
 
-        $publisher = Publisher::find($id);
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Requested game not found');
+
+        }
+
+        $publisher = $game->publisher;
 
         if (empty($publisher))
         {
 
-            return $this->respondNotFound('Requested publisher not found');
+            return $this->respondSuccess('There are no publishers');
 
         }
 
-        $games = $publisher->games;
-
-        if ($games->isEmpty())
-        {
-
-            return $this->respondSuccess('There are no games');
-
-        }
-
-        return GameResource::collection($games);
+        return new PublisherResource($publisher);
 
     }
 

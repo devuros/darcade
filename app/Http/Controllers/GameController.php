@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Publisher;
+use App\Developer;
 use App\Genre;
 use App\Game;
 use App\Http\Resources\GameResource;
@@ -94,6 +96,62 @@ class GameController extends ApiController
         }
 
         $games = $genre->games;
+
+        if ($games->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no games');
+
+        }
+
+        return GameResource::collection($games);
+
+    }
+
+    /**
+     * Get the requested developer's games
+     */
+    public function showDeveloperGames($id)
+    {
+
+        $developer = Developer::find($id);
+
+        if (empty($developer))
+        {
+
+            return $this->respondNotFound('Requested developer not found');
+
+        }
+
+        $games = $developer->games;
+
+        if ($games->isEmpty())
+        {
+
+            return $this->respondSuccess('There are no games');
+
+        }
+
+        return GameResource::collection($games);
+
+    }
+
+    /**
+     * Get the requested publisher's games
+     */
+    public function showPublisherGames($id)
+    {
+
+        $publisher = Publisher::find($id);
+
+        if (empty($publisher))
+        {
+
+            return $this->respondNotFound('Requested publisher not found');
+
+        }
+
+        $games = $publisher->games;
 
         if ($games->isEmpty())
         {

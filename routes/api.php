@@ -5,12 +5,14 @@ Route::get('/user', 'UserController@showCurrentUser');
 
 Route::apiResource('games', 'GameController');
 Route::get('genres/{id}/games', 'GameController@showGenreGames')->name('genre.games');
+Route::get('developers/{id}/games', 'GameController@showDeveloperGames')->name('developer.games');
+Route::get('publishers/{id}/games', 'GameController@showPublisherGames')->name('publisher.games');
 
 Route::apiResource('developers', 'DeveloperController');
-Route::get('developers/{id}/games', 'DeveloperController@showDeveloperGames')->name('developer.games');
+Route::get('games/{id}/developer', 'DeveloperController@showGameDeveloper');
 
 Route::apiResource('publishers', 'PublisherController');
-Route::get('publishers/{id}/games', 'PublisherController@showPublisherGames')->name('publisher.games');
+Route::get('games/{id}/publisher', 'PublisherController@showGamePublisher');
 
 Route::apiResource('genres', 'GenreController');
 Route::get('games/{id}/genres', 'GenreController@showGameGenre')->name('game.genres');

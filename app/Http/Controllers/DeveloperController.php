@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Game;
 use App\Developer;
 use App\Http\Resources\DeveloperResource;
 use App\Http\Resources\DeveloperCollection;
@@ -156,30 +157,30 @@ class DeveloperController extends ApiController
     }
 
     /**
-     * Get the requested developer's games
+     * Get the requested game's developer
      */
-    public function showDeveloperGames($id)
+    public function showGameDeveloper($id)
     {
 
-        $developer = Developer::find($id);
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Requested game not found');
+
+        }
+
+        $developer = $game->developer;
 
         if (empty($developer))
         {
 
-            return $this->respondNotFound('Requested developer not found');
+            return $this->respondSuccess('There are no developers');
 
         }
 
-        $games = $developer->games;
-
-        if ($games->isEmpty())
-        {
-
-            return $this->respondSuccess('There are no games');
-
-        }
-
-        return GameResource::collection($games);
+        return new DeveloperResource($developer);
 
     }
 
