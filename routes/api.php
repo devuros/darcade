@@ -18,6 +18,7 @@ Route::apiResource('publishers', 'PublisherController');
 Route::get('publishers/{id}/games', 'PublisherController@showPublisherGames')->name('publisher.games');
 
 Route::apiResource('genres', 'GenreController');
+Route::get('genres/{id}/games', 'GenreController@showGenreGames')->name('genre.games');
 
 Route::apiResource('screenshots', 'ScreenshotController');
 
