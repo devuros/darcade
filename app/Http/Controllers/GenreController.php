@@ -91,7 +91,35 @@ class GenreController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $genre = Genre::find($id);
+
+        if (empty($genre))
+        {
+
+            return $this->respondNotFound('Sorry, the requested genre was not found');
+
+        }
+
+        if (Auth::user()->cant('update', $genre))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $validatedData = $request->validate([
+
+            'genre'=> 'required|string'
+
+        ]);
+
+        $genre->genre = $validatedData['genre'];
+
+        $genre->save();
+
+        return $this->respondSuccess('Genre updated successfully');
+
     }
 
     /**
@@ -102,6 +130,26 @@ class GenreController extends ApiController
      */
     public function destroy($id)
     {
-        //
+
+        $genre = Genre::find($id);
+
+        if (empty($genre))
+        {
+
+            return $this->respondNotFound('Sorry, the requested genre was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $genre))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $genre->delete();
+
+        return $this->respondSuccess('Genre successfully deleted');
+
     }
 }
