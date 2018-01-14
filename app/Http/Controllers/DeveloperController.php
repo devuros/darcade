@@ -12,6 +12,8 @@ use App\Http\Resources\DeveloperCollection;
 use App\Http\Resources\GameResource;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StoreDeveloper;
+
 class DeveloperController extends ApiController
 {
 
@@ -37,7 +39,7 @@ class DeveloperController extends ApiController
     /**
      * Store a newly created developer
      */
-    public function store(Request $request)
+    public function store(StoreDeveloper $request)
     {
 
         if (Auth::user()->cant('store', 'App\Developer'))
@@ -47,15 +49,9 @@ class DeveloperController extends ApiController
 
         }
 
-        $validatedData = $request->validate([
-
-            'developer'=> 'required|string'
-
-        ]);
-
         $developer = new Developer;
 
-        $developer->developer = $validatedData['developer'];
+        $developer->developer = $request->developer;
 
         $developer->save();
 
@@ -85,7 +81,7 @@ class DeveloperController extends ApiController
     /**
      * Update the specified developer
      */
-    public function update(Request $request, $id)
+    public function update(StoreDeveloper $request, $id)
     {
 
         $developer = Developer::find($id);
@@ -104,13 +100,7 @@ class DeveloperController extends ApiController
 
         }
 
-        $validatedData = $request->validate([
-
-            'developer'=> 'required|string'
-
-        ]);
-
-        $developer->developer = $validatedData['developer'];
+        $developer->developer = $request->developer;
 
         $developer->save();
 

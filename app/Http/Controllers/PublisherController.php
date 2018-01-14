@@ -12,6 +12,8 @@ use App\Http\Resources\PublisherCollection;
 use App\Http\Resources\GameResource;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StorePublisher;
+
 class PublisherController extends ApiController
 {
 
@@ -37,7 +39,7 @@ class PublisherController extends ApiController
     /**
      * Store a newly created publisher
      */
-    public function store(Request $request)
+    public function store(StorePublisher $request)
     {
 
         if (Auth::user()->cant('store', 'App\Publisher'))
@@ -47,15 +49,9 @@ class PublisherController extends ApiController
 
         }
 
-        $validatedData = $request->validate([
-
-            'publisher'=> 'required|string'
-
-        ]);
-
         $publisher = new Publisher;
 
-        $publisher->publisher = $validatedData['publisher'];
+        $publisher->publisher = $request->publisher;
 
         $publisher->save();
 
@@ -85,7 +81,7 @@ class PublisherController extends ApiController
     /**
      * Update the specified publisher
      */
-    public function update(Request $request, $id)
+    public function update(StorePublisher $request, $id)
     {
 
         $publisher = Publisher::find($id);
@@ -104,13 +100,7 @@ class PublisherController extends ApiController
 
         }
 
-        $validatedData = $request->validate([
-
-            'publisher'=> 'required|string'
-
-        ]);
-
-        $publisher->publisher = $validatedData['publisher'];
+        $publisher->publisher = $request->publisher;
 
         $publisher->save();
 
