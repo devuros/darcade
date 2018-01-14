@@ -20,7 +20,7 @@ class LibraryController extends ApiController
     }
 
     /**
-     * Get current user's library (owned games)
+     * Get authenticated user's library
      */
     public function showCurrentUserLibrary()
     {
@@ -92,7 +92,7 @@ class LibraryController extends ApiController
     }
 
     /**
-     * Get the requested user's library (owned games)
+     * Get the requested user's library
      */
     public function showUserLibrary($id)
     {

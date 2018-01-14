@@ -41,7 +41,6 @@ class ReviewController extends ApiController
     }
 
     /**
-     *
      */
     public function index()
     {
