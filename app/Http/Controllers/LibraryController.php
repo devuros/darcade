@@ -39,7 +39,6 @@ class LibraryController extends ApiController
     }
 
     /**
-     *
      */
     public function index()
     {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Library;
 use App\User;
 use App\Cart;
 use App\Order;
@@ -131,56 +132,74 @@ class CartController extends ApiController
 
         }
 
-        $order = new Order;
+        \DB::transaction(function () use ($user_id, $content) {
 
-        $order->user_id = $user_id;
-        $order->total = 0;
+            // insert a new order without total amount
+            // get the inserted id
 
-        $order->save();
+            $order = new Order;
 
-        $order_id = $order->id;
+            $order->user_id = $user_id;
+            $order->total = 0;
 
-        $total = 0;
+            $order->save();
 
-        $time = \Carbon\Carbon::now();
+            $order_id = $order->id;
 
-        foreach ($content as $item)
-        {
-            $actual_price = $item->base_price;
+            //  calculate the sum of all games
 
-            if ($item->is_on_sale)
+            $total = 0;
+
+            foreach ($content as $game)
             {
-                $actual_price = $item->sale_price;
+
+                $actual_price = $game->base_price;
+
+                if ($game->is_on_sale)
+                {
+
+                    $actual_price = $game->sale_price;
+
+                }
+
+                $total += $actual_price;
+
+                //  insert each game into purchases
+
+                $purchase = new Purchase;
+
+                $purchase->game_id = $game->id;
+                $purchase->order_id = $order_id;
+                $purchase->actual_price = $actual_price;
+
+                $purchase->save();
+
+                //  insert each game into library
+
+                $library = new Library;
+
+                $library->game_id = $game->id;
+                $library->user_id = $user_id;
+
+                $library->save();
+
             }
 
-            $total += $actual_price;
+            //  update total amount
 
-            $purchase = new Purchase;
+            $order->total = $total;
 
-            $purchase->game_id = $item->id;
-            $purchase->order_id = $order_id;
-            $purchase->actual_price = $actual_price;
+            $order->save();
 
-            $purchase->save();
+            //  empty the cart
 
-            \DB::table('game_user')->insert([
+            Cart::where('user_id', $user_id)->delete();
 
-                'game_id'=> $item->id,
-                'user_id'=> $user_id,
-                'created_at'=> $time,
-                'updated_at'=> $time
+        }, 2);
 
-            ]);
+        //  everything was successful
 
-        }
-
-        $order->total = $total;
-
-        $order->save();
-
-        Cart::where('user_id', $user_id)->delete();
-
-        return $this->respondSuccess('Items successfully purchased, enjoy!');
+        return $this->respondSuccess('Games successfully purchased, enjoy!');
 
     }
 
