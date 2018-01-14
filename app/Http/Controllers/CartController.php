@@ -12,6 +12,8 @@ use App\Purchase;
 use App\Http\Resources\GameResource;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StoreCart;
+
 class CartController extends ApiController
 {
 
@@ -23,44 +25,34 @@ class CartController extends ApiController
     }
 
     /**
-     * Get the cart content
+     * Get the authenticated user's cart content
      */
     public function index(Request $request)
     {
 
-        $user_id = $request->user()->id;
+        $cart_content = User::find(Auth::id())->cart;
 
-        $content = User::find($user_id)->cart;
-
-        if ($content->isEmpty())
+        if ($cart_content->isEmpty())
         {
 
             return $this->respondSuccess('Your cart is empty');
 
         }
 
-        return GameResource::collection($content);
+        return GameResource::collection($cart_content);
 
     }
 
     /**
-     * Add an item to cart
+     * Add an item to the authenticated user's cart
      */
-    public function store(Request $request)
+    public function store(StoreCart $request)
     {
-
-        $user_id = $request->user()->id;
-
-        $validatedData = request()->validate([
-
-            'game'=> 'required|integer|exists:games,id'
-
-        ]);
 
         $cart = new Cart;
 
-        $cart->user_id = $user_id;
-        $cart->game_id = $validatedData['game'];
+        $cart->user_id = Auth::id();
+        $cart->game_id = $request->game;
 
         $cart->save();
 
@@ -69,63 +61,66 @@ class CartController extends ApiController
     }
 
     /**
-     * Remove an item from cart
+     * Remove an item from the authenticated user's cart
      */
     public function destroy($id)
     {
 
-        $cart = Cart::find($id);
+        $cart_item = Cart::find($id);
 
-        if (empty($cart))
+        if (empty($cart_item))
         {
 
             return $this->respondConflict('Cannot remove resource because it does not exist');
 
         }
 
-        if ($cart->user_id != Auth::id())
+        if (Auth::user()->cant('delete', $cart_item))
         {
 
             return $this->respondForbidden('Forbidden, you don not have the permission');
 
         }
 
-        $cart->delete();
+        $cart_item->delete();
 
         return $this->respondSuccess('Game successfully removed from cart');
 
     }
 
     /**
-     * Empty cart content
+     * Empty the authenticated user's cart
      */
     public function empty(Request $request)
     {
 
-        $user_id = $request->user()->id;
+        $cart_content = User::find(Auth::id())->cart;
 
-        $content = User::find($user_id)->cart;
-
-        if ($content->isEmpty())
+        if ($cart_content->isEmpty())
         {
 
             return $this->respondConflict('Nothing to remove, your cart is empty');
 
         }
 
-        Cart::where('user_id', $user_id)->delete();
+        if (Cart::where('user_id', Auth::id())->delete())
+        {
 
-        return $this->respondSuccess('Cart successfully emptied');
+            return $this->respondSuccess('Cart successfully emptied');
+
+        }
+
+        return $this->respondInternalError('Something went wrong, action could not be completed');
 
     }
 
     /**
-     * Checkout cart content
+     * Checkout the authenticated user's cart content
      */
     public function checkout(Request $request)
     {
 
-        $user_id = $request->user()->id;
+        $user_id = Auth::id();
 
         $content = User::find($user_id)->cart;
 
