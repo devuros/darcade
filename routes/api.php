@@ -38,4 +38,4 @@ Route::get('users/{id}/wishes', 'WishController@showUserWishes');
 Route::apiResource('reviews', 'ReviewController')->except('index');
 Route::get('reviews', 'ReviewController@showCurrentUserReviews');
 Route::get('users/{id}/reviews', 'ReviewController@showUserReviews');
-Route::get('games/{id}/reviews', 'ReviewController@showGameReviews');
+Route::get('games/{id}/reviews', 'ReviewController@showGameReviews')->name('game.reviews');
