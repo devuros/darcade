@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class ReviewResource extends Resource
+class UserReviewResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,7 @@ class ReviewResource extends Resource
 
         return [
 
-            'image'=> $this->image,
-            'title'=> $this->title,
+            'id'=> $this->id,
             'recommended'=> $this->recommended,
             'body'=> $this->body,
             'created'=> $this->created_at

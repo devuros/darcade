@@ -140,14 +140,19 @@ class GenreController extends ApiController
 
         }
 
-        $genre->delete();
+        if ($genre->delete())
+        {
 
-        return $this->respondSuccess('Genre successfully deleted');
+            return $this->respondSuccess('Genre successfully deleted');
+
+        }
+
+        return $this->respondInternalError('Something went wrong, action could not be completed');
 
     }
 
     /**
-     * Get genres of the requested game
+     * Get genres for the requested game
      */
     public function showGameGenre($id)
     {

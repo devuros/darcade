@@ -135,7 +135,6 @@ class CartController extends ApiController
         \DB::transaction(function () use ($user_id, $content) {
 
             // insert a new order without total amount
-            // get the inserted id
 
             $order = new Order;
 
@@ -143,6 +142,8 @@ class CartController extends ApiController
             $order->total = 0;
 
             $order->save();
+
+            // get the inserted id
 
             $order_id = $order->id;
 
@@ -199,7 +200,7 @@ class CartController extends ApiController
 
         //  everything was successful
 
-        return $this->respondSuccess('Games successfully purchased, enjoy!');
+        return $this->respondSuccess('Purchase successful, enjoy!');
 
     }
 

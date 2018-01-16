@@ -128,7 +128,7 @@ class ApiController extends Controller
 	/**
 	 * Specific error method: HTTP_FORBIDDEN
 	 */
-	public function respondForbidden($message = 'Request forbidden')
+	public function respondForbidden($message = 'You don not have the permission')
 	{
 
 		return $this->setStatusCode(self::HTTP_FORBIDDEN)->respondWithError($message);
@@ -148,7 +148,7 @@ class ApiController extends Controller
 	/**
 	 * Specific error method: HTTP_CONFLICT
 	 */
-	public function respondConflict($message = 'Resource does not exist')
+	public function respondConflict($message = 'Conflict, resource is not present')
 	{
 
 		return $this->setStatusCode(self::HTTP_CONFLICT)->respondWithError($message);
@@ -168,7 +168,7 @@ class ApiController extends Controller
 	/**
 	 * Specific error method: HTTP_INTERNAL_ERROR
 	 */
-	public function respondInternalError($message = 'Internal error')
+	public function respondInternalError($message = 'Internal application error')
 	{
 
 		return $this->setStatusCode(self::HTTP_INTERNAL_ERROR)->respondWithError($message);

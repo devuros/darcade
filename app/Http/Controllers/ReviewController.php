@@ -8,6 +8,7 @@ use App\Game;
 use App\User;
 use App\Review;
 use App\Http\Resources\ReviewResource;
+use App\Http\Resources\UserReviewResource;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -27,12 +28,16 @@ class ReviewController extends ApiController
     public function showCurrentUserReviews()
     {
 
-        $reviews = User::find(Auth::id())->reviews;
+        $reviews = User::find(Auth::id())
+            ->reviews()
+            ->join('games', 'reviews.game_id', '=', 'games.id')
+            ->select('reviews.*', 'games.image', 'games.title')
+            ->get();
 
         if ($reviews->isEmpty())
         {
 
-            return $this->respondSuccess('You didnt write any reviews');
+            return $this->respondSuccess('You did not write any reviews');
 
         }
 
@@ -107,7 +112,11 @@ class ReviewController extends ApiController
 
         }
 
-        $reviews = $user->reviews;
+        $reviews = $user
+            ->reviews()
+            ->join('games', 'reviews.game_id', '=', 'games.id')
+            ->select('reviews.*', 'games.image', 'games.title')
+            ->get();
 
         if ($reviews->isEmpty())
         {
@@ -144,7 +153,7 @@ class ReviewController extends ApiController
 
         }
 
-        return ReviewResource::collection($reviews);
+        return UserReviewResource::collection($reviews);
 
     }
 

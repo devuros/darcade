@@ -34,9 +34,6 @@ class User extends Authenticatable
 
     ];
 
-    /**
-     * Get user's role(s)
-     */
     public function roles()
     {
 
@@ -44,9 +41,6 @@ class User extends Authenticatable
 
     }
 
-    /**
-     * Get the content of the user's cart
-     */
     public function cart()
     {
 
@@ -54,9 +48,6 @@ class User extends Authenticatable
 
     }
 
-    /**
-     * Get the games the user ownes
-     */
     public function library()
     {
 
@@ -64,9 +55,6 @@ class User extends Authenticatable
 
     }
 
-    /**
-     * Get the games the user wishes to own
-     */
     public function wishes()
     {
 
@@ -74,9 +62,6 @@ class User extends Authenticatable
 
     }
 
-    /**
-     * Get all the reviews the user wrote
-     */
     public function reviews()
     {
 
@@ -84,9 +69,6 @@ class User extends Authenticatable
 
     }
 
-    /**
-     * Get all of the user's orders
-     */
     public function orders()
     {
 

@@ -166,7 +166,7 @@ class GameController extends ApiController
     }
 
     /**
-     * Get the requested screenshot's game
+     * Get the requested screenshot game
      */
     public function showScreenshotGame($id)
     {

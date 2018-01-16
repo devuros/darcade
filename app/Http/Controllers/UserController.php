@@ -119,9 +119,13 @@ class UserController extends ApiController
 
         }
 
-        $user->delete();
+        if ($user->delete()) {
 
-        return $this->respondSuccess('User successfully deleted');
+            return $this->respondSuccess('User successfully deleted');
+
+        }
+
+        return $this->respondInternalError('Something went wrong, action could not be completed');
 
     }
 }
