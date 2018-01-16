@@ -12,13 +12,16 @@ use App\Http\Resources\UserReviewResource;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StoreReview;
+use App\Http\Requests\UpdateReview;
+
 class ReviewController extends ApiController
 {
 
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only('showCurrentUserReviews');
+        $this->middleware('auth:api')->only(['showCurrentUserReviews', 'store', 'update', 'destroy']);
 
     }
 
@@ -53,14 +56,38 @@ class ReviewController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created review
      */
-    public function store(Request $request)
+    public function store(StoreReview $request)
     {
-        //
+
+        if (Auth::user()->cant('store', 'App\Review'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $game_review_exists = User::find(Auth::id())->reviews()->where('game_id', $request->game)->exists();
+
+        if ($game_review_exists)
+        {
+
+            return $this->respondForbidden('You already wrote a review for this game');
+
+        }
+
+        $review = new Review;
+
+        $review->game_id = $request->game;
+        $review->user_id = Auth::id();
+        $review->recommended = $request->recommended;
+        $review->body = $request->body;
+
+        $review->save();
+
+        return $this->respondCreated('Review successfully created');
+
     }
 
     /**
@@ -75,15 +102,34 @@ class ReviewController extends ApiController
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update the specified review
      */
-    public function update(Request $request, $id)
+    public function update(UpdateReview $request, $id)
     {
-        //
+
+        $review = Review::find($id);
+
+        if (empty($review))
+        {
+
+            return $this->respondNotFound('Sorry, the requested review was not found');
+
+        }
+
+        if (Auth::user()->cant('update', $review))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $review->recommended = $request->recommended;
+        $review->body = $request->body;
+
+        $review->save();
+
+        return $this->respondSuccess('Review updated successfully');
+
     }
 
     /**
@@ -94,7 +140,9 @@ class ReviewController extends ApiController
      */
     public function destroy($id)
     {
+
         //
+
     }
 
     /**
