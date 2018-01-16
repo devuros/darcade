@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
 
-	const http_success = 200; //	The standard success code and default option
-	const http_created = 201; //	Resource created
+	const HTTP_SUCCESS = 200; //	The standard success code and default option
+	const HTTP_CREATED = 201; //	Resource created
 
-	const http_bad_request = 400; //	Could not be understood due to malformed syntax
-	const http_unauthorized = 401; //	User did not authenticate
-	const http_forbidden = 403; //	Does not have the permission
-	const http_not_found = 404; //	Resource not found
-	const http_conflict = 409; //	Resource cannot be deleted, because it does not exist
-	const http_unprocessable_entity = 422; //	Failed validation
+	const HTTP_BAD_REQUEST = 400; //	Could not be understood due to malformed syntax
+	const HTTP_UNAUTHORIZED = 401; //	User did not authenticate
+	const HTTP_FORBIDDEN = 403; //	Does not have the permission
+	const HTTP_NOT_FOUND = 404; //	Resource not found
+	const HTTP_CONFLICT = 409; //	Resource cannot be deleted, because it does not exist
+	const HTTP_UNPROCESSABLE_ENTITY = 422; //	Failed validation
 
-	const http_internal_error = 500; // Do not let this happen
+	const HTTP_INTERNAL_ERROR = 500; // Do not let this happen
 
 	protected $statusCode;
 
@@ -67,22 +67,22 @@ class ApiController extends Controller
 	}
 
 	/**
-	 * Specific success method: http_success
+	 * Specific success method: HTTP_SUCCESS
 	 */
 	public function respondSuccess($message = 'OK')
 	{
 
-		return $this->setStatusCode(self::http_success)->respondWithSuccess($message);
+		return $this->setStatusCode(self::HTTP_SUCCESS)->respondWithSuccess($message);
 
 	}
 
 	/**
-	 * Specific success method: http_created
+	 * Specific success method: HTTP_CREATED
 	 */
 	public function respondCreated($message = 'Resource created')
 	{
 
-		return $this->setStatusCode(self::http_created)->respondWithSuccess($message);
+		return $this->setStatusCode(self::HTTP_CREATED)->respondWithSuccess($message);
 
 	}
 
@@ -106,72 +106,72 @@ class ApiController extends Controller
 	}
 
 	/**
-	 * Specific error method: http_bad_request
+	 * Specific error method: HTTP_BAD_REQUEST
 	 */
 	public function respondBadRequest($message = 'Malformed syntax')
 	{
 
-		return $this->setStatusCode(self::http_bad_request)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_BAD_REQUEST)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_unauthorized
+	 * Specific error method: HTTP_UNAUTHORIZED
 	 */
 	public function respondUnauthorized($message = 'Unauthorized')
 	{
 
-		return $this->setStatusCode(self::http_unauthorized)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_UNAUTHORIZED)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_forbidden
+	 * Specific error method: HTTP_FORBIDDEN
 	 */
 	public function respondForbidden($message = 'Request forbidden')
 	{
 
-		return $this->setStatusCode(self::http_forbidden)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_FORBIDDEN)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_not_found
+	 * Specific error method: HTTP_NOT_FOUND
 	 */
 	public function respondNotFound($message = 'Resource not found')
 	{
 
-		return $this->setStatusCode(self::http_not_found)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_NOT_FOUND)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_conflict
+	 * Specific error method: HTTP_CONFLICT
 	 */
 	public function respondConflict($message = 'Resource does not exist')
 	{
 
-		return $this->setStatusCode(self::http_conflict)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_CONFLICT)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_unprocessable_entity
+	 * Specific error method: HTTP_UNPROCESSABLE_ENTITY
 	 */
 	public function respondUnprocessableEntity($message = 'Input failed validation')
 	{
 
-		return $this->setStatusCode(self::http_unprocessable_entity)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_UNPROCESSABLE_ENTITY)->respondWithError($message);
 
 	}
 
 	/**
-	 * Specific error method: http_internal_error
+	 * Specific error method: HTTP_INTERNAL_ERROR
 	 */
 	public function respondInternalError($message = 'Internal error')
 	{
 
-		return $this->setStatusCode(self::http_internal_error)->respondWithError($message);
+		return $this->setStatusCode(self::HTTP_INTERNAL_ERROR)->respondWithError($message);
 
 	}
 
