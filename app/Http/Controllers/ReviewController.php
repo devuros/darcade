@@ -8,6 +8,7 @@ use App\Game;
 use App\User;
 use App\Review;
 use App\Http\Resources\ReviewResource;
+use App\Http\Resources\ReviewBaseResource;
 use App\Http\Resources\UserReviewResource;
 
 use Illuminate\Support\Facades\Auth;
@@ -92,14 +93,22 @@ class ReviewController extends ApiController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Display the specified review
      */
     public function show($id)
     {
-        //
+
+        $review = Review::find($id);
+
+        if (empty($review))
+        {
+
+            return $this->respondNotFound('Sorry, the requested review was not found');
+
+        }
+
+        return new ReviewBaseResource($review);
+
     }
 
     /**
@@ -134,15 +143,35 @@ class ReviewController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified review
      */
     public function destroy($id)
     {
 
-        //
+        $review = Review::find($id);
+
+        if (empty($review))
+        {
+
+            return $this->respondNotFound('Sorry, the requested review was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $review))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        if ($review->delete())
+        {
+
+            return $this->respondSuccess('Review successfully deleted');
+
+        }
+
+        return $this->respondInternalError('Something went wrong, action could not be completed');
 
     }
 
