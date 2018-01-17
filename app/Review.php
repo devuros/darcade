@@ -30,6 +30,9 @@ class Review extends Pivot
 
     }
 
+    /**
+     *
+     */
     public function getCreatedAtColumn()
     {
 
@@ -37,6 +40,9 @@ class Review extends Pivot
 
     }
 
+    /**
+     *
+     */
     public function getUpdatedAtColumn()
     {
 
