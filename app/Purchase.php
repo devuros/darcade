@@ -9,9 +9,6 @@ class Purchase extends Model
 
 	public $timestamps = false;
 
-	/**
-	 * Get the order of the purchase
-	 */
 	public function order()
 	{
 
@@ -19,9 +16,6 @@ class Purchase extends Model
 
 	}
 
-	/**
-	 * Get the name of the game which was purchased
-	 */
 	public function game()
 	{
 

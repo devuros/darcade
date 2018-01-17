@@ -12,8 +12,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
-     * @var array
      */
     protected $fillable = [
         'name', 'email', 'password',
@@ -21,8 +19,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
-     * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
@@ -76,12 +72,20 @@ class User extends Authenticatable
 
     }
 
+    public function purchases()
+    {
+
+        return $this->hasManyThrough('App\Purchase', 'App\Order');
+
+    }
+
     /**
      * Get all purchases for all orders made by the user
      */
-    public function purchases()
+    public function userPurchases()
     {
-        return $this->hasManyThrough('App\Purchase', 'App\Order')
+
+        return $this->purchases()
             ->join('games', 'purchases.game_id', '=', 'games.id')
             ->latest()
             ->select('purchases.*', 'orders.created_at', 'games.title');

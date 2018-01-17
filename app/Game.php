@@ -18,9 +18,6 @@ class Game extends Model
 
     ];
 
-    /**
-     * Get the game's developer
-     */
     public function developer()
     {
 
@@ -28,9 +25,6 @@ class Game extends Model
 
     }
 
-    /**
-     * Get the game's publisher
-     */
     public function publisher()
     {
 
@@ -38,9 +32,6 @@ class Game extends Model
 
     }
 
-    /**
-     * Get the genres assosiated with the game
-     */
     public function genres()
     {
 
@@ -48,9 +39,6 @@ class Game extends Model
 
     }
 
-    /**
-     * Get the game's screenshots
-     */
     public function screenshots()
     {
 
@@ -58,9 +46,6 @@ class Game extends Model
 
     }
 
-    /**
-     * Get all the game's reviews
-     */
     public function reviews()
     {
 

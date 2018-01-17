@@ -29,7 +29,7 @@ class PurchaseController extends ApiController
 
         $user_id = $request->user()->id;
 
-        $purchases = User::find($user_id)->purchases;
+        $purchases = User::find($user_id)->userPurchases()->get();
 
         if ($purchases->isEmpty())
         {
@@ -61,7 +61,7 @@ class PurchaseController extends ApiController
 
         $user_id = Auth::id();
 
-        $purchase = User::find($user_id)->purchases()->where('purchases.id', $id)->first();
+        $purchase = User::find($user_id)->userPurchases()->where('purchases.id', $id)->first();
 
         if (empty($purchase))
         {

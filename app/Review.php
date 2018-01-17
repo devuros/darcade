@@ -16,9 +16,6 @@ class Review extends Pivot
 
     ];
 
-    /**
-     * Get the game this review belongs to
-     */
     public function game()
     {
 
@@ -26,9 +23,6 @@ class Review extends Pivot
 
     }
 
-    /**
-     * Get the author of the review
-     */
     public function author()
     {
 
