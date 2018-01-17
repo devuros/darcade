@@ -39,6 +39,7 @@ class WishController extends ApiController
     }
 
     /**
+     *
      */
     public function index()
     {
