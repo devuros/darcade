@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Wish;
 use App\User;
 use App\Http\Resources\GameResource;
+use App\Http\Resources\WishResource;
 
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Requests\StoreWish;
 
 class WishController extends ApiController
 {
@@ -15,7 +19,7 @@ class WishController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only('showCurrentUserWishes');
+        $this->middleware('auth:api')->only(['showCurrentUserWishes', 'store', 'destroy']);
 
     }
 
@@ -34,7 +38,12 @@ class WishController extends ApiController
 
         }
 
-        return GameResource::collection($wishes);
+        $wishes_with_date = Wish::where('user_id', Auth::id())
+            ->join('games', 'wishes.game_id', '=' , 'games.id')
+            ->select('games.*', 'wishes.id as wish', 'wishes.created_at as created')
+            ->get();
+
+        return WishResource::collection($wishes_with_date);
 
     }
 
@@ -43,18 +52,40 @@ class WishController extends ApiController
      */
     public function index()
     {
-        //
+        // route disabled
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created wish
      */
-    public function store(Request $request)
+    public function store(StoreWish $request)
     {
-        //
+
+        if (Auth::user()->cant('create', 'App\Wish'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $wish_exists = User::find(Auth::id())->wishes()->where('game_id', $request->game)->exists();
+
+        if ($wish_exists)
+        {
+
+            return $this->respondForbidden('You already have this game in your wishlist');
+
+        }
+
+        $wish = new Wish;
+
+        $wish->game_id = $request->game;
+        $wish->user_id = Auth::id();
+
+        $wish->save();
+
+        return $this->respondCreated('Wish successfully created');
+
     }
 
     /**
@@ -65,7 +96,7 @@ class WishController extends ApiController
      */
     public function show($id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -77,18 +108,40 @@ class WishController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified wish
      */
     public function destroy($id)
     {
-        //
+
+        $wish = Wish::find($id);
+
+        if (empty($wish))
+        {
+
+            return $this->respondNotFound('Sorry, the requested wish was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $wish))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        if ($wish->delete())
+        {
+
+            return $this->respondSuccess('Wish successfully removed');
+
+        }
+
+        return $this->respondInternalError('Something went wrong, action could not be completed');
+
     }
 
     /**
@@ -115,7 +168,12 @@ class WishController extends ApiController
 
         }
 
-        return GameResource::collection($games);
+        $wishes_with_date = Wish::where('user_id', $id)
+            ->join('games', 'wishes.game_id', '=' , 'games.id')
+            ->select('games.*', 'wishes.id as wish', 'wishes.created_at as created')
+            ->get();
+
+        return WishResource::collection($wishes_with_date);
 
     }
 

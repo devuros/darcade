@@ -42,7 +42,9 @@ class WishPolicy
      */
     public function create(User $user)
     {
-        //
+
+        return true;
+
     }
 
     /**
@@ -66,6 +68,8 @@ class WishPolicy
      */
     public function delete(User $user, Wish $wish)
     {
-        //
+
+        return $user->id === $wish->user_id;
+
     }
 }

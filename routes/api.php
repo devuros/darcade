@@ -31,7 +31,7 @@ Route::apiResource('library', 'LibraryController')->only('store');
 Route::get('library', 'LibraryController@showCurrentUserLibrary');
 Route::get('users/{id}/library', 'LibraryController@showUserLibrary');
 
-Route::apiResource('wishes', 'WishController')->except('index');
+Route::apiResource('wishes', 'WishController')->except(['index', 'show', 'update']);
 Route::get('wishes', 'WishController@showCurrentUserWishes');
 Route::get('users/{id}/wishes', 'WishController@showUserWishes');
 
