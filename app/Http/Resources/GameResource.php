@@ -19,6 +19,7 @@ class GameResource extends Resource
 
         return [
 
+            'id'=> $this->id,
             'title'=> $this->title,
             'image'=> $this->image,
             'release_date'=> $this->release_date,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Wish;
 use App\Library;
 use App\User;
 use App\Cart;
@@ -147,7 +148,7 @@ class CartController extends ApiController
 
             $order_id = $order->id;
 
-            //  calculate the sum of all games
+            // calculate the sum of all games
 
             $total = 0;
 
@@ -165,7 +166,7 @@ class CartController extends ApiController
 
                 $total += $actual_price;
 
-                //  insert each game into purchases
+                // insert each game into purchases
 
                 $purchase = new Purchase;
 
@@ -175,7 +176,7 @@ class CartController extends ApiController
 
                 $purchase->save();
 
-                //  insert each game into library
+                // insert each game into library
 
                 $library = new Library;
 
@@ -184,21 +185,42 @@ class CartController extends ApiController
 
                 $library->save();
 
+                // remove the purchased game if it is in wishlist
+
+                $wish_exists = Wish::where([
+
+                    ['user_id', '=', $user_id],
+                    ['game_id', '=', $game->id]
+
+                ])->exists();
+
+                if ($wish_exists)
+                {
+
+                    Wish::where([
+
+                        ['user_id', '=', $user_id],
+                        ['game_id', '=', $game->id]
+
+                    ])->delete();
+
+                }
+
             }
 
-            //  update total amount
+            // update total amount
 
             $order->total = $total;
 
             $order->save();
 
-            //  empty the cart
+            // empty the cart
 
             Cart::where('user_id', $user_id)->delete();
 
         }, 2);
 
-        //  everything was successful
+        // everything was successful
 
         return $this->respondSuccess('Purchase successful, enjoy!');
 
