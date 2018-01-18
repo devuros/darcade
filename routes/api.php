@@ -39,3 +39,6 @@ Route::apiResource('reviews', 'ReviewController')->except('index');
 Route::get('reviews', 'ReviewController@showCurrentUserReviews');
 Route::get('users/{id}/reviews', 'ReviewController@showUserReviews');
 Route::get('games/{id}/reviews', 'ReviewController@showGameReviews')->name('game.reviews');
+
+Route::apiResource('roles', 'RoleController')->only(['index']);
+Route::get('users/{id}/roles', 'RoleController@showUserRole');
