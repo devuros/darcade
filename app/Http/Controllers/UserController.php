@@ -10,13 +10,15 @@ use App\Http\Resources\UserResource;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StoreUser;
+
 class UserController extends ApiController
 {
 
     public function __construct()
     {
 
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except('store');
 
     }
 
@@ -50,14 +52,29 @@ class UserController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created user
      */
-    public function store(Request $request)
+    public function store(StoreUser $request)
     {
-        //
+
+        \DB::transaction(function () use ($request) {
+
+            $user = new User;
+
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+
+            $user->save();
+
+            $timestamp = \Carbon\Carbon::now();
+
+            $user->roles()->attach(1, ['created_at'=> $timestamp, 'updated_at'=> $timestamp]);
+
+        }, 2);
+
+        return $this->respondCreated('User successfully created');
+
     }
 
     /**
@@ -120,7 +137,8 @@ class UserController extends ApiController
 
         }
 
-        if ($user->delete()) {
+        if ($user->delete())
+        {
 
             return $this->respondSuccess('User successfully deleted');
 

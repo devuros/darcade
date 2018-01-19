@@ -22,6 +22,16 @@ class RolePolicy
 
     }
 
+    public function index(User $user)
+    {
+        return false;
+    }
+
+    public function showUserRoles(User $user)
+    {
+        return false;
+    }
+
     /**
      * Determine whether the user can view the role.
      *
@@ -31,7 +41,7 @@ class RolePolicy
      */
     public function view(User $user, Role $role)
     {
-        //
+        return false;
     }
 
     /**
@@ -42,7 +52,7 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -54,7 +64,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        //
+        return false;
     }
 
     /**
@@ -66,6 +76,6 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
-        //
+        return false;
     }
 }

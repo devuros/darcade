@@ -21,9 +21,6 @@ class UserPolicy
 
     }
 
-    /**
-     * Determine whether the see all users
-     */
     public function index(User $user)
     {
 
@@ -53,12 +50,6 @@ class UserPolicy
         //
     }
 
-    /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
     public function store(User $user)
     {
 
