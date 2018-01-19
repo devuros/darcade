@@ -137,14 +137,27 @@ class UserController extends ApiController
 
         }
 
-        if ($user->delete())
+        \DB::beginTransaction();
+
+        try
         {
+
+            $user->roles()->detach();
+            $user->delete();
+
+            \DB::commit();
 
             return $this->respondSuccess('User successfully deleted');
 
         }
+        catch (\Throwable $e)
+        {
 
-        return $this->respondInternalError('Something went wrong, action could not be completed');
+            \DB::rollback();
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 }
