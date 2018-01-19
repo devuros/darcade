@@ -54,7 +54,7 @@ class ReviewController extends ApiController
      */
     public function index()
     {
-        //
+        // route disabled
     }
 
     /**

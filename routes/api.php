@@ -18,7 +18,7 @@ Route::get('games/{id}/publisher', 'PublisherController@showGamePublisher')->nam
 Route::apiResource('genres', 'GenreController');
 Route::get('games/{id}/genres', 'GenreController@showGameGenre')->name('game.genres');
 
-Route::apiResource('screenshots', 'ScreenshotController')->except('update');
+Route::apiResource('screenshots', 'ScreenshotController')->only(['index', 'store', 'show', 'destroy']);
 Route::get('games/{id}/screenshots', 'ScreenshotController@showGameScreenshots')->name('game.screenshots');
 
 Route::apiResource('cart', 'CartController')->only(['index', 'store', 'destroy']);
@@ -31,11 +31,11 @@ Route::apiResource('library', 'LibraryController')->only('store');
 Route::get('library', 'LibraryController@showCurrentUserLibrary');
 Route::get('users/{id}/library', 'LibraryController@showUserLibrary');
 
-Route::apiResource('wishes', 'WishController')->except(['index', 'show', 'update']);
+Route::apiResource('wishes', 'WishController')->only(['store', 'destroy']);
 Route::get('wishes', 'WishController@showCurrentUserWishes');
 Route::get('users/{id}/wishes', 'WishController@showUserWishes');
 
-Route::apiResource('reviews', 'ReviewController')->except('index');
+Route::apiResource('reviews', 'ReviewController')->only(['store', 'show', 'update', 'destroy']);
 Route::get('reviews', 'ReviewController@showCurrentUserReviews');
 Route::get('users/{id}/reviews', 'ReviewController@showUserReviews');
 Route::get('games/{id}/reviews', 'ReviewController@showGameReviews')->name('game.reviews');

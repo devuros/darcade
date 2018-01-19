@@ -12,6 +12,13 @@ use App\Http\Resources\ScreenshotCollection;
 class ScreenshotController extends ApiController
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('auth:api')->only(['store', 'destroy']);
+
+    }
+
     /**
      * Get all screenshots
      */
@@ -66,14 +73,13 @@ class ScreenshotController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified screenshot
      */
     public function destroy($id)
     {
+
         //
+
     }
 
     /**
