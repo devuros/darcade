@@ -18,7 +18,7 @@ Route::get('games/{id}/publisher', 'PublisherController@showGamePublisher')->nam
 Route::apiResource('genres', 'GenreController');
 Route::get('games/{id}/genres', 'GenreController@showGameGenre')->name('game.genres');
 
-Route::apiResource('screenshots', 'ScreenshotController');
+Route::apiResource('screenshots', 'ScreenshotController')->except('update');
 Route::get('games/{id}/screenshots', 'ScreenshotController@showGameScreenshots')->name('game.screenshots');
 
 Route::apiResource('cart', 'CartController')->only(['index', 'store', 'destroy']);

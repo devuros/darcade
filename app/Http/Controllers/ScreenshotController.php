@@ -25,14 +25,13 @@ class ScreenshotController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created screenshot
      */
     public function store(Request $request)
     {
+
         //
+
     }
 
     /**
@@ -63,7 +62,7 @@ class ScreenshotController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**
