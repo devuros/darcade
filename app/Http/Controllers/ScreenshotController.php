@@ -133,7 +133,11 @@ class ScreenshotController extends ApiController
     public function destroy($id)
     {
 
-        // to do
+        // check if the resource exists
+
+        // if it does, remove it from storage and delete it from database
+
+        // if not, notify
 
     }
 
