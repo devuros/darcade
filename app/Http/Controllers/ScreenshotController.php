@@ -37,7 +37,7 @@ class ScreenshotController extends ApiController
     public function store(Request $request)
     {
 
-        //
+        // to do
 
     }
 
@@ -78,7 +78,7 @@ class ScreenshotController extends ApiController
     public function destroy($id)
     {
 
-        //
+        // to do
 
     }
 
