@@ -133,11 +133,56 @@ class ScreenshotController extends ApiController
     public function destroy($id)
     {
 
-        // check if the resource exists
+        $screenshot = Screenshot::find($id);
 
-        // if it does, remove it from storage and delete it from database
+        if (empty($screenshot))
+        {
 
-        // if not, notify
+            return $this->respondNotFound('Sorry, the requested screenshot was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $screenshot))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        \DB::beginTransaction();
+
+        try
+        {
+
+            if (Storage::disk('public')->exists($screenshot->path))
+            {
+
+                Storage::disk('public')->delete($screenshot->path);
+
+                $screenshot->delete();
+
+                \DB::commit();
+
+                return $this->respondSuccess('Screenshot successfully removed');
+
+            }
+            else
+            {
+
+                return $this->respondConflict('File could not be found on disk');
+
+            }
+
+
+        }
+        catch (\Throwable $e)
+        {
+
+            \DB::rollback();
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 
