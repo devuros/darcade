@@ -52,27 +52,43 @@ class ScreenshotController extends ApiController
 
         }
 
-        // validate the file upload
-
-        if ($request->hasFile('screenshot'))
+        if (!$request->hasFile('screenshot'))
         {
 
-            if ($request->file('screenshot')->isValid())
-            {
-
-                //
-
-            }
-            else
-            {
-
-                return $this->respondInternalError('Something went wrong, action could not be completed');
-
-            }
+            return $this->respondInternalError('Something went wrong, action could not be completed');
 
         }
-        else
+
+        if (!$request->file('screenshot')->isValid())
         {
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
+
+        \DB::beginTransaction();
+
+        try
+        {
+
+            $path = $request->screenshot->store('screenshots', 'public');
+
+            $screenshot = new Screenshot;
+
+            $screenshot->path = $path;
+            $screenshot->game_id = $request->game;
+
+            $screenshot->save();
+
+            \DB::commit();
+
+            return $this->respondCreated('Screenshot successfully uploaded');
+
+        }
+        catch (\Throwable $e)
+        {
+
+            \DB::rollback();
 
             return $this->respondInternalError('Something went wrong, action could not be completed');
 
