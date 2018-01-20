@@ -24,6 +24,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Wish' => 'App\Policies\WishPolicy',
         'App\Role' => 'App\Policies\RolePolicy',
         'App\Screenshot' => 'App\Policies\ScreenshotPolicy',
+        'App\Game' => 'App\Policies\GamePolicy',
 
     ];
 

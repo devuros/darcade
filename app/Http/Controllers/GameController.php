@@ -12,6 +12,10 @@ use App\Game;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Requests\StoreGame;
+
 class GameController extends ApiController
 {
 
@@ -28,12 +32,9 @@ class GameController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created game
      */
-    public function store(Request $request)
+    public function store(StoreGame $request)
     {
 
         // to do
@@ -61,11 +62,7 @@ class GameController extends ApiController
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update the specified game
      */
     public function update(Request $request, $id)
     {
@@ -75,10 +72,7 @@ class GameController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified game
      */
     public function destroy($id)
     {
