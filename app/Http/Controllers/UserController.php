@@ -112,7 +112,7 @@ class UserController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**

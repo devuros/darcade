@@ -55,7 +55,7 @@ class RoleController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -66,7 +66,7 @@ class RoleController extends ApiController
      */
     public function show($id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -78,7 +78,7 @@ class RoleController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -89,7 +89,7 @@ class RoleController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        // route disabled
     }
 
     /**

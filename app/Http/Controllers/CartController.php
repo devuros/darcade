@@ -63,6 +63,14 @@ class CartController extends ApiController
     }
 
     /**
+     *
+     */
+    public function show($id)
+    {
+        // route disabled
+    }
+
+    /**
      * Remove an item from the authenticated user's cart
      */
     public function destroy($id)

@@ -42,7 +42,7 @@ class LibraryController extends ApiController
      */
     public function index()
     {
-        //
+        // route disabled
     }
 
     /**
@@ -53,7 +53,7 @@ class LibraryController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        // ?
     }
 
     /**
@@ -64,7 +64,7 @@ class LibraryController extends ApiController
      */
     public function show($id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -76,7 +76,7 @@ class LibraryController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -87,7 +87,7 @@ class LibraryController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        // route disabled
     }
 
     /**

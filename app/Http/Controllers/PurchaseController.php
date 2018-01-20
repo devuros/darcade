@@ -50,7 +50,7 @@ class PurchaseController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -83,7 +83,7 @@ class PurchaseController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        // route disabled
     }
 
     /**
@@ -94,6 +94,6 @@ class PurchaseController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        // route disabled
     }
 }

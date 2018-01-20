@@ -16,7 +16,7 @@ Route::apiResource('publishers', 'PublisherController');
 Route::get('games/{id}/publisher', 'PublisherController@showGamePublisher')->name('game.publisher');
 
 Route::apiResource('genres', 'GenreController');
-Route::get('games/{id}/genres', 'GenreController@showGameGenre')->name('game.genres');
+Route::get('games/{id}/genres', 'GenreController@showGameGenres')->name('game.genres');
 
 Route::apiResource('screenshots', 'ScreenshotController')->only(['index', 'store', 'show', 'destroy']);
 Route::get('games/{id}/screenshots', 'ScreenshotController@showGameScreenshots')->name('game.screenshots');
@@ -27,7 +27,7 @@ Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
 
 Route::apiResource('purchases', 'PurchaseController')->only(['index', 'show']);
 
-Route::apiResource('library', 'LibraryController')->only('store');
+Route::apiResource('library', 'LibraryController')->only(['store']);
 Route::get('library', 'LibraryController@showCurrentUserLibrary');
 Route::get('users/{id}/library', 'LibraryController@showUserLibrary');
 

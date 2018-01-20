@@ -154,7 +154,7 @@ class GenreController extends ApiController
     /**
      * Get genres for the requested game
      */
-    public function showGameGenre($id)
+    public function showGameGenres($id)
     {
 
         $game = Game::find($id);
