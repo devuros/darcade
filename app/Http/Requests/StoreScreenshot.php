@@ -25,7 +25,8 @@ class StoreScreenshot extends FormRequest
     {
         return [
 
-            //
+            'game'=> 'required|integer|exists:games,id',
+            'screenshot'=> 'required|image'
 
         ];
     }

@@ -23,6 +23,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Review' => 'App\Policies\ReviewPolicy',
         'App\Wish' => 'App\Policies\WishPolicy',
         'App\Role' => 'App\Policies\RolePolicy',
+        'App\Screenshot' => 'App\Policies\ScreenshotPolicy',
 
     ];
 

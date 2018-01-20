@@ -6,8 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Game;
 use App\Screenshot;
+
 use App\Http\Resources\ScreenshotResource;
 use App\Http\Resources\ScreenshotCollection;
+
+use App\Http\Requests\StoreScreenshot;
+
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ScreenshotController extends ApiController
 {
@@ -34,10 +42,41 @@ class ScreenshotController extends ApiController
     /**
      * Store a newly created screenshot
      */
-    public function store(Request $request)
+    public function store(StoreScreenshot $request)
     {
 
-        // to do
+        if (Auth::user()->cant('create', 'App\Screenshot'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        // validate the file upload
+
+        if ($request->hasFile('screenshot'))
+        {
+
+            if ($request->file('screenshot')->isValid())
+            {
+
+                //
+
+            }
+            else
+            {
+
+                return $this->respondInternalError('Something went wrong, action could not be completed');
+
+            }
+
+        }
+        else
+        {
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 
