@@ -35,7 +35,9 @@ class GameController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+
+        // to do
+
     }
 
 
@@ -67,7 +69,9 @@ class GameController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // to do
+
     }
 
     /**
@@ -78,7 +82,9 @@ class GameController extends ApiController
      */
     public function destroy($id)
     {
-        //
+
+        // to do
+
     }
 
     /**
