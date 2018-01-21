@@ -86,7 +86,7 @@ class Game extends Model
     }
 
     /**
-     * Get games which are one month old
+     * Get games which are max one month old
      */
     public function scopeNewRelease($query)
     {
