@@ -152,7 +152,7 @@ class GameController extends ApiController
         try
         {
 
-            // check if user wants to change the game's image
+            // check whether the user wants to change the game's image
 
             $action = '';
 
@@ -162,8 +162,12 @@ class GameController extends ApiController
                 if ($request->hasFile('image'))
                 {
 
+                    $action = 'image field is present';
+
                     if ($request->file('image')->isValid())
                     {
+
+                        $action = 'image field is present and valid';
 
                         if (Storage::disk('public')->exists($game->image))
                         {
@@ -172,13 +176,13 @@ class GameController extends ApiController
 
                             $path = $request->image->store('games', 'public');
 
-                            $action = 'new image uploaded';
+                            $action = 'old image was deleted, new one is uploaded';
 
                         }
                         else
                         {
 
-                            return $this->respondConflict('File could not be found on disk');
+                            return $this->respondConflict('old image could not be found on disk');
 
                         }
 
@@ -189,14 +193,6 @@ class GameController extends ApiController
                         return $this->respondInternalError('Selected image is not valid');
 
                     }
-
-                }
-                else
-                {
-
-                    $path = $game->image;
-
-                    $action = 'image field is present but empty';
 
                 }
 
