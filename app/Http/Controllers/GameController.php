@@ -13,8 +13,10 @@ use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\StoreGame;
+use App\Http\Requests\UpdateGame;
 
 class GameController extends ApiController
 {
@@ -126,10 +128,113 @@ class GameController extends ApiController
     /**
      * Update the specified game
      */
-    public function update(Request $request, $id)
+    public function update(UpdateGame $request, $id)
     {
 
-        // to do
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Sorry, the requested game was not found');
+
+        }
+
+        if (Auth::user()->cant('update', $game))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        \DB::beginTransaction();
+
+        try
+        {
+
+            // check if user wants to change the game's image
+
+            $action = '';
+
+            if ($request->has('image'))
+            {
+
+                if ($request->hasFile('image'))
+                {
+
+                    if ($request->file('image')->isValid())
+                    {
+
+                        if (Storage::disk('public')->exists($game->image))
+                        {
+
+                            Storage::disk('public')->delete($game->image);
+
+                            $path = $request->image->store('games', 'public');
+
+                            $action = 'new image uploaded';
+
+                        }
+                        else
+                        {
+
+                            return $this->respondConflict('File could not be found on disk');
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        return $this->respondInternalError('Selected image is not valid');
+
+                    }
+
+                }
+                else
+                {
+
+                    $path = $game->image;
+
+                    $action = 'image field is present but empty';
+
+                }
+
+            }
+            else
+            {
+
+                $path = $game->image;
+
+                $action = 'image field is not present';
+
+            }
+
+            $game->title = $request->title;
+            $game->image = $path;
+            $game->release_date = $request->release_date;
+            $game->description = $request->description;
+            $game->about = $request->about;
+            $game->developer_id = $request->developer;
+            $game->publisher_id = $request->publisher;
+            $game->base_price = $request->base_price;
+            $game->sale_price = $request->sale_price;
+
+            $game->save();
+
+            \DB::commit();
+
+            return $this->respondCreated('Game successfully updated: '.$action);
+
+        }
+        catch (\Throwable $e)
+        {
+
+            \DB::rollback();
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 
