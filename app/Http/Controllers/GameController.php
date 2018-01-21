@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
+use App\Http\Requests\UpdateGameIsOnSale;
 
 class GameController extends ApiController
 {
@@ -24,7 +25,7 @@ class GameController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only(['store', 'update', 'destroy']);
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy', 'updateGameIsOnSale']);
 
     }
 
@@ -389,6 +390,36 @@ class GameController extends ApiController
         }
 
         return new GameResource($game);
+
+    }
+
+    /**
+     * Change if the game is on sale or not
+     */
+    public function updateGameIsOnSale(UpdateGameIsOnSale $request, $id)
+    {
+
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Sorry, the requested game was not found');
+
+        }
+
+        if (Auth::user()->cant('update', $game))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $game->is_on_sale = $request->is_on_sale;
+
+        $game->save();
+
+        return $this->respondSuccess('Game\'s sale status successfully changed');
 
     }
 

@@ -103,16 +103,6 @@ class User extends Authenticatable
     }
 
     /**
-     * Get purchases under the given price
-     */
-    public function purchasesUnder($price)
-    {
-
-        return $this->purchases()->where('actual_price', '<', $price)->get();
-
-    }
-
-    /**
      * Check if user has administrator role
      */
     public function isAdmin()

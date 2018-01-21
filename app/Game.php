@@ -53,4 +53,24 @@ class Game extends Model
 
     }
 
+    /**
+     *
+     */
+    public function underFive()
+    {
+
+        //
+
+    }
+
+    /**
+     *
+     */
+    public function underTen()
+    {
+
+        //
+
+    }
+
 }

@@ -8,6 +8,7 @@ Route::get('genres/{id}/games', 'GameController@showGenreGames')->name('genre.ga
 Route::get('developers/{id}/games', 'GameController@showDeveloperGames')->name('developer.games');
 Route::get('publishers/{id}/games', 'GameController@showPublisherGames')->name('publisher.games');
 Route::get('screenshots/{id}/game', 'GameController@showScreenshotGame')->name('screenshot.game');
+Route::put('games/{id}/sale', 'GameController@updateGameIsOnSale');
 
 Route::apiResource('developers', 'DeveloperController');
 Route::get('games/{id}/developer', 'DeveloperController@showGameDeveloper')->name('game.developer');
