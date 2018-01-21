@@ -19,6 +19,13 @@ use App\Http\Requests\StoreGame;
 class GameController extends ApiController
 {
 
+    public function __construct()
+    {
+
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy']);
+
+    }
+
     /**
      * Get all games
      */
@@ -37,7 +44,62 @@ class GameController extends ApiController
     public function store(StoreGame $request)
     {
 
-        // to do
+        if (Auth::user()->cant('create', 'App\Game'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        if (!$request->hasFile('image'))
+        {
+
+            return $this->respondInternalError('No image uploaded');
+
+        }
+
+        if (!$request->file('image')->isValid())
+        {
+
+            return $this->respondInternalError('Selected image is not valid');
+
+        }
+
+        \DB::beginTransaction();
+
+        try
+        {
+
+            $path = $request->image->store('games', 'public');
+
+            $game = new Game;
+
+            $game->title = $request->title;
+            $game->image = $path;
+            $game->release_date = $request->release_date;
+            $game->description = $request->description;
+            $game->about = $request->about;
+            $game->developer_id = $request->developer;
+            $game->publisher_id = $request->publisher;
+            $game->base_price = $request->base_price;
+            $game->sale_price = $request->sale_price;
+            $game->is_on_sale = $request->is_on_sale;
+
+            $game->save();
+
+            \DB::commit();
+
+            return $this->respondCreated('Game successfully created');
+
+        }
+        catch (\Throwable $e)
+        {
+
+            \DB::rollback();
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 

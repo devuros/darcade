@@ -28,6 +28,13 @@ class RenameGameOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchases');
+
+        if (Schema::hasTable('purchases'))
+        {
+
+            Schema::rename('purchases', 'game_order');
+
+        }
+
     }
 }

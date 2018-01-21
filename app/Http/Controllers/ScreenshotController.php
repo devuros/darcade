@@ -55,14 +55,14 @@ class ScreenshotController extends ApiController
         if (!$request->hasFile('screenshot'))
         {
 
-            return $this->respondInternalError('Something went wrong, action could not be completed');
+            return $this->respondInternalError('No image uploaded');
 
         }
 
         if (!$request->file('screenshot')->isValid())
         {
 
-            return $this->respondInternalError('Something went wrong, action could not be completed');
+            return $this->respondInternalError('Selected image is not valid');
 
         }
 
