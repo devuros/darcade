@@ -240,7 +240,43 @@ class GameController extends ApiController
     public function destroy($id)
     {
 
-        // to do
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Sorry, the requested game was not found');
+
+        }
+
+        if (Auth::user()->cant('delete', $game))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        \DB::beginTransaction();
+
+        try
+        {
+
+            $game->delete();
+
+            \DB::commit();
+
+            return $this->respondSuccess('Game successfully removed');
+
+
+        }
+        catch (\Throwable $e)
+        {
+
+            \DB::rollback();
+
+            return $this->respondInternalError('Something went wrong, action could not be completed');
+
+        }
 
     }
 

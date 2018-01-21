@@ -26,7 +26,7 @@ class StoreGame extends FormRequest
         return [
 
             'title'=> 'required|string|unique:games,title',
-            'image'=> 'required|image',
+            'image'=> 'required|image|max:500',
             'release_date'=> 'required|date',
             'description'=> 'required|string',
             'about'=> 'required|string',

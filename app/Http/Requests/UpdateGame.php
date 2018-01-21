@@ -26,7 +26,7 @@ class UpdateGame extends FormRequest
         return [
 
             'title'=> 'required|string',
-            'image'=> 'sometimes|required|image',
+            'image'=> 'sometimes|required|image|max:500',
             'release_date'=> 'required|date',
             'description'=> 'required|string',
             'about'=> 'required|string',
