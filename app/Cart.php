@@ -8,9 +8,9 @@ class Cart extends Model
 {
 
 	/**
-	 * Get the games in cart of the requested user
+	 * Get the items in the requested user's cart
 	 */
-    public function scopeUser($query, $user)
+    public function scopeUserCart($query, $user)
     {
 
     	return $query->where('user_id', $user);

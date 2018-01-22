@@ -14,4 +14,14 @@ class Screenshot extends Model
 
     }
 
+    /**
+     * Get all the game's screenshots
+     */
+    public function scopeGameScreenshots($query, $game)
+    {
+
+    	return $query->where('game_id', $game);
+
+    }
+
 }

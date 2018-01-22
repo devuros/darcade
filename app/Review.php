@@ -50,4 +50,44 @@ class Review extends Pivot
 
     }
 
+    /**
+     * Get only recommended reviews
+     */
+    public function scopeRecommended($query)
+    {
+
+        return $query->where('recommended', 1);
+
+    }
+
+    /**
+     * Get only not recommended reviews
+     */
+    public function scopeNotRecommended($query)
+    {
+
+        return $query->where('recommended', 0);
+
+    }
+
+    /**
+     * Get user's reviews
+     */
+    public function scopeUserReviews($query, $user)
+    {
+
+        return $query->where('user_id', $user);
+
+    }
+
+    /**
+     * Get reviews of the game
+     */
+    public function scopeGameReviews($query, $game)
+    {
+
+        return $query->where('game_id', $game);
+
+    }
+
 }

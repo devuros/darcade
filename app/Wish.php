@@ -21,4 +21,14 @@ class Wish extends Model
 
     }
 
+    /**
+     * Get the user's wishes
+     */
+    public function scopeUserWishes($query, $user)
+    {
+
+    	return $query->where('user_id', $user);
+
+    }
+
 }

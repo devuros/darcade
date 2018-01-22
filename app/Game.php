@@ -98,4 +98,14 @@ class Game extends Model
 
     }
 
+    /**
+     * Get all soft deleted games
+     */
+    public function scopeDeletedGames($query)
+    {
+
+        return $query->onlyTrashed();
+
+    }
+
 }

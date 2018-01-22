@@ -14,4 +14,14 @@ class Library extends Model
      */
     protected $table = 'game_user';
 
+    /**
+     * Get the games of the requested user
+     */
+    public function scopeUserLibrary($query, $user)
+    {
+
+    	return $query->where('user_id', $user);
+
+    }
+
 }
