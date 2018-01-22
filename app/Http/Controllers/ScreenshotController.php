@@ -71,7 +71,7 @@ class ScreenshotController extends ApiController
         try
         {
 
-            $path = $request->screenshot->store('screenshots', 'public');
+            $path = $request->screenshot->store('screenshots/'.$request->game, 'public');
 
             $screenshot = new Screenshot;
 
