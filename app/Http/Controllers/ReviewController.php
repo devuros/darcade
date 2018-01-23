@@ -235,4 +235,63 @@ class ReviewController extends ApiController
 
     }
 
+    /**
+     * Get game review statistics
+     */
+    public function showOverallStatistics($id)
+    {
+
+        $game = Game::find($id);
+
+        if (empty($game))
+        {
+
+            return $this->respondNotFound('Requested game not found');
+
+        }
+
+        $game_reviews = Review::gameReviews($id)->count();
+
+        if ($game_reviews == 0)
+        {
+
+            return $this->respondSuccess('There are no reviews');
+
+        }
+
+        $recommended_game_reviews = Review::gameReviews($id)->recommended()->count();
+
+        if ($recommended_game_reviews == 0)
+        {
+
+            return $this->setStatusCode(self::HTTP_SUCCESS)->respond([
+
+                'data'=> [
+
+                    'count'=> $game_reviews,
+                    'positive_percentage'=> 0
+
+                ]
+
+            ]);
+
+        }
+
+        $positive_percentage = round($recommended_game_reviews/$game_reviews, 2)*100;
+
+        return $this->setStatusCode(self::HTTP_SUCCESS)->respond([
+
+            'data'=> [
+
+                'count'=> $game_reviews,
+                'positive_percentage'=> $positive_percentage
+
+            ]
+
+        ]);
+
+        // refactor the code, create a new method in ApiController
+
+    }
+
 }

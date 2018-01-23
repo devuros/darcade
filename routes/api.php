@@ -41,6 +41,7 @@ Route::apiResource('reviews', 'ReviewController')->only(['store', 'show', 'updat
 Route::get('reviews', 'ReviewController@showCurrentUserReviews');
 Route::get('users/{id}/reviews', 'ReviewController@showUserReviews');
 Route::get('games/{id}/reviews', 'ReviewController@showGameReviews')->name('game.reviews');
+Route::get('games/{id}/statistics', 'ReviewController@showOverallStatistics');
 
 Route::apiResource('roles', 'RoleController')->only(['index']);
 Route::get('users/{id}/roles', 'RoleController@showUserRoles');
