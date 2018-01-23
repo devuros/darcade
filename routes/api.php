@@ -9,6 +9,7 @@ Route::get('developers/{id}/games', 'GameController@showDeveloperGames')->name('
 Route::get('publishers/{id}/games', 'GameController@showPublisherGames')->name('publisher.games');
 Route::get('screenshots/{id}/game', 'GameController@showScreenshotGame')->name('screenshot.game');
 Route::put('games/{id}/sale', 'GameController@updateGameIsOnSale');
+Route::post('game-genre', 'GameController@attachGenre');
 
 Route::apiResource('developers', 'DeveloperController');
 Route::get('games/{id}/developer', 'DeveloperController@showGameDeveloper')->name('game.developer');

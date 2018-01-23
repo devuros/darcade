@@ -9,6 +9,7 @@ use App\Publisher;
 use App\Developer;
 use App\Genre;
 use App\Game;
+use App\GameGenre;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
 
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
+use App\Http\Requests\StoreGameGenre;
 use App\Http\Requests\UpdateGameIsOnSale;
 
 class GameController extends ApiController
@@ -25,7 +27,7 @@ class GameController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->only(['store', 'update', 'destroy', 'updateGameIsOnSale']);
+        $this->middleware('auth:api')->only(['store', 'update', 'destroy', 'updateGameIsOnSale', 'attachGenre']);
 
     }
 
@@ -420,6 +422,30 @@ class GameController extends ApiController
         $game->save();
 
         return $this->respondSuccess('Game\'s sale status successfully changed');
+
+    }
+
+    /**
+     * Attach a genre to the game
+     */
+    public function attachGenre(StoreGameGenre $request)
+    {
+
+        if (Auth::user()->cant('create', 'App\Game'))
+        {
+
+            return $this->respondForbidden('You dont have the permissions');
+
+        }
+
+        $game_genre = new GameGenre;
+
+        $game_genre->game_id = $request->game;
+        $game_genre->genre_id = $request->genre;
+
+        $game_genre->save();
+
+        return $this->respondCreated('Genre successfully attached to the game');
 
     }
 
