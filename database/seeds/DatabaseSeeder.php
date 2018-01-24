@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
 		'developers',
         'publishers',
         'genres',
+        'role_user',
 
 	];
 
@@ -34,7 +35,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(GenresTableSeeder::class);
 
-        //
+        $this->call(RoleUserTableSeeder::class);
 
     }
 

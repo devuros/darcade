@@ -14,18 +14,18 @@ class UsersTableSeeder extends BaseSeeder
 
     	factory('App\User', $this->getUsersNumber())->create();
 
-    	factory('App\User')->create([
+        factory('App\User')->create([
 
-            'name' => 'Uros Jovanovic',
-            'email' => 'urosjovanovic0704@gmail.com',
-            'password' => bcrypt('morja994')
+            'name' => 'Milos Radosavljevic',
+            'email' => 'milos@example.com'
 
         ]);
 
         factory('App\User')->create([
 
-            'name' => 'Milos Radosavljevic',
-            'email' => 'milos@example.com'
+            'name' => 'Uros Jovanovic',
+            'email' => 'urosjovanovic0704@gmail.com',
+            'password' => bcrypt('morja994')
 
         ]);
 
