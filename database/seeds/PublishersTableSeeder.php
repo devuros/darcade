@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PublishersTableSeeder extends Seeder
+class PublishersTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,13 @@ class PublishersTableSeeder extends Seeder
     public function run()
     {
 
-        factory('App\Publisher', 20)->create();
+        factory('App\Publisher', $this->getPublishersNumber())->create();
+
+        factory('App\Publisher')->create([
+
+            'publisher'=> 'Cvetkovic Nemanja'
+
+        ]);
 
     }
 }

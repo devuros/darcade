@@ -2,9 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\User;
-
-class RolesTableSeeder extends Seeder
+class RolesTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -14,33 +12,16 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
 
-        factory('App\Role')->create([
+        foreach ($this->getRolesArray() as $role)
+        {
 
-			'role'=> 'user'
+            factory('App\Role')->create([
 
-		]);
-
-		factory('App\Role')->create([
-
-			'role'=> 'admin'
-
-		]);
-
-		$timestamp = Carbon\Carbon::now();
-
-		foreach (range(1, 10) as $index)
-		{
-
-            DB::table('role_user')->insert([
-
-                'role_id'=> 1,
-                'user_id'=> $index,
-                'created_at'=> $timestamp,
-                'updated_at'=> $timestamp,
+                'role'=> $role
 
             ]);
 
-		}
+        }
 
     }
 }

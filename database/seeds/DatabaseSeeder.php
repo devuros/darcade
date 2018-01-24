@@ -6,6 +6,7 @@ class DatabaseSeeder extends Seeder
 {
 	private $tables = [
 
+        'roles',
         'users',
 		'developers',
         'publishers',
@@ -23,48 +24,17 @@ class DatabaseSeeder extends Seeder
 
         $this->cleanDatabase();
 
-        // Users seeding
+        $this->call(RolesTableSeeder::class);
 
         $this->call(UsersTableSeeder::class);
 
-        factory('App\User')->create([
-
-            'name' => 'Uros Jovanovic',
-            'email' => 'urosjovanovic0704@gmail.com',
-            'password' => bcrypt('morja994')
-
-        ]);
-
-        factory('App\User')->create([
-
-            'name' => 'Milos Radosavljevic',
-            'email' => 'milos@example.com'
-
-        ]);
-
-        // Developers seeding
-
         $this->call(DevelopersTableSeeder::class);
-
-        factory('App\Developer')->create([
-
-            'developer'=> 'Cvetkovic Nemanja'
-
-        ]);
-
-        // Publishers seeding
 
         $this->call(PublishersTableSeeder::class);
 
-        factory('App\Publisher')->create([
-
-            'publisher'=> 'Cvetkovic Nemanja'
-
-        ]);
-
-        // Genres seeding
-
         $this->call(GenresTableSeeder::class);
+
+        //
 
     }
 

@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 
-class GenresTableSeeder extends Seeder
+class GenresTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -13,27 +12,12 @@ class GenresTableSeeder extends Seeder
     public function run()
     {
 
-    	$tags = [
-
-			'Action',
-			'Adventure',
-			'Casual',
-			'Indie',
-			'Massively Multiplayer',
-			'Racing',
-			'RPG',
-			'Simulation',
-			'Sports',
-			'Strategy'
-
-		];
-
-		foreach ($tags as $tag)
+		foreach ($this->getGenresArray() as $genre)
 		{
 
 			factory('App\Genre')->create([
 
-				'genre'=> $tag,
+				'genre'=> $genre,
 
 			]);
 
