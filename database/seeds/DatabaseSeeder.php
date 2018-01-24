@@ -6,15 +6,10 @@ class DatabaseSeeder extends Seeder
 {
 	private $tables = [
 
-		'games',
-        'game_genre',
-        'screenshots',
-        'carts',
-        'orders',
-        'purchases',
-        'game_user',
-        'wishes',
-        'reviews',
+        'users',
+		'developers',
+        'publishers',
+        'genres',
 
 	];
 
@@ -28,33 +23,48 @@ class DatabaseSeeder extends Seeder
 
         $this->cleanDatabase();
 
-        //
-        // These tables will be seeded only once
-        //
+        // Users seeding
 
-        // $this->call(UsersTableSeeder::class);
-        // $this->call(GenresTableSeeder::class);
-        // $this->call(DevelopersTableSeeder::class);
-        // $this->call(PublishersTableSeeder::class);
-        // $this->call(RolesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
-        //
-        // These tables will be seeded everytime
-        //
+        factory('App\User')->create([
 
-        $this->call(GamesTableSeeder::class);
+            'name' => 'Uros Jovanovic',
+            'email' => 'urosjovanovic0704@gmail.com',
+            'password' => bcrypt('morja994')
 
-        $this->call(GameGenreTableSeeder::class);
+        ]);
 
-        $this->call(ScreenshotsTableSeeder::class);
+        factory('App\User')->create([
 
-        $this->call(CartsTableSeeder::class);
+            'name' => 'Milos Radosavljevic',
+            'email' => 'milos@example.com'
 
-        $this->call(OrdersTableSeeder::class);
+        ]);
 
-        $this->call(WishesTableSeeder::class);
+        // Developers seeding
 
-        $this->call(ReviewsTableSeeder::class);
+        $this->call(DevelopersTableSeeder::class);
+
+        factory('App\Developer')->create([
+
+            'developer'=> 'Cvetkovic Nemanja'
+
+        ]);
+
+        // Publishers seeding
+
+        $this->call(PublishersTableSeeder::class);
+
+        factory('App\Publisher')->create([
+
+            'publisher'=> 'Cvetkovic Nemanja'
+
+        ]);
+
+        // Genres seeding
+
+        $this->call(GenresTableSeeder::class);
 
     }
 

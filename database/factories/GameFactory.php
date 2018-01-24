@@ -43,6 +43,7 @@ $factory->define(App\Game::class, function (Faker $faker) {
     	'is_on_sale'=> $faker->boolean(50),
 
     ];
+
 });
 
 // State se koristi da bi se dodelila neka podrazumevana vrednost

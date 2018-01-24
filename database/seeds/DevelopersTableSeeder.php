@@ -12,13 +12,7 @@ class DevelopersTableSeeder extends Seeder
     public function run()
     {
 
-        factory('App\Developer', 10)->create();
-
-        // factory('App\Developer')->create([
-
-        // 	'developer'=> 'Cvetkovic Nemanja'
-
-        // ]);
+        factory('App\Developer', 20)->create();
 
     }
 }
