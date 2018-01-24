@@ -255,7 +255,12 @@ class ReviewController extends ApiController
         if ($game_reviews == 0)
         {
 
-            return $this->respondSuccess('There are no reviews');
+            return $this->respondCustom([
+
+                'count'=> null,
+                'positive_percentage'=> null
+
+            ]);
 
         }
 
@@ -264,14 +269,10 @@ class ReviewController extends ApiController
         if ($recommended_game_reviews == 0)
         {
 
-            return $this->setStatusCode(self::HTTP_SUCCESS)->respond([
+            return $this->respondCustom([
 
-                'data'=> [
-
-                    'count'=> $game_reviews,
-                    'positive_percentage'=> 0
-
-                ]
+                'count'=> $game_reviews,
+                'positive_percentage'=> null
 
             ]);
 
@@ -279,18 +280,12 @@ class ReviewController extends ApiController
 
         $positive_percentage = round($recommended_game_reviews/$game_reviews, 2)*100;
 
-        return $this->setStatusCode(self::HTTP_SUCCESS)->respond([
+        return $this->respondCustom([
 
-            'data'=> [
-
-                'count'=> $game_reviews,
-                'positive_percentage'=> $positive_percentage
-
-            ]
+            'count'=> $game_reviews,
+            'positive_percentage'=> $positive_percentage
 
         ]);
-
-        // refactor the code, create a new method in ApiController
 
     }
 

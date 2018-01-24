@@ -175,4 +175,18 @@ class ApiController extends Controller
 
 	}
 
+	/**
+	 * Method for responding with custom data
+	 */
+	public function respondCustom(array $data)
+	{
+
+		return $this->setStatusCode(self::HTTP_SUCCESS)->respond([
+
+            'data'=> $data
+
+        ]);
+
+	}
+
 }
