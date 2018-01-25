@@ -14,7 +14,11 @@ class GameTest extends TestCase
     public function testSkeletonGameExists()
     {
 
-    	//
+    	$this->assertDatabaseHas('games', [
+
+        	'title'=> 'Skeleton RPG'
+
+        ]);
 
     }
 }
