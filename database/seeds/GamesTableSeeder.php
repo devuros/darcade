@@ -2,8 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Developer;
-use App\Publisher;
+use Illuminate\Support\Facades\Storage;
 
 class GamesTableSeeder extends BaseSeeder
 {
@@ -27,7 +26,11 @@ class GamesTableSeeder extends BaseSeeder
 				'publisher_id'=> array_random($publishers),
 				'image'=> function () {
 
-					//
+					// dohvati sliku
+
+					// sacuvaj pomocu storage, i dohvati putanju
+
+					// upisi putanju u bazu
 
 				}
 
@@ -35,25 +38,19 @@ class GamesTableSeeder extends BaseSeeder
 
 		}
 
-		factory('App\Game')->create([
+		factory('App\Game')->states('sale')->create([
 
 			'title'=> 'Skeleton RPG',
 			'image'=> 'example.jpg',
+			'release_date'=> '2018-01-25 20:00:00',
 			'description'=> 'Skeleton RPG is a true masterpiece, written in c# and made in Unity.
 			It\'s a game where talent meets enthusiasm. Simply the best.',
 			'developer_id'=> $this->getDevelopersNumber()+1,
 			'publisher_id'=> $this->getPublishersNumber()+1,
-			'is_on_sale'=> true
+			'base_price'=> 14.99,
+			'sale_price'=> 10.49
 
 		]);
-
-		// factory('App\Game')->states('image', 'sale')->create([
-
-		// 	'title'=> 'Ninja and Samurai',
-		// 	'base_price'=> 7.99,
-		// 	'sale_price'=> 4.56,
-
-		// ]);
 
     }
 }

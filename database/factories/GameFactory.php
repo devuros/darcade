@@ -10,8 +10,8 @@ $factory->define(App\Game::class, function (Faker $faker) {
 	return [
 
     	'title'=> $faker->words($faker->numberBetween(2, 3), true),
-    	'image'=> 'image.jpg',
-    	'release_date'=> $faker->dateTimeBetween('-6 years', 'now'),
+    	'image'=> 'img.jpg',
+    	'release_date'=> $faker->dateTimeBetween('-3 years', 'now'),
     	'description'=> $faker->text(155),
     	'about'=> $faker->paragraphs(2, true),
     	'developer_id'=> function () { return factory('App\Developer')->create()->id; },
@@ -32,6 +32,16 @@ $factory->state(App\Game::class, 'sale', [
 
 $factory->state(App\Game::class, 'image', [
 
-    'image'=> 'example.png'
+    'image'=> 'exm.png'
 
 ]);
+
+$factory->state(App\Game::class, 'title', function ($faker) {
+
+    return [
+
+        'title'=> $faker->word()
+
+    ];
+
+});

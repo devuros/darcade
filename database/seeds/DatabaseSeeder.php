@@ -26,19 +26,23 @@ class DatabaseSeeder extends Seeder
 
         $this->cleanDatabase();
 
-        $this->call(RolesTableSeeder::class);
+        $this->call([
 
-        $this->call(UsersTableSeeder::class);
+            RolesTableSeeder::class,
 
-        $this->call(DevelopersTableSeeder::class);
+            UsersTableSeeder::class,
 
-        $this->call(PublishersTableSeeder::class);
+            DevelopersTableSeeder::class,
 
-        $this->call(GenresTableSeeder::class);
+            PublishersTableSeeder::class,
 
-        $this->call(RoleUserTableSeeder::class);
+            GenresTableSeeder::class,
 
-        $this->call(GamesTableSeeder::class);
+            RoleUserTableSeeder::class,
+
+            GamesTableSeeder::class,
+
+        ]);
 
     }
 
