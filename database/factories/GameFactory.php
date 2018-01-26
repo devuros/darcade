@@ -30,12 +30,6 @@ $factory->state(App\Game::class, 'sale', [
 
 ]);
 
-$factory->state(App\Game::class, 'image', [
-
-    'image'=> 'exm.png'
-
-]);
-
 $factory->state(App\Game::class, 'title', function ($faker) {
 
     return [

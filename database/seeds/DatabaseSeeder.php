@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\Storage;
+
 class DatabaseSeeder extends Seeder
 {
 	private $tables = [
@@ -48,6 +50,8 @@ class DatabaseSeeder extends Seeder
 
     public function cleanDatabase()
     {
+
+        Storage::disk('public')->deleteDirectory('games');
 
         foreach ($this->tables as $tableName) {
 

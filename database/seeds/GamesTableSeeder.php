@@ -25,15 +25,15 @@ class GamesTableSeeder extends BaseSeeder
 
 			factory('App\Game')->create([
 
-				'developer_id'=> array_random($developers),
-				'publisher_id'=> array_random($publishers),
 				'image'=> function () {
 
-					$path = Storage::disk('public')->putFile('games', new File('app/storage/app/favicon'));
+					$path = Storage::disk('public')->putFile('games', $this->getDefaultGameImage());
 
 					return $path;
 
-				}
+				},
+				'developer_id'=> array_random($developers),
+				'publisher_id'=> array_random($publishers)
 
 			]);
 
@@ -42,7 +42,13 @@ class GamesTableSeeder extends BaseSeeder
 		factory('App\Game')->states('sale')->create([
 
 			'title'=> 'Skeleton RPG',
-			'image'=> 'example.jpg',
+			'image'=> function () {
+
+				$path = Storage::disk('public')->putFile('games', new File('storage/app/jolly.png'));
+
+				return $path;
+
+			},
 			'release_date'=> '2018-01-25 20:00:00',
 			'description'=> 'Skeleton RPG is a true masterpiece, written in c# and made in Unity.
 			It\'s a game where talent meets enthusiasm. Simply the best.',

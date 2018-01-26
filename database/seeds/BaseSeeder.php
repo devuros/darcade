@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+
 class BaseSeeder extends Seeder
 {
 
@@ -78,12 +81,21 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $games_number = 3;
+	protected $games_number = 5;
+
+	protected $default_game_image = new File('storage/app/favicon.ico');
 
 	public function getGamesNumber()
 	{
 
 		return $this->games_number;
+
+	}
+
+	public function getDefaultGameImage()
+	{
+
+		return $this->default_game_image;
 
 	}
 
