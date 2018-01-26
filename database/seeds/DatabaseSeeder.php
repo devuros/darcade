@@ -28,17 +28,17 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
 
-            RolesTableSeeder::class,
+            // RolesTableSeeder::class,
 
-            UsersTableSeeder::class,
+            // UsersTableSeeder::class,
 
-            DevelopersTableSeeder::class,
+            // DevelopersTableSeeder::class,
 
-            PublishersTableSeeder::class,
+            // PublishersTableSeeder::class,
 
-            GenresTableSeeder::class,
+            // GenresTableSeeder::class,
 
-            RoleUserTableSeeder::class,
+            // RoleUserTableSeeder::class,
 
             GamesTableSeeder::class,
 

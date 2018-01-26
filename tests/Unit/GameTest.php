@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class GameTest extends TestCase
 {
     /**
-     * Test Skeleton RPG exists
+     * Test game Skeleton RPG exists
      */
     public function testSkeletonGameExists()
     {

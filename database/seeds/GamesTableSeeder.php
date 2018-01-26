@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+
 class GamesTableSeeder extends BaseSeeder
 {
     /**
@@ -26,11 +29,9 @@ class GamesTableSeeder extends BaseSeeder
 				'publisher_id'=> array_random($publishers),
 				'image'=> function () {
 
-					// dohvati sliku
+					$path = Storage::disk('public')->putFile('games', new File('app/storage/app/favicon'));
 
-					// sacuvaj pomocu storage, i dohvati putanju
-
-					// upisi putanju u bazu
+					return $path;
 
 				}
 
