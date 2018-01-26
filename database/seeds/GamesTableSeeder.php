@@ -27,7 +27,7 @@ class GamesTableSeeder extends BaseSeeder
 
 				'image'=> function () {
 
-					$path = Storage::disk('public')->putFile('games', $this->getDefaultGameImage());
+					$path = Storage::disk('public')->putFile('games', new File('storage/app/favicon.ico'));
 
 					return $path;
 

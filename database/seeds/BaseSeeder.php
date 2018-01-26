@@ -81,21 +81,12 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $games_number = 5;
-
-	protected $default_game_image = new File('storage/app/favicon.ico');
+	protected $games_number = 1;
 
 	public function getGamesNumber()
 	{
 
 		return $this->games_number;
-
-	}
-
-	public function getDefaultGameImage()
-	{
-
-		return $this->default_game_image;
 
 	}
 
