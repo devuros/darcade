@@ -81,7 +81,7 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $games_number = 1;
+	protected $games_number = 4;
 
 	public function getGamesNumber()
 	{

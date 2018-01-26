@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Game;
-use App\Genre;
+use App\GameGenre;
 
-class GameGenreTableSeeder extends Seeder
+class GameGenreTableSeeder extends BaseSeeder
 {
 
     /**
@@ -16,20 +15,29 @@ class GameGenreTableSeeder extends Seeder
     public function run()
     {
 
-    	$games = Game::pluck('id')->all();
-		$genres = Genre::pluck('id')->all();
+    	$games = $this->getGamesNumber();
+        $genres = range(1, count($this->getGenresArray()));
 
-    	foreach ($games as $game)
+    	foreach (range(1, $games) as $game)
     	{
 
-	        DB::table('game_genre')->insert([
+	        $game_genre = new GameGenre;
 
-				'game_id'=> $game,
-				'genre_id'=> array_random($genres),
+            $game_genre->game_id = $game;
+            $game_genre->genre_id = array_random($genres);
 
-			]);
+            $game_genre->save();
 
 		}
+
+        // Attach genre for Skeleton RPG
+
+        $skeleton_genre = new GameGenre;
+
+        $skeleton_genre->game_id = $games+1;
+        $skeleton_genre->genre_id = array_random($genres);
+
+        $skeleton_genre->save();
 
     }
 }
