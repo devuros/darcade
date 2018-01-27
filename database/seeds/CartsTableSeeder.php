@@ -16,19 +16,26 @@ class CartsTableSeeder extends BaseSeeder
 
         $carts = $this->getGamesInCartPerUser();
 
-        $games = range(1, $this->getGamesNumber());
+        $games = $this->getGamesNumber();
 
     	foreach (range(1, $users) as $user)
     	{
 
-            foreach (range(1, array_random($carts)) as $cart) {
+            $games_array = range(1, $games);
+
+            foreach (range(1, array_random($carts)) as $cart)
+            {
+
+                $game = array_random($games_array);
 
                 factory('App\Cart')->create([
 
                     'user_id'=> $user,
-                    'game_id'=> array_random($games)
+                    'game_id'=> $game
 
                 ]);
+
+                array_pull($games_array, $game-1);
 
             }
 
