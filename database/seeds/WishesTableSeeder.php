@@ -2,10 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Game;
-use App\User;
-
-class WishesTableSeeder extends Seeder
+class WishesTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +12,7 @@ class WishesTableSeeder extends Seeder
     public function run()
     {
 
-        $games = Game::pluck('id')->all();
-		$users = User::pluck('id')->all();
-
-		$rows = DB::table('game_user')
-        	->select('game_id', 'user_id')
-        	->get();
+		//
 
     	$wishes = array();
 

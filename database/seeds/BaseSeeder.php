@@ -8,6 +8,8 @@ use Illuminate\Http\UploadedFile;
 class BaseSeeder extends Seeder
 {
 
+	// Roles
+
 	protected $roles_array = [
 
 		'user',
@@ -22,7 +24,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Users
 
 	protected $users_number = 5;
 
@@ -33,7 +35,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Developers
 
 	protected $developers_number = 20;
 
@@ -44,7 +46,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Publishers
 
 	protected $publishers_number = 20;
 
@@ -55,7 +57,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Genres
 
 	protected $genres_array = [
 
@@ -79,7 +81,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Games
 
 	protected $games_number = 10;
 
@@ -90,7 +92,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Screenshots
 
 	protected $screenshots_per_game = [1, 2];
 
@@ -101,7 +103,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Carts
 
 	protected $games_in_cart_per_user = [1, 2, 3];
 
@@ -112,7 +114,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	//
+	// Orders, Purchases
 
 	protected $orders_per_user = [0, 1, 2];
 
@@ -131,6 +133,12 @@ class BaseSeeder extends Seeder
 		return $this->purchases_per_order;
 
 	}
+
+	// Wishes
+
+	//
+
+	// Reviews
 
 	//
 
