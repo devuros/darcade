@@ -13,7 +13,7 @@ class OrdersTableSeeder extends BaseSeeder
 
         $users = $this->getUsersNumber();
 
-        $games = range(1, $this->getGamesNumber());
+        $games = $this->getGamesNumber();
 
         $orders = $this->getOrdersPerUser();
 
@@ -35,6 +35,8 @@ class OrdersTableSeeder extends BaseSeeder
                 {
                     continue;
                 }
+
+                $games_array = range(1, $games);
 
                 foreach (range(1, $user_orders) as $order_index)
                 {
@@ -59,7 +61,7 @@ class OrdersTableSeeder extends BaseSeeder
 
                         // game that will be seeded in purchases and library
 
-                        $random_game = array_random($games);
+                        $random_game = array_random($games_array);
 
                         // get game details
 
@@ -92,6 +94,8 @@ class OrdersTableSeeder extends BaseSeeder
                             'updated_at'=> $timestamp,
 
                         ]);
+
+                        array_pull($games_array, $random_game-1);
 
                     }
 

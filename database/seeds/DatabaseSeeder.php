@@ -54,9 +54,9 @@ class DatabaseSeeder extends Seeder
 
             // ScreenshotsTableSeeder::class,
 
-            CartsTableSeeder::class,
+            // CartsTableSeeder::class,
 
-            // OrdersTableSeeder::class,
+            OrdersTableSeeder::class,
 
         ]);
 

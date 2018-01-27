@@ -123,7 +123,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	protected $purchases_per_order = [1, 2, 3];
+	protected $purchases_per_order = [1, 2, 3, 4];
 
 	public function getPurchasesPerOrder()
 	{
