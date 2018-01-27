@@ -51,6 +51,30 @@ class CartController extends ApiController
     public function store(StoreCart $request)
     {
 
+        $game_exists_in_cart = User::find(Auth::id())
+            ->cart()
+            ->where('game_id', $request->game)
+            ->exists();
+
+        if ($game_exists_in_cart)
+        {
+
+            return $this->respondForbidden('You already have this game in your cart');
+
+        }
+
+        $game_exists_in_library = User::find(Auth::id())
+            ->library()
+            ->where('game_id', $request->game)
+            ->exists();
+
+        if ($game_exists_in_library)
+        {
+
+            return $this->respondForbidden('You already own this game');
+
+        }
+
         $cart = new Cart;
 
         $cart->user_id = Auth::id();
