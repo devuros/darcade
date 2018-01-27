@@ -25,7 +25,7 @@ class StoreCart extends FormRequest
     {
         return [
 
-            'game'=> 'required|integer|exists:games,id'
+            'game'=> 'bail|required|integer|exists:games,id'
 
         ];
     }

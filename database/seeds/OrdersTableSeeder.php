@@ -13,7 +13,7 @@ class OrdersTableSeeder extends BaseSeeder
 
         $users = $this->getUsersNumber();
 
-        $games = $this->getGamesNumber();
+        $games = range(1, $this->getGamesNumber());
 
         $orders = $this->getOrdersPerUser();
 
@@ -33,7 +33,7 @@ class OrdersTableSeeder extends BaseSeeder
 
                 if ($user_orders == 0)
                 {
-                    break;
+                    continue;
                 }
 
                 foreach (range(1, $user_orders) as $order_index)

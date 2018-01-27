@@ -24,7 +24,7 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $users_number = 20;
+	protected $users_number = 5;
 
 	public function getUsersNumber()
 	{
