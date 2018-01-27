@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         'role_user',
         'games',
         'game_genre',
+        'screenshots',
 
 	];
 
@@ -47,6 +48,8 @@ class DatabaseSeeder extends Seeder
 
             GameGenreTableSeeder::class,
 
+            ScreenshotsTableSeeder::class,
+
         ]);
 
     }
@@ -55,6 +58,8 @@ class DatabaseSeeder extends Seeder
     {
 
         Storage::disk('public')->deleteDirectory('games');
+
+        Storage::disk('public')->deleteDirectory('screenshots');
 
         foreach ($this->tables as $tableName) {
 

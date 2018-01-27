@@ -81,7 +81,7 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $games_number = 4;
+	protected $games_number = 5;
 
 	public function getGamesNumber()
 	{
@@ -91,5 +91,14 @@ class BaseSeeder extends Seeder
 	}
 
 	//
+
+	protected $screenshots_per_game = [1, 2, 3];
+
+	public function getScreenshotsPerGame()
+	{
+
+		return $this->screenshots_per_game;
+
+	}
 
 }

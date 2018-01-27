@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Game;
 
-class ScreenshotsTableSeeder extends Seeder
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+
+class ScreenshotsTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -13,21 +17,25 @@ class ScreenshotsTableSeeder extends Seeder
     public function run()
     {
 
-        $games = Game::pluck('id')->all();
+        $games = $this->getGamesNumber();
 
-
-        foreach ($games as $game)
+        foreach (range(1, $games) as $game)
         {
 
-            factory('App\Screenshot', rand(2, 4))->create([
+            factory('App\Screenshot')->create([
 
-                'game_id'=> $game,
+                'path'=> function () {
+
+                    $path = Storage::disk('public')->putFile('screenshots/'.$game, new File('storage/app/capture.png'));
+
+                    return $path;
+
+                },
+                'game_id'=> $game
 
             ]);
 
         }
-
-        // factory('App\Screenshot', 2)->create();
 
     }
 }
