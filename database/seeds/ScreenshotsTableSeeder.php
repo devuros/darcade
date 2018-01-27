@@ -24,7 +24,7 @@ class ScreenshotsTableSeeder extends BaseSeeder
 
             factory('App\Screenshot')->create([
 
-                'path'=> function () {
+                'path'=> function () use ($game) {
 
                     $path = Storage::disk('public')->putFile('screenshots/'.$game, new File('storage/app/capture.png'));
 
