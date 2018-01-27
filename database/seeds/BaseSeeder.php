@@ -92,7 +92,7 @@ class BaseSeeder extends Seeder
 
 	//
 
-	protected $screenshots_per_game = [1, 2, 3];
+	protected $screenshots_per_game = [1, 2];
 
 	public function getScreenshotsPerGame()
 	{
@@ -100,5 +100,7 @@ class BaseSeeder extends Seeder
 		return $this->screenshots_per_game;
 
 	}
+
+	//
 
 }

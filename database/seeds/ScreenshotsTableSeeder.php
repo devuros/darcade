@@ -19,23 +19,62 @@ class ScreenshotsTableSeeder extends BaseSeeder
 
         $games = $this->getGamesNumber();
 
+        $screenshots = $this->getScreenshotsPerGame();
+
         foreach (range(1, $games) as $game)
         {
 
-            factory('App\Screenshot')->create([
+            foreach (range(1, array_random($screenshots)) as $screenshot) {
 
-                'path'=> function () use ($game) {
+                factory('App\Screenshot')->create([
 
-                    $path = Storage::disk('public')->putFile('screenshots/'.$game, new File('storage/app/capture.png'));
+                    'path'=> function () use ($game) {
 
-                    return $path;
+                        $path = Storage::disk('public')
+                            ->putFile('screenshots/'.$game, new File('storage/app/capture.png'));
 
-                },
-                'game_id'=> $game
+                        return $path;
 
-            ]);
+                    },
+                    'game_id'=> $game
+
+                ]);
+
+            }
 
         }
+
+        // Seed Skeleton RPG
+
+        $skeleton_game = $games + 1;
+
+        factory('App\Screenshot')->create([
+
+            'path'=> function () use ($skeleton_game) {
+
+                $skeleton_path = Storage::disk('public')
+                    ->putFile('screenshots/'.$skeleton_game, new File('storage/app/skeleton1.jpg'));
+
+                return $skeleton_path;
+
+            },
+            'game_id'=> $skeleton_game
+
+        ]);
+
+        factory('App\Screenshot')->create([
+
+            'path'=> function () use ($skeleton_game) {
+
+                $skeleton_path = Storage::disk('public')
+                    ->putFile('screenshots/'.$skeleton_game, new File('storage/app/skeleton2.png'));
+
+                return $skeleton_path;
+
+            },
+            'game_id'=> $skeleton_game
+
+        ]);
 
     }
 }

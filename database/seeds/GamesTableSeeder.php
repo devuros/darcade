@@ -49,7 +49,7 @@ class GamesTableSeeder extends BaseSeeder
 				return $path;
 
 			},
-			'release_date'=> '2018-01-25 20:00:00',
+			'release_date'=> '2018-04-1 20:00:00',
 			'description'=> 'Skeleton RPG is a true masterpiece, written in c# and made in Unity.
 			It\'s a game where talent meets enthusiasm. Simply the best.',
 			'developer_id'=> $this->getDevelopersNumber()+1,
