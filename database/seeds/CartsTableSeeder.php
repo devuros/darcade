@@ -34,7 +34,7 @@ class CartsTableSeeder extends BaseSeeder
 
 		}
 
-        // Seed Skeleton RPG
+        // Add Skeleton RPG to Milos Radosavljevic's cart
 
         factory('App\Cart')->create([
 

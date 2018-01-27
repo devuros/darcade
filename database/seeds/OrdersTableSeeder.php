@@ -2,10 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Game;
-use App\User;
-
-class OrdersTableSeeder extends Seeder
+class OrdersTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +13,6 @@ class OrdersTableSeeder extends Seeder
     {
 
         // Seed tables: orders, purchases, game_user
-
-        $games = Game::all('id', 'base_price', 'sale_price', 'is_on_sale')->toArray();
-		$users = User::pluck('id')->all();
 
         foreach ($users as $user)
         {
