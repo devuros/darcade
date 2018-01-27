@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
 
             // ScreenshotsTableSeeder::class,
 
-            CartsTableSeeder::class,
+            // CartsTableSeeder::class,
 
             OrdersTableSeeder::class,
 
@@ -69,7 +69,8 @@ class DatabaseSeeder extends Seeder
 
         Storage::disk('public')->deleteDirectory('screenshots');
 
-        foreach ($this->tables as $tableName) {
+        foreach ($this->tables as $tableName)
+        {
 
             DB::table($tableName)->truncate();
 

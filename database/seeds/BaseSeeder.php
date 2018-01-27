@@ -114,4 +114,24 @@ class BaseSeeder extends Seeder
 
 	//
 
+	protected $orders_per_user = [0, 1, 2];
+
+	public function getOrdersPerUser()
+	{
+
+		return $this->orders_per_user;
+
+	}
+
+	protected $purchases_per_order = [1, 2, 3];
+
+	public function getPurchasesPerOrder()
+	{
+
+		return $this->purchases_per_order;
+
+	}
+
+	//
+
 }
