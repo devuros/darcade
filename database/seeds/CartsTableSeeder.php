@@ -2,10 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Game;
-use App\User;
-
-class CartsTableSeeder extends Seeder
+class CartsTableSeeder extends BaseSeeder
 {
     /**
      * Run the database seeds.
@@ -15,23 +12,36 @@ class CartsTableSeeder extends Seeder
     public function run()
     {
 
-    	$games = Game::pluck('id')->all();
-		$users = User::pluck('id')->all();
+        $users = $this->getUsersNumber();
 
-    	foreach (range(1, 10) as $index)
+        $carts = $this->getGamesInCartPerUser();
+
+        $games = range(1, $this->getGamesNumber());
+
+    	foreach (range(1, $users) as $user)
     	{
-    		$time = Carbon\Carbon::now();
 
-            DB::table('carts')->insert([
+            foreach (range(1, array_random($carts)) as $cart) {
 
-                'user_id'=> array_random($users),
-                'game_id'=> array_random($games),
-                'created_at'=> $time,
-                'updated_at'=> $time,
+                factory('App\Cart')->create([
 
-            ]);
+                    'user_id'=> $user,
+                    'game_id'=> array_random($games)
+
+                ]);
+
+            }
 
 		}
+
+        // Seed Skeleton RPG
+
+        factory('App\Cart')->create([
+
+            'user_id'=> $users+1,
+            'game_id'=> $this->getGamesNumber()+1
+
+        ]);
 
     }
 }

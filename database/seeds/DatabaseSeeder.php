@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         'games',
         'game_genre',
         'screenshots',
+        'carts',
 
 	];
 
@@ -34,21 +35,23 @@ class DatabaseSeeder extends Seeder
 
             // RolesTableSeeder::class,
 
-            // UsersTableSeeder::class,
+            UsersTableSeeder::class,
 
             // DevelopersTableSeeder::class,
 
             // PublishersTableSeeder::class,
 
-            GenresTableSeeder::class,
+            // GenresTableSeeder::class,
 
             // RoleUserTableSeeder::class,
 
             GamesTableSeeder::class,
 
-            GameGenreTableSeeder::class,
+            // GameGenreTableSeeder::class,
 
-            ScreenshotsTableSeeder::class,
+            // ScreenshotsTableSeeder::class,
+
+            CartsTableSeeder::class,
 
         ]);
 
