@@ -12,44 +12,42 @@ class WishesTableSeeder extends BaseSeeder
     public function run()
     {
 
-		//
+		$users = $this->getUsersNumber();
 
-    	$wishes = array();
+        $wishes = $this->getWishesPerGame();
 
-    	foreach ($rows as $row)
-    	{
-
-    		$wishes[$row->user_id.$row->game_id] = 0;
-
-    	}
-
-		foreach (range(1, 30) as $index)
+		foreach (range(1, $users) as $user)
 		{
 
-			$game = array_random($games);
-			$user = array_random($users);
+            // number of wishes to be seeder for the user
 
-			if (array_key_exists($user.$game, $wishes))
-			{
+            $number_of_wishes = array_random($wishes);
 
-				continue;
+            if ($number_of_wishes == 0)
+            {
+                continue;
+            }
 
-			}
+            $user_games = App\Library::where('user_id', $user)->pluck('game_id')->all();
 
-			$wishes[$user.$game] = 0;
+            //
 
-			$timestamp = Carbon\Carbon::now();
+            foreach (range(1, $number_of_wishes) as $wish_index)
+            {
 
-			DB::table('wishes')->insert([
+                factory('App\Wish')->create([
 
-                'game_id'=> $game,
-                'user_id'=> $user,
-                'created_at'=> $timestamp,
-                'updated_at'=> $timestamp,
+                    'game_id'=> ,
+                    'user_id'=> $user
 
-            ]);
+                ]);
+
+                //
+
+            }
 
 		}
 
     }
+
 }

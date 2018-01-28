@@ -136,7 +136,14 @@ class BaseSeeder extends Seeder
 
 	// Wishes
 
-	//
+	protected $wishes_per_user = [0, 1, 3, 5];
+
+	public function getWishesPerUser()
+	{
+
+		return $this->wishes_per_user;
+
+	}
 
 	// Reviews
 
