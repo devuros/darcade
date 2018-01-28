@@ -26,7 +26,7 @@ class BaseSeeder extends Seeder
 
 	// Users
 
-	protected $users_number = 10;
+	protected $users_number = 5;
 
 	public function getUsersNumber()
 	{
@@ -125,7 +125,7 @@ class BaseSeeder extends Seeder
 
 	}
 
-	protected $purchases_per_order = [1, 2, 3, 4];
+	protected $purchases_per_order = [1, 2, 3];
 
 	public function getPurchasesPerOrder()
 	{
@@ -136,7 +136,7 @@ class BaseSeeder extends Seeder
 
 	// Wishes
 
-	protected $wishes_per_user = [0, 1, 3, 5];
+	protected $wishes_per_user = [0, 1, 3];
 
 	public function getWishesPerUser()
 	{
