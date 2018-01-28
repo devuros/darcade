@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         'purchases',
         'game_user',
         'wishes',
+        'reviews',
 
 	];
 
@@ -60,6 +61,8 @@ class DatabaseSeeder extends Seeder
             OrdersTableSeeder::class,
 
             WishesTableSeeder::class,
+
+            ReviewsTableSeeder::class
 
         ]);
 

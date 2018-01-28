@@ -99,7 +99,9 @@ class OrdersTableSeeder extends BaseSeeder
 
                     }
 
-                    DB::table('orders')->where('id', $order_id)->update(['total'=> $total]);
+                    DB::table('orders')
+                        ->where('id', $order_id)
+                        ->update(['total'=> $total]);
 
                 }
 

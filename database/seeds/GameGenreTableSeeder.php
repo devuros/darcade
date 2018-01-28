@@ -16,6 +16,7 @@ class GameGenreTableSeeder extends BaseSeeder
     {
 
     	$games = $this->getGamesNumber();
+
         $genres = range(1, count($this->getGenresArray()));
 
     	foreach (range(1, $games) as $game)

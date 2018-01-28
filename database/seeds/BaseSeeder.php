@@ -147,6 +147,13 @@ class BaseSeeder extends Seeder
 
 	// Reviews
 
-	//
+	protected $reviews_per_user = [0, 2, 4];
+
+	public function getReviewsPerUser()
+	{
+
+		return $this->reviews_per_user;
+
+	}
 
 }

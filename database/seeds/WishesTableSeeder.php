@@ -30,7 +30,9 @@ class WishesTableSeeder extends BaseSeeder
                 continue;
             }
 
-            $user_games = App\Library::where('user_id', $user)->pluck('game_id')->all();
+            $user_games = App\Library::where('user_id', $user)
+                ->pluck('game_id')
+                ->all();
 
             $user_wishes = array_diff($games, $user_games);
 
