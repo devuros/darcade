@@ -29,7 +29,7 @@ class ReviewsTableSeeder extends BaseSeeder
             }
 
             $user_games = App\Library::where('user_id', $user)
-                ->pluck('game_id')
+                ->pluck('game_id', 'game_id')
                 ->all();
 
             if (count($user_games) == 0)
@@ -56,7 +56,7 @@ class ReviewsTableSeeder extends BaseSeeder
 
                 ]);
 
-                array_pull($user_games, $random_game-1);
+                array_pull($user_games, $random_game);
 
             }
 

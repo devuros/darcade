@@ -26,7 +26,7 @@ class BaseSeeder extends Seeder
 
 	// Users
 
-	protected $users_number = 5;
+	protected $users_number = 10;
 
 	public function getUsersNumber()
 	{
@@ -83,7 +83,7 @@ class BaseSeeder extends Seeder
 
 	// Games
 
-	protected $games_number = 10;
+	protected $games_number = 20;
 
 	public function getGamesNumber()
 	{
@@ -147,7 +147,7 @@ class BaseSeeder extends Seeder
 
 	// Reviews
 
-	protected $reviews_per_user = [0, 2, 4];
+	protected $reviews_per_user = [0, 1, 2, 4];
 
 	public function getReviewsPerUser()
 	{

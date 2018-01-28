@@ -54,6 +54,15 @@ class WishesTableSeeder extends BaseSeeder
 
 		}
 
+        // Seed Skeleton RPG
+
+        factory('App\Wish')->create([
+
+            'game_id'=> $this->getGamesNumber()+1,
+            'user_id'=> $this->getUsersNumber()+1
+
+        ]);
+
     }
 
 }
