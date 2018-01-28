@@ -14,7 +14,7 @@ class WishesTableSeeder extends BaseSeeder
 
 		$users = $this->getUsersNumber();
 
-        $wishes = $this->getWishesPerGame();
+        $wishes = $this->getWishesPerUser();
 
         $games = range(1, $this->getGamesNumber());
 
@@ -32,19 +32,21 @@ class WishesTableSeeder extends BaseSeeder
 
             $user_games = App\Library::where('user_id', $user)->pluck('game_id')->all();
 
-            //
+            $user_wishes = array_diff($games, $user_games);
 
             foreach (range(1, $number_of_wishes) as $wish_index)
             {
 
+                $random_game = array_random($user_wishes);
+
                 factory('App\Wish')->create([
 
-                    'game_id'=> ,
+                    'game_id'=> $random_game,
                     'user_id'=> $user
 
                 ]);
 
-                //
+                array_pull($user_wishes, $random_game-1);
 
             }
 
