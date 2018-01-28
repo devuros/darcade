@@ -16,10 +16,12 @@ class WishesTableSeeder extends BaseSeeder
 
         $wishes = $this->getWishesPerGame();
 
+        $games = range(1, $this->getGamesNumber());
+
 		foreach (range(1, $users) as $user)
 		{
 
-            // number of wishes to be seeder for the user
+            // number of wishes to be seeded for the user
 
             $number_of_wishes = array_random($wishes);
 
