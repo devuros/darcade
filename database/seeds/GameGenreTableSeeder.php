@@ -36,7 +36,7 @@ class GameGenreTableSeeder extends BaseSeeder
         $skeleton_genre = new GameGenre;
 
         $skeleton_genre->game_id = $games+1;
-        $skeleton_genre->genre_id = array_random($genres);
+        $skeleton_genre->genre_id = 7;
 
         $skeleton_genre->save();
 

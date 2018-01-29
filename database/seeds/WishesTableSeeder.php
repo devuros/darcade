@@ -54,7 +54,7 @@ class WishesTableSeeder extends BaseSeeder
 
 		}
 
-        // Seed Skeleton RPG
+        // Seed Skeleton RPG to Milos Radosavljevic's wishlist
 
         factory('App\Wish')->create([
 

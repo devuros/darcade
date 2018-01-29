@@ -36,54 +36,60 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        $this->cleanDatabase();
+        // $this->cleanDatabase();
 
-        Storage::disk('public')->deleteDirectory('games');
-        Storage::disk('public')->deleteDirectory('screenshots');
+        // Storage::disk('public')->deleteDirectory('games');
+        // Storage::disk('public')->deleteDirectory('screenshots');
 
-        // Segment: one
+        /**
+         * Segment: one
+         */
 
-        $this->call([
+        // $this->call([
 
-            RolesTableSeeder::class,
+        //     RolesTableSeeder::class,
 
-            UsersTableSeeder::class,
+        //     UsersTableSeeder::class,
 
-            RoleUserTableSeeder::class,
+        //     RoleUserTableSeeder::class,
 
-            DevelopersTableSeeder::class,
+        //     DevelopersTableSeeder::class,
 
-            PublishersTableSeeder::class,
+        //     PublishersTableSeeder::class,
 
-            GenresTableSeeder::class
+        //     GenresTableSeeder::class
 
-        ]);
+        // ]);
 
-        // Segment: two
+        /**
+         * Segment: two
+         */
 
-        $this->call([
+        // $this->call([
 
-            GamesTableSeeder::class,
+        //     GamesTableSeeder::class,
 
-            GameGenreTableSeeder::class,
+        //     GameGenreTableSeeder::class,
 
-            ScreenshotsTableSeeder::class,
+        //     ScreenshotsTableSeeder::class,
 
-            CartsTableSeeder::class
+        //     CartsTableSeeder::class
 
-        ]);
+        // ]);
 
-        // Segment: three
+        /**
+         * Segment: three
+         */
 
-        $this->call([
+        // $this->call([
 
-            OrdersTableSeeder::class,
+        //     OrdersTableSeeder::class,
 
-            WishesTableSeeder::class,
+        //     WishesTableSeeder::class,
 
-            ReviewsTableSeeder::class
+        //     ReviewsTableSeeder::class
 
-        ]);
+        // ]);
 
     }
 
