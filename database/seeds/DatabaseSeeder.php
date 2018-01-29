@@ -10,14 +10,16 @@ class DatabaseSeeder extends Seeder
 
         'roles',
         'users',
+        'role_user',
 		'developers',
         'publishers',
         'genres',
-        'role_user',
+
         'games',
         'game_genre',
         'screenshots',
         'carts',
+
         'orders',
         'purchases',
         'game_user',
@@ -36,27 +38,44 @@ class DatabaseSeeder extends Seeder
 
         $this->cleanDatabase();
 
+        Storage::disk('public')->deleteDirectory('games');
+        Storage::disk('public')->deleteDirectory('screenshots');
+
+        // Segment: one
+
         $this->call([
 
-            // RolesTableSeeder::class,
+            RolesTableSeeder::class,
 
             UsersTableSeeder::class,
 
-            // DevelopersTableSeeder::class,
+            RoleUserTableSeeder::class,
 
-            // PublishersTableSeeder::class,
+            DevelopersTableSeeder::class,
 
-            // GenresTableSeeder::class,
+            PublishersTableSeeder::class,
 
-            // RoleUserTableSeeder::class,
+            GenresTableSeeder::class
+
+        ]);
+
+        // Segment: two
+
+        $this->call([
 
             GamesTableSeeder::class,
 
-            // GameGenreTableSeeder::class,
+            GameGenreTableSeeder::class,
 
-            // ScreenshotsTableSeeder::class,
+            ScreenshotsTableSeeder::class,
 
-            // CartsTableSeeder::class,
+            CartsTableSeeder::class
+
+        ]);
+
+        // Segment: three
+
+        $this->call([
 
             OrdersTableSeeder::class,
 
@@ -70,10 +89,6 @@ class DatabaseSeeder extends Seeder
 
     public function cleanDatabase()
     {
-
-        Storage::disk('public')->deleteDirectory('games');
-
-        Storage::disk('public')->deleteDirectory('screenshots');
 
         foreach ($this->tables as $tableName)
         {

@@ -26,7 +26,7 @@ class BaseSeeder extends Seeder
 
 	// Users
 
-	protected $users_number = 10;
+	protected $users_number = 40;
 
 	public function getUsersNumber()
 	{
@@ -83,7 +83,7 @@ class BaseSeeder extends Seeder
 
 	// Games
 
-	protected $games_number = 20;
+	protected $games_number = 50;
 
 	public function getGamesNumber()
 	{
@@ -105,7 +105,7 @@ class BaseSeeder extends Seeder
 
 	// Carts
 
-	protected $games_in_cart_per_user = [1, 2, 3];
+	protected $games_in_cart_per_user = [0, 1, 2];
 
 	public function getGamesInCartPerUser()
 	{
@@ -136,7 +136,7 @@ class BaseSeeder extends Seeder
 
 	// Wishes
 
-	protected $wishes_per_user = [0, 1, 3];
+	protected $wishes_per_user = [0, 1, 3, 4];
 
 	public function getWishesPerUser()
 	{

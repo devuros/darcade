@@ -68,7 +68,10 @@ class WishController extends ApiController
 
         }
 
-        $wish_exists = User::find(Auth::id())->wishes()->where('game_id', $request->game)->exists();
+        $wish_exists = User::find(Auth::id())
+            ->wishes()
+            ->where('game_id', $request->game)
+            ->exists();
 
         if ($wish_exists)
         {
@@ -155,7 +158,7 @@ class WishController extends ApiController
         if (empty($user))
         {
 
-            return $this->respondNotFound('Requested user not found');
+            return $this->respondNotFound('Requested user was not found');
 
         }
 

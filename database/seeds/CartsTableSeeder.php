@@ -21,6 +21,15 @@ class CartsTableSeeder extends BaseSeeder
     	foreach (range(1, $users) as $user)
     	{
 
+            // number of games to be seeded in the user's cart
+
+            $number_of_carts = array_random($carts);
+
+            if ($number_of_carts == 0)
+            {
+                continue;
+            }
+
             $games_array = range(1, $games);
 
             foreach (range(1, array_random($carts)) as $cart)
