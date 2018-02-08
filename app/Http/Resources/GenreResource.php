@@ -17,6 +17,7 @@ class GenreResource extends Resource
 
         return [
 
+            'id'=> $this->id,
             'genre'=> $this->genre
 
         ];
