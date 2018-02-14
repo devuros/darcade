@@ -1,0 +1,1338 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"browse",
+				"browse-div"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"text-color",
+				"text-color-secondary"
+			],
+			[
+				"discount",
+				"discount-text-color-green"
+			],
+			[
+				"special-",
+				"special-offer-price-discount"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"above",
+				"above-header-bg-color"
+			],
+			[
+				"margin-",
+				"margin-right"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"home",
+				"home-page-core-wrapper-width"
+			],
+			[
+				"div",
+				"div\tTag"
+			],
+			[
+				"genres",
+				"genres_response"
+			],
+			[
+				"fo",
+				"footer-content"
+			],
+			[
+				"i",
+				"i\tTag"
+			],
+			[
+				"p",
+				"p\tTag"
+			],
+			[
+				"number",
+				"number_of_reviews"
+			],
+			[
+				"user",
+				"user_games"
+			],
+			[
+				"user_",
+				"user_wishes"
+			],
+			[
+				"games",
+				"games_array"
+			],
+			[
+				"order",
+				"order_purchases"
+			],
+			[
+				"skeleton",
+				"skeleton_game"
+			],
+			[
+				"skele",
+				"skeleton_game"
+			],
+			[
+				"game",
+				"game_genre"
+			],
+			[
+				"HTTP",
+				"HTTP_FORBIDDEN"
+			],
+			[
+				"po",
+				"positive_percentage"
+			],
+			[
+				"reco",
+				"recommended_game_reviews"
+			],
+			[
+				"genre",
+				"genre_id"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"Store",
+				"StoreGame"
+			],
+			[
+				"wish",
+				"wish_exists"
+			],
+			[
+				"re",
+				"reviews"
+			],
+			[
+				"Re",
+				"Review"
+			],
+			[
+				"http_",
+				"http_unauthorized"
+			],
+			[
+				"Purch",
+				"PurchaseResource"
+			],
+			[
+				"http",
+				"http_forbidden"
+			],
+			[
+				"su",
+				"successfully"
+			],
+			[
+				"vali",
+				"validData"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"S",
+				"Screenshot"
+			],
+			[
+				"http_un",
+				"http_unprocessable_entity"
+			],
+			[
+				"Game",
+				"GameResource"
+			],
+			[
+				"http_su",
+				"http_success"
+			],
+			[
+				"belongs",
+				"belongsTo"
+			],
+			[
+				"owned",
+				"owned_game"
+			],
+			[
+				"if",
+				"if\tif …"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"ord",
+				"order_id"
+			],
+			[
+				"random",
+				"random_game"
+			],
+			[
+				"sale",
+				"sale_price"
+			],
+			[
+				"fac",
+				"factory"
+			],
+			[
+				"li",
+				"li\tTag"
+			],
+			[
+				"di",
+				"datalist\tTag"
+			],
+			[
+				"text",
+				"textarea\tTag"
+			],
+			[
+				"s",
+				"setlocale"
+			],
+			[
+				"d",
+				"date"
+			],
+			[
+				"a",
+				"a\tCreate a new anchor tag"
+			],
+			[
+				"tag",
+				"tagIds"
+			],
+			[
+				"less",
+				"lessonIds"
+			],
+			[
+				"Lesson",
+				"LessonResource"
+			],
+			[
+				"Regi",
+				"RegistrationRequest"
+			],
+			[
+				"form-",
+				"form-group"
+			],
+			[
+				"te",
+				"textarea\tTag"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"f",
+				"f3f2f2"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"post-",
+				"post-body"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"co",
+				"contenteditable\tAttr"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "routes/api.php",
+			"settings":
+			{
+				"buffer_size": 2637,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"last_filter": "Snippet: dock",
+		"selected_items":
+		[
+			[
+				"Snippet: dock",
+				"Snippet: Start Docblock"
+			],
+			[
+				"Snippet: cons",
+				"Snippet: function __construct"
+			],
+			[
+				"Package Control:  ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control:  in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				"Snippet: snippet",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: snippe",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: snipp",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: sni",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: snip",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: make",
+				"SnippetMaker: Make Snippet"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Create a label tag"
+			],
+			[
+				"Snippet: __",
+				"Snippet: function __construct"
+			],
+			[
+				"Snippet: function",
+				"Snippet: function …"
+			],
+			[
+				"Snippet: fu",
+				"Snippet: Function"
+			],
+			[
+				"Snippet: functio",
+				"Snippet: Function"
+			],
+			[
+				"Snippet: func",
+				"Snippet: Function"
+			],
+			[
+				"Snippet: fun",
+				"Snippet: function …"
+			],
+			[
+				"Snippet: edit",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"Snippet: for",
+				"Snippet: foreach …"
+			],
+			[
+				"Snippet:mak",
+				"SnippetMaker: Make Snippet"
+			],
+			[
+				"",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"Snippet maker: ",
+				"SnippetMaker: Make Snippet"
+			],
+			[
+				"Snippet:",
+				"Snippet: Function"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: div",
+				"Snippet: div"
+			],
+			[
+				"package control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
+			[
+				"set",
+				"Set Syntax: PHP"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 318.0,
+		"history":
+		[
+			"git status"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Uki/darcade-api"
+	],
+	"file_history":
+	[
+		"/C/Users/Uki/darcade-client/resources/assets/sass/_variables.scss",
+		"/C/Users/Uki/darcade-client/resources/assets/sass/app.scss",
+		"/C/Users/Uki/darcade-client/resources/views/home.blade.php",
+		"/C/Users/Uki/darcade-client/app/Http/Controllers/HomeController.php",
+		"/C/Users/Uki/darcade-client/app/Http/Controllers/ClientController.php",
+		"/C/Users/Uki/darcade-client/resources/views/layouts/app.blade.php",
+		"/C/Users/Uki/darcade-client/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php",
+		"/C/Users/Uki/darcade-client/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php",
+		"/C/Users/Uki/darcade-client/resources/views/errors/api_not_found.blade.php",
+		"/C/Users/Uki/darcade-client/resources/views/errors/api_not_available.blade.php",
+		"/C/Users/Uki/darcade-client/storage/logs/laravel.log",
+		"/C/Users/Uki/darcade-client/resources/views/layouts/header.blade.php",
+		"/C/Users/Uki/darcade-client/routes/web.php",
+		"/C/Users/Uki/darcade-client/vendor/guzzlehttp/guzzle/src/Client.php",
+		"/C/Users/Uki/darcade-client/vendor/guzzlehttp/guzzle/src/RequestOptions.php",
+		"/C/Users/Uki/darcade-client/vendor/guzzlehttp/guzzle/src/ClientInterface.php",
+		"/C/Users/Uki/darcade-client/resources/views/layouts/footer.blade.php",
+		"/C/Users/Uki/darcade-client/node_modules/core-js/modules/web.dom.iterable.js",
+		"/C/Users/Uki/darcade-client/config/app.php",
+		"/C/Users/Uki/darcade-client/app/Providers/AppServiceProvider.php",
+		"/C/Users/Uki/darcade-client/package.json",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Uki/darcade-client/composer.lock",
+		"/C/Users/Uki/darcade-client/composer.json",
+		"/C/Users/Uki/darcade-client/resources/views/welcome.blade.php",
+		"/C/Users/Uki/darcade-client/webpack.mix.js",
+		"/C/Users/Uki/darcade-client/resources/views/layout/app.blade.php",
+		"/C/Users/Uki/darcade-client/vendor/league/flysystem/docs/logo/laravel.svg",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/label.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/li.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/text.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/ul.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/form.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/div.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/button.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/textarea.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/anchor.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/this.sublime-snippet",
+		"/C/Users/Uki/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/$.sublime-snippet",
+		"/C/Users/Uki/darcade-client/.env",
+		"/C/Users/Uki/darcade-api/routes/api.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/ApiController.php",
+		"/C/Users/Uki/darcade-api/database/seeds/BaseSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/DatabaseSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/WishesTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/ReviewsTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/UsersTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/OrdersTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/CartsTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/GameGenreTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/ScreenshotsTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/GenresTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/PublishersTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/DevelopersTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/RoleUserTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/seeds/RolesTableSeeder.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/WishController.php",
+		"/C/Users/Uki/darcade-api/app/Wish.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/WishResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreWish.php",
+		"/C/Users/Uki/darcade-api/database/seeds/GamesTableSeeder.php",
+		"/C/Users/Uki/darcade-api/database/factories/ReviewFactory.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Support/Arr.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
+		"/C/Users/Uki/darcade-api/storage/logs/laravel.log",
+		"/C/Users/Uki/darcade-api/database/factories/GameFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/WishFactory.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/LibraryController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
+		"/C/Users/Uki/darcade-api/app/User.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreCart.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/PurchaseController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
+		"/C/Users/Uki/darcade-api/app/Policies/ReviewPolicy.php",
+		"/C/Users/Uki/darcade-api/app/Policies/WishPolicy.php",
+		"/C/Users/Uki/darcade-api/database/factories/CartFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/ScreenshotFactory.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/ScreenshotController.php",
+		"/C/Users/Uki/darcade-api/config/filesystems.php",
+		"/C/Users/Uki/darcade-api/tests/Unit/GameTest.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Http/File.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Http/FileHelpers.php",
+		"/C/Users/Uki/darcade-api/vendor/league/flysystem/src/File.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemAdapter.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
+		"/C/Users/Uki/darcade-api/vendor/defuse/php-encryption/src/File.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Support/Facades/Storage.php",
+		"/C/Users/Uki/darcade-api/tests/Unit/UserTest.php",
+		"/C/Users/Uki/darcade-api/tests/Feature/ExampleTest.php",
+		"/C/Users/Uki/darcade-api/tests/Unit/AdminTest.php",
+		"/C/Users/Uki/darcade-api/vendor/phpunit/phpunit/src/Framework/Assert.php",
+		"/C/Users/Uki/darcade-api/vendor/fzaninotto/faker/src/Faker/Provider/Image.php",
+		"/C/Users/Uki/darcade-api/vendor/fzaninotto/faker/test/Faker/Provider/ImageTest.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Foundation/Testing/WithFaker.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/UserController.php",
+		"/C/Users/Uki/darcade-api/composer.json",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Seeder.php",
+		"/C/Users/Uki/darcade-api/database/factories/GenreFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/UserFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/PublisherFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/DeveloperFactory.php",
+		"/C/Users/Uki/darcade-api/database/factories/RoleFactory.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/C/Users/Uki/darcade-api/app/Review.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/ReviewResource.php",
+		"/C/Users/Uki/darcade-api/app/GameGenre.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGameGenre.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php",
+		"/C/Users/Uki/darcade-api/app/Policies/GamePolicy.php",
+		"/C/Users/Uki/darcade-api/app/Game.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGame.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/GenreController.php",
+		"/C/Users/Uki/darcade-api/app/Screenshot.php",
+		"/C/Users/Uki/darcade-api/app/Role.php",
+		"/C/Users/Uki/darcade-api/app/Purchase.php",
+		"/C/Users/Uki/darcade-api/app/Publisher.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/PublisherController.php",
+		"/C/Users/Uki/darcade-api/app/Order.php",
+		"/C/Users/Uki/darcade-api/app/Library.php",
+		"/C/Users/Uki/darcade-api/app/Genre.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/DeveloperController.php",
+		"/C/Users/Uki/darcade-api/app/Developer.php",
+		"/C/Users/Uki/darcade-api/app/Cart.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/UpdateGameIsOnSale.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"new",
+			"specialOffers",
+			"both",
+			"specialOffers",
+			"image",
+			"wrapper",
+			"item",
+			"featuredSection",
+			"green",
+			"title",
+			"featuredAside",
+			"left",
+			"carouselExampleControls",
+			"prev",
+			"Previous",
+			"prev",
+			"clear",
+			"left",
+			"bootstra",
+			"boot",
+			"first",
+			"active",
+			"em",
+			"title",
+			"rgb",
+			"top",
+			"method",
+			"Controller",
+			"top",
+			"genres",
+			"sellers",
+			"genres",
+			"client",
+			"getBody",
+			"DELETE",
+			"PUT",
+			"POST",
+			"METHOD_GET",
+			"GET",
+			"DELETE",
+			"GET",
+			"POST",
+			"home",
+			"action",
+			"res",
+			"genres_response",
+			"res",
+			"community",
+			"about",
+			"login",
+			"HomeController",
+			"guzzle"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "routes/api.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "darcade-api.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"api.",
+				"routes\\api.php"
+			],
+			[
+				"app.bl",
+				"resources\\views\\layouts\\app.blade.php"
+			],
+			[
+				"guzzle",
+				"vendor\\guzzlehttp\\guzzle\\src\\Exception\\GuzzleException.php"
+			],
+			[
+				"api_",
+				"resources\\views\\errors\\api_not_found.blade.php"
+			],
+			[
+				"laravel.",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"api_no",
+				"resources\\views\\errors\\api_not_available.blade.php"
+			],
+			[
+				"header.blad",
+				"resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"header.bla",
+				"resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"footer.",
+				"resources\\views\\layouts\\footer.blade.php"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"web.o",
+				"node_modules\\core-js\\modules\\web.dom.iterable.js"
+			],
+			[
+				"appser",
+				"app\\Providers\\AppServiceProvider.php"
+			],
+			[
+				"web.",
+				"routes\\web.php"
+			],
+			[
+				"apic",
+				"app\\Http\\Controllers\\ApiController.php"
+			],
+			[
+				"api",
+				"routes\\api.php"
+			],
+			[
+				"web",
+				"routes\\web.php"
+			],
+			[
+				"header.bl",
+				"resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"footer.bl",
+				"resources\\views\\layouts\\footer.blade.php"
+			],
+			[
+				"footer",
+				"resources\\views\\layouts\\footer.blade.php"
+			],
+			[
+				"header.",
+				"resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"header.blade",
+				"resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"composer.lo",
+				"composer.lock"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"userstabl",
+				"database\\seeds\\UsersTableSeeder.php"
+			],
+			[
+				"reviewsta",
+				"database\\seeds\\ReviewsTableSeeder.php"
+			],
+			[
+				"wishesta",
+				"database\\seeds\\WishesTableSeeder.php"
+			],
+			[
+				"ordersta",
+				"database\\seeds\\OrdersTableSeeder.php"
+			],
+			[
+				"cartsta",
+				"database\\seeds\\CartsTableSeeder.php"
+			],
+			[
+				"screenshotsta",
+				"database\\seeds\\ScreenshotsTableSeeder.php"
+			],
+			[
+				"gamegenreta",
+				"database\\seeds\\GameGenreTableSeeder.php"
+			],
+			[
+				"genresta",
+				"database\\seeds\\GenresTableSeeder.php"
+			],
+			[
+				"publishersta",
+				"database\\seeds\\PublishersTableSeeder.php"
+			],
+			[
+				"developersta",
+				"database\\seeds\\DevelopersTableSeeder.php"
+			],
+			[
+				"roleuser",
+				"database\\seeds\\RoleUserTableSeeder.php"
+			],
+			[
+				"usersta",
+				"database\\seeds\\UsersTableSeeder.php"
+			],
+			[
+				"rolesta",
+				"database\\seeds\\RolesTableSeeder.php"
+			],
+			[
+				"cartstableseeder",
+				"database\\seeds\\CartsTableSeeder.php"
+			],
+			[
+				"wish",
+				"app\\Wish.php"
+			],
+			[
+				"wishco",
+				"app\\Http\\Controllers\\WishController.php"
+			],
+			[
+				"users",
+				"database\\seeds\\UsersTableSeeder.php"
+			],
+			[
+				"gamesta",
+				"database\\seeds\\GamesTableSeeder.php"
+			],
+			[
+				"wishes",
+				"database\\seeds\\WishesTableSeeder.php"
+			],
+			[
+				"laravel",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"gamefa",
+				"database\\factories\\GameFactory.php"
+			],
+			[
+				"libraryc",
+				"app\\Http\\Controllers\\LibraryController.php"
+			],
+			[
+				"user",
+				"app\\User.php"
+			],
+			[
+				"gameres",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"user.php",
+				"app\\User.php"
+			],
+			[
+				"wishc",
+				"app\\Http\\Controllers\\WishController.php"
+			],
+			[
+				"reviewpol",
+				"app\\Policies\\ReviewPolicy.php"
+			],
+			[
+				"wishpol",
+				"app\\Policies\\WishPolicy.php"
+			],
+			[
+				"cartc",
+				"app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"roleu",
+				"database\\seeds\\RoleUserTableSeeder.php"
+			],
+			[
+				"userstab",
+				"database\\seeds\\UsersTableSeeder.php"
+			],
+			[
+				"laravel.log",
+				"storage\\logs\\laravel.log"
+			],
+			[
+				"screenshotc",
+				"app\\Http\\Controllers\\ScreenshotController.php"
+			],
+			[
+				"gamestable",
+				"database\\seeds\\GamesTableSeeder.php"
+			],
+			[
+				"gamestabl",
+				"database\\seeds\\GamesTableSeeder.php"
+			],
+			[
+				"file",
+				"config\\filesystems.php"
+			],
+			[
+				"gamec",
+				"app\\Http\\Controllers\\GameController.php"
+			],
+			[
+				"faker/provider/image",
+				"vendor\\fzaninotto\\faker\\src\\Faker\\Provider\\Image.php"
+			],
+			[
+				"gameco",
+				"app\\Http\\Controllers\\GameController.php"
+			],
+			[
+				"publishers",
+				"database\\seeds\\PublishersTableSeeder.php"
+			],
+			[
+				"userc",
+				"app\\Http\\Controllers\\UserController.php"
+			],
+			[
+				"roleuserta",
+				"database\\seeds\\RoleUserTableSeeder.php"
+			],
+			[
+				"genrestab",
+				"database\\seeds\\GenresTableSeeder.php"
+			],
+			[
+				"userfa",
+				"database\\factories\\UserFactory.php"
+			],
+			[
+				"reviewres",
+				"app\\Http\\Resources\\ReviewResource.php"
+			],
+			[
+				"review",
+				"app\\Review.php"
+			],
+			[
+				"reviewc",
+				"app\\Http\\Controllers\\ReviewController.php"
+			],
+			[
+				"game.php",
+				"app\\Game.php"
+			],
+			[
+				"gamepol",
+				"app\\Policies\\GamePolicy.php"
+			],
+			[
+				"storecart",
+				"app\\Http\\Requests\\StoreCart.php"
+			],
+			[
+				"storegame",
+				"app\\Http\\Requests\\StoreGame.php"
+			],
+			[
+				"storegamegen",
+				"app\\Http\\Requests\\StoreGameGenre.php"
+			],
+			[
+				"gameresou",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"genrec",
+				"app\\Http\\Controllers\\GenreController.php"
+			],
+			[
+				"usercon",
+				"app\\Http\\Controllers\\UserController.php"
+			],
+			[
+				"purchasec",
+				"app\\Http\\Controllers\\PurchaseController.php"
+			],
+			[
+				"publisherc",
+				"app\\Http\\Controllers\\PublisherController.php"
+			],
+			[
+				"game.",
+				"app\\Game.php"
+			],
+			[
+				"genrecon",
+				"app\\Http\\Controllers\\GenreController.php"
+			],
+			[
+				"game.ph",
+				"app\\Game.php"
+			],
+			[
+				"developerc",
+				"app\\Http\\Controllers\\DeveloperController.php"
+			],
+			[
+				"cartco",
+				"app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"user.ph",
+				"app\\User.php"
+			],
+			[
+				"updategameis",
+				"app\\Http\\Requests\\UpdateGameIsOnSale.php"
+			],
+			[
+				"user.",
+				"app\\User.php"
+			],
+			[
+				"gamepolic",
+				"app\\Policies\\GamePolicy.php"
+			],
+			[
+				"updategame",
+				"app\\Http\\Requests\\UpdateGame.php"
+			],
+			[
+				"asp",
+				"app\\Providers\\AuthServiceProvider.php"
+			],
+			[
+				"storesc",
+				"app\\Http\\Requests\\StoreScreenshot.php"
+			],
+			[
+				"screenshotpo",
+				"app\\Policies\\ScreenshotPolicy.php"
+			],
+			[
+				"gamepoli",
+				"app\\Policies\\GamePolicy.php"
+			],
+			[
+				"rolec",
+				"app\\Http\\Controllers\\RoleController.php"
+			],
+			[
+				"reviewco",
+				"app\\Http\\Controllers\\ReviewController.php"
+			],
+			[
+				"wishcon",
+				"app\\Http\\Controllers\\WishController.php"
+			],
+			[
+				"gamesc",
+				"vendor\\phpunit\\phpunit-mock-objects\\tests\\Generator\\namespaced_class.phpt"
+			],
+			[
+				"screnshotre",
+				"app\\Http\\Resources\\ScreenshotResource.php"
+			],
+			[
+				"apicon",
+				"app\\Http\\Controllers\\ApiController.php"
+			],
+			[
+				"deveoperc",
+				"app\\Http\\Controllers\\DeveloperController.php"
+			],
+			[
+				"storecar",
+				"app\\Http\\Requests\\StoreCart.php"
+			],
+			[
+				"cartpo",
+				"app\\Policies\\CartPolicy.php"
+			],
+			[
+				"roleco",
+				"app\\Http\\Controllers\\RoleController.php"
+			],
+			[
+				"rolepo",
+				"app\\Policies\\RolePolicy.php"
+			],
+			[
+				"screenshotres",
+				"app\\Http\\Resources\\ScreenshotResource.php"
+			],
+			[
+				"scree",
+				"app\\Screenshot.php"
+			],
+			[
+				"screenshot",
+				"app\\Http\\Controllers\\ScreenshotController.php"
+			],
+			[
+				"reviewsc",
+				"app\\Http\\Resources\\ReviewResource.php"
+			],
+			[
+				"genreco",
+				"app\\Http\\Controllers\\GenreController.php"
+			],
+			[
+				"developer",
+				"app\\Developer.php"
+			],
+			[
+				"registerc",
+				"app\\Http\\Controllers\\Auth\\RegisterController.php"
+			],
+			[
+				"storeuser",
+				"app\\Http\\Requests\\StoreUser.php"
+			],
+			[
+				"userres",
+				"app\\Http\\Resources\\UserResource.php"
+			],
+			[
+				"roleres",
+				"app\\Http\\Resources\\RoleResource.php"
+			],
+			[
+				"rolepol",
+				"app\\Policies\\RolePolicy.php"
+			],
+			[
+				"userp",
+				"app\\Policies\\UserPolicy.php"
+			],
+			[
+				"role.",
+				"app\\Role.php"
+			],
+			[
+				"cartcon",
+				"app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"reviewpo",
+				"app\\Policies\\ReviewPolicy.php"
+			],
+			[
+				"authser",
+				"app\\Providers\\AuthServiceProvider.php"
+			],
+			[
+				"wish.",
+				"app\\Wish.php"
+			],
+			[
+				"genreres",
+				"app\\Http\\Resources\\GenreResource.php"
+			],
+			[
+				"gamerou",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"storewish",
+				"app\\Http\\Requests\\StoreWish.php"
+			],
+			[
+				"cart.",
+				"app\\Cart.php"
+			],
+			[
+				"user.p",
+				"app\\User.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 1273.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 319.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
