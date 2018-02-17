@@ -17,6 +17,7 @@ class PublisherResource extends Resource
 
         return [
 
+            'id'=> $this->id,
             'publisher'=> $this->publisher
 
         ];

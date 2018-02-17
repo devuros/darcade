@@ -17,6 +17,7 @@ class DeveloperResource extends Resource
 
         return [
 
+            'id'=> $this->id,
             'developer'=> $this->developer
 
         ];

@@ -330,6 +330,23 @@
 				"buffer_size": 2637,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "app/Http/Controllers/GameController.php",
+			"settings":
+			{
+				"buffer_size": 9181,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Resources/GameResource.php",
+			"settings":
+			{
+				"buffer_size": 1040,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -493,6 +510,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Uki/darcade-api/app/Http/Resources/DeveloperResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/PublisherResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/GenreController.php",
 		"/C/Users/Uki/darcade-client/resources/assets/sass/_variables.scss",
 		"/C/Users/Uki/darcade-client/resources/assets/sass/app.scss",
 		"/C/Users/Uki/darcade-client/resources/views/home.blade.php",
@@ -606,7 +626,6 @@
 		"/C/Users/Uki/darcade-api/app/Policies/GamePolicy.php",
 		"/C/Users/Uki/darcade-api/app/Game.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGame.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/GenreController.php",
 		"/C/Users/Uki/darcade-api/app/Screenshot.php",
 		"/C/Users/Uki/darcade-api/app/Role.php",
 		"/C/Users/Uki/darcade-api/app/Purchase.php",
@@ -618,9 +637,7 @@
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/DeveloperController.php",
 		"/C/Users/Uki/darcade-api/app/Developer.php",
-		"/C/Users/Uki/darcade-api/app/Cart.php",
-		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
-		"/C/Users/Uki/darcade-api/app/Http/Requests/UpdateGameIsOnSale.php"
+		"/C/Users/Uki/darcade-api/app/Cart.php"
 	],
 	"find":
 	{
@@ -638,6 +655,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"publisher",
 			"new",
 			"specialOffers",
 			"both",
@@ -707,7 +725,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -723,8 +741,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								152,
+								152
 							]
 						],
 						"settings":
@@ -735,7 +753,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/GameController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2447,
+								2447
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1764.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Resources/GameResource.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								816,
+								816
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -789,6 +867,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"publisherres",
+				"app\\Http\\Resources\\PublisherResource.php"
+			],
+			[
+				"developerres",
+				"app\\Http\\Resources\\DeveloperResource.php"
+			],
+			[
+				"gamec",
+				"app\\Http\\Controllers\\GameController.php"
+			],
+			[
+				"genrec",
+				"app\\Http\\Controllers\\GenreController.php"
+			],
 			[
 				"api.",
 				"routes\\api.php"
@@ -1030,10 +1124,6 @@
 				"config\\filesystems.php"
 			],
 			[
-				"gamec",
-				"app\\Http\\Controllers\\GameController.php"
-			],
-			[
 				"faker/provider/image",
 				"vendor\\fzaninotto\\faker\\src\\Faker\\Provider\\Image.php"
 			],
@@ -1096,10 +1186,6 @@
 			[
 				"gameresou",
 				"app\\Http\\Resources\\GameResource.php"
-			],
-			[
-				"genrec",
-				"app\\Http\\Controllers\\GenreController.php"
 			],
 			[
 				"usercon",
@@ -1292,14 +1378,6 @@
 			[
 				"storewish",
 				"app\\Http\\Requests\\StoreWish.php"
-			],
-			[
-				"cart.",
-				"app\\Cart.php"
-			],
-			[
-				"user.p",
-				"app\\User.php"
 			]
 		],
 		"width": 0.0
