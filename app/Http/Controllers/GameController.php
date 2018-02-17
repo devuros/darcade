@@ -453,4 +453,40 @@ class GameController extends ApiController
 
     }
 
+    //
+
+    /**
+     * Get games priced under 10
+     */
+    public function showGamesUT()
+    {
+
+        $games = Game::UnderTen()->get();
+
+        return GameResource::collection($games);
+
+    }
+
+    /**
+     * Get games priced under 25
+     */
+    public function showGamesUTF()
+    {
+
+        $games = Game::UnderTwentyFive()->get();
+
+        return GameResource::collection($games);
+
+    }
+
+    /**
+     * Get games that are on sale
+     */
+    public function specials()
+    {
+
+        //
+
+    }
+
 }

@@ -66,22 +66,32 @@ class Game extends Model
     }
 
     /**
-     * Get games which are priced under ten
+     * Get games which are priced under 10
      */
     public function scopeUnderTen($query)
     {
 
-        return $query->where('sale_price', '<', '10');
+        return $query->where('base_price', '<', 10)
+            ->orWhere(function ($q)
+            {
+                $q->where('is_on_sale', '=', 1)
+                    ->where('sale_price', '<', 10);
+            });
 
     }
 
     /**
-     * Get games which are priced under ten
+     * Get games which are priced under 25
      */
-    public function scopeUnderFive($query)
+    public function scopeUnderTwentyFive($query)
     {
 
-        return $query->where('sale_price', '<', '5');
+        return $query->where('base_price', '<', 25)
+            ->orWhere(function ($q)
+            {
+                $q->where('is_on_sale', '=', 1)
+                    ->where('sale_price', '<', 25);
+            });
 
     }
 

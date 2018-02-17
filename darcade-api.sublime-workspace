@@ -327,7 +327,8 @@
 			"file": "routes/api.php",
 			"settings":
 			{
-				"buffer_size": 2637,
+				"buffer_size": 2758,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -335,16 +336,16 @@
 			"file": "app/Http/Controllers/GameController.php",
 			"settings":
 			{
-				"buffer_size": 9379,
+				"buffer_size": 9882,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Resources/GameResource.php",
+			"file": "app/Game.php",
 			"settings":
 			{
-				"buffer_size": 1040,
+				"buffer_size": 2000,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -511,6 +512,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/DeveloperResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/PublisherResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/GenreController.php",
@@ -584,7 +586,6 @@
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/LibraryController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/app/User.php",
-		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreCart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PurchaseController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
@@ -656,6 +657,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"UT",
+			"games",
+			"sale_price",
 			"game",
 			"publisher",
 			"new",
@@ -736,15 +740,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2637,
+						"buffer_size": 2758,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								152,
-								152
+								769,
+								769
 							]
 						],
 						"settings":
@@ -764,15 +768,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9379,
+						"buffer_size": 9882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7128,
-								7128
+								9853,
+								9853
 							]
 						],
 						"settings":
@@ -782,7 +786,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5796.0,
+						"translation.y": 8041.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -790,19 +794,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/Http/Resources/GameResource.php",
+					"file": "app/Game.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1040,
+						"buffer_size": 2000,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								816,
-								816
+								1408,
+								1408
 							]
 						],
 						"settings":
@@ -812,7 +816,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -869,6 +873,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"game.php",
+				"app\\Game.php"
+			],
 			[
 				"developerres",
 				"app\\Http\\Resources\\DeveloperResource.php"
@@ -1166,10 +1174,6 @@
 				"app\\Http\\Controllers\\ReviewController.php"
 			],
 			[
-				"game.php",
-				"app\\Game.php"
-			],
-			[
 				"gamepol",
 				"app\\Policies\\GamePolicy.php"
 			],
@@ -1409,7 +1413,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 285.0,
 	"status_bar_visible": true,
 	"template_settings":
