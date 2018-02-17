@@ -335,7 +335,8 @@
 			"file": "app/Http/Controllers/GameController.php",
 			"settings":
 			{
-				"buffer_size": 9181,
+				"buffer_size": 9379,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -655,6 +656,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"game",
 			"publisher",
 			"new",
 			"specialOffers",
@@ -762,15 +764,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9181,
+						"buffer_size": 9379,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2447,
-								2447
+								7128,
+								7128
 							]
 						],
 						"settings":
@@ -780,7 +782,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1764.0,
+						"translation.y": 5796.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -868,12 +870,12 @@
 		"selected_items":
 		[
 			[
-				"publisherres",
-				"app\\Http\\Resources\\PublisherResource.php"
-			],
-			[
 				"developerres",
 				"app\\Http\\Resources\\DeveloperResource.php"
+			],
+			[
+				"publisherres",
+				"app\\Http\\Resources\\PublisherResource.php"
 			],
 			[
 				"gamec",
@@ -1407,8 +1409,8 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 319.0,
+	"side_bar_visible": false,
+	"side_bar_width": 285.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

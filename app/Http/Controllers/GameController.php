@@ -12,6 +12,8 @@ use App\Game;
 use App\GameGenre;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
+use App\Http\Resources\DeveloperResource;
+use App\Http\Resources\PublisherResource;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -331,7 +333,8 @@ class GameController extends ApiController
         if ($games->isEmpty())
         {
 
-            return $this->respondSuccess('There are no games');
+            // return $this->respondSuccess('There are no games');
+            return new DeveloperResource($developer);
 
         }
 
@@ -359,7 +362,8 @@ class GameController extends ApiController
         if ($games->isEmpty())
         {
 
-            return $this->respondSuccess('There are no games');
+            // return $this->respondSuccess('There are no games');
+            return new PublisherResource($publisher);
 
         }
 
