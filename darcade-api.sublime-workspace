@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_id"
+			],
+			[
 				"browse",
 				"browse-div"
 			],
@@ -78,10 +82,6 @@
 			[
 				"number",
 				"number_of_reviews"
-			],
-			[
-				"user",
-				"user_games"
 			],
 			[
 				"user_",
@@ -333,20 +333,28 @@
 			}
 		},
 		{
-			"file": "app/Http/Controllers/GameController.php",
+			"file": "app/Http/Controllers/CartController.php",
 			"settings":
 			{
-				"buffer_size": 9882,
+				"buffer_size": 5496,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Game.php",
+			"file": "app/Http/Resources/CartResource.php",
 			"settings":
 			{
-				"buffer_size": 2000,
+				"buffer_size": 624,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/User.php",
+			"settings":
+			{
+				"buffer_size": 1917,
 				"line_ending": "Unix"
 			}
 		}
@@ -512,7 +520,14 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
+		"/C/Users/Uki/darcade-api/app/Cart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/Auth/LoginController.php",
+		"/C/Users/Uki/darcade-api/routes/web.php",
+		"/C/Users/Uki/darcade-api/app/Game.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/passport/src/Http/Controllers/AuthorizationController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/DeveloperResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/PublisherResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/GenreController.php",
@@ -601,7 +616,6 @@
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Http/FileHelpers.php",
 		"/C/Users/Uki/darcade-api/vendor/league/flysystem/src/File.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemAdapter.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
 		"/C/Users/Uki/darcade-api/vendor/defuse/php-encryption/src/File.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Support/Facades/Storage.php",
 		"/C/Users/Uki/darcade-api/tests/Unit/UserTest.php",
@@ -626,7 +640,6 @@
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGameGenre.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php",
 		"/C/Users/Uki/darcade-api/app/Policies/GamePolicy.php",
-		"/C/Users/Uki/darcade-api/app/Game.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGame.php",
 		"/C/Users/Uki/darcade-api/app/Screenshot.php",
 		"/C/Users/Uki/darcade-api/app/Role.php",
@@ -634,12 +647,7 @@
 		"/C/Users/Uki/darcade-api/app/Publisher.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PublisherController.php",
 		"/C/Users/Uki/darcade-api/app/Order.php",
-		"/C/Users/Uki/darcade-api/app/Library.php",
-		"/C/Users/Uki/darcade-api/app/Genre.php",
-		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/DeveloperController.php",
-		"/C/Users/Uki/darcade-api/app/Developer.php",
-		"/C/Users/Uki/darcade-api/app/Cart.php"
+		"/C/Users/Uki/darcade-api/app/Library.php"
 	],
 	"find":
 	{
@@ -731,7 +739,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -747,13 +755,73 @@
 						"selection":
 						[
 							[
-								769,
-								769
+								1148,
+								1148
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/CartController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2133,
+								2133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1836.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Resources/CartResource.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								602,
+								602
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -763,20 +831,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/GameController.php",
+					"buffer": 3,
+					"file": "app/User.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9882,
+						"buffer_size": 1917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9853,
-								9853
+								1568,
+								1568
 							]
 						],
 						"settings":
@@ -786,40 +854,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8041.0,
+						"translation.y": 1260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Game.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2000,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1408,
-								1408
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1350.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -873,6 +911,38 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"cart.",
+				"app\\Cart.php"
+			],
+			[
+				"cartres",
+				"app\\Http\\Resources\\CartResource.php"
+			],
+			[
+				"gameres",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"user.p",
+				"app\\User.php"
+			],
+			[
+				"cartcon",
+				"app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"logincont",
+				"app\\Http\\Controllers\\Auth\\LoginController.php"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"authorizationcon",
+				"vendor\\laravel\\passport\\src\\Http\\Controllers\\AuthorizationController.php"
+			],
 			[
 				"game.php",
 				"app\\Game.php"
@@ -928,10 +998,6 @@
 			[
 				"footer.",
 				"resources\\views\\layouts\\footer.blade.php"
-			],
-			[
-				"web.php",
-				"routes\\web.php"
 			],
 			[
 				"web.o",
@@ -1080,10 +1146,6 @@
 			[
 				"user",
 				"app\\User.php"
-			],
-			[
-				"gameres",
-				"app\\Http\\Resources\\GameResource.php"
 			],
 			[
 				"user.php",
@@ -1358,32 +1420,8 @@
 				"app\\Role.php"
 			],
 			[
-				"cartcon",
-				"app\\Http\\Controllers\\CartController.php"
-			],
-			[
 				"reviewpo",
 				"app\\Policies\\ReviewPolicy.php"
-			],
-			[
-				"authser",
-				"app\\Providers\\AuthServiceProvider.php"
-			],
-			[
-				"wish.",
-				"app\\Wish.php"
-			],
-			[
-				"genreres",
-				"app\\Http\\Resources\\GenreResource.php"
-			],
-			[
-				"gamerou",
-				"app\\Http\\Resources\\GameResource.php"
-			],
-			[
-				"storewish",
-				"app\\Http\\Requests\\StoreWish.php"
 			]
 		],
 		"width": 0.0
@@ -1413,7 +1451,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 285.0,
 	"status_bar_visible": true,
 	"template_settings":

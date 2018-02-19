@@ -12,6 +12,8 @@ use App\Order;
 use App\Purchase;
 
 use App\Http\Resources\GameResource;
+use App\Http\Resources\CartResource;
+
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\StoreCart;
@@ -32,16 +34,21 @@ class CartController extends ApiController
     public function index(Request $request)
     {
 
-        $cart_content = User::find(Auth::id())->cart;
+        $user_id = Auth::id();
 
-        if ($cart_content->isEmpty())
+        $cart_content = Cart::where('user_id', '=', $user_id)
+            ->join('games', 'carts.game_id', '=', 'games.id')
+            ->select('games.*', 'carts.id as cart_id')
+            ->get();
+
+        if (count($cart_content) < 1)
         {
 
             return $this->respondSuccess('Your cart is empty');
 
         }
 
-        return GameResource::collection($cart_content);
+        return CartResource::collection($cart_content);
 
     }
 
