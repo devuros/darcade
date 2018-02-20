@@ -24,6 +24,7 @@ Route::get('games/{id}/genres', 'GenreController@showGameGenres')->name('game.ge
 
 Route::apiResource('screenshots', 'ScreenshotController')->only(['index', 'store', 'show', 'destroy']);
 Route::get('games/{id}/screenshots', 'ScreenshotController@showGameScreenshots')->name('game.screenshots');
+Route::get('image/{path}', 'ScreenshotController@image');
 
 Route::apiResource('cart', 'CartController')->only(['index', 'store', 'destroy']);
 Route::delete('cart', 'CartController@empty')->name('cart.empty');

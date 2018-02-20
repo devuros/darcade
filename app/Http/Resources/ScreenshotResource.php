@@ -18,7 +18,7 @@ class ScreenshotResource extends Resource
         return [
 
             'id'=> $this->id,
-            'source'=> $this->path,
+            'source'=> 'http://localhost:8000/storage/'.$this->path,
             'game'=> $this->game_id
 
         ];

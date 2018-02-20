@@ -214,4 +214,23 @@ class ScreenshotController extends ApiController
 
     }
 
+    /**
+     * Return path to the image
+     */
+    public function image($path)
+    {
+
+        // http://localhost:8000/storage/
+
+        // games/Ik7Z1l5V7IJNK83KN19J0Sk6Jz77C3emqL5eV657.jpeg
+        // games/0yBNsIfVIKify5jBsl87NDK7HjoI9S5s8X434jts.ico
+
+        return $this->respondCustom([
+
+            'path'=> 'true'
+
+        ]);
+
+    }
+
 }

@@ -23,7 +23,7 @@ class GameResource extends Resource
 
             'id'=> $this->id,
             'title'=> $this->title,
-            'image'=> $this->image,
+            'image'=> 'http://localhost:8000/storage/'.$this->image,
             'release_date'=> $this->release_date,
             'description'=> $this->description,
             'about'=> $this->about,

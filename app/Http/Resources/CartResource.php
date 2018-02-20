@@ -19,7 +19,7 @@ class CartResource extends Resource
 
             'id'=> $this->id,
             'title'=> $this->title,
-            'image'=> $this->image,
+            'image'=> 'http://localhost:8000/storage/'.$this->image,
             'base_price'=> $this->base_price,
             'sale_price'=> $this->sale_price,
             'is_on_sale'=> $this->is_on_sale,
