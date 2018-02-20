@@ -21,7 +21,8 @@ class PurchaseResource extends Resource
             'order'=> $this->order_id,
             'date'=> $this->created_at,
             'item'=> $this->title,
-            'total'=> $this->actual_price
+            'total'=> $this->actual_price,
+            'game_id'=> $this->game_id
 
         ];
 

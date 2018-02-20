@@ -88,7 +88,7 @@ class User extends Authenticatable
         return $this->purchases()
             ->join('games', 'purchases.game_id', '=', 'games.id')
             ->latest()
-            ->select('purchases.*', 'orders.created_at', 'games.title');
+            ->select('purchases.*', 'orders.created_at', 'games.title', 'games.id as game_id');
 
     }
 

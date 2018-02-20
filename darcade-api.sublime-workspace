@@ -333,20 +333,10 @@
 			}
 		},
 		{
-			"file": "app/Http/Controllers/CartController.php",
+			"file": "app/Http/Controllers/PurchaseController.php",
 			"settings":
 			{
-				"buffer_size": 5496,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Resources/CartResource.php",
-			"settings":
-			{
-				"buffer_size": 624,
-				"encoding": "UTF-8",
+				"buffer_size": 1934,
 				"line_ending": "Unix"
 			}
 		},
@@ -354,7 +344,8 @@
 			"file": "app/User.php",
 			"settings":
 			{
-				"buffer_size": 1917,
+				"buffer_size": 1940,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -520,6 +511,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Uki/darcade-api/app/Http/Resources/PurchaseResource.php",
+		"/C/Users/Uki/darcade-api/app/User.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/CartResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
 		"/C/Users/Uki/darcade-api/app/Cart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
@@ -599,8 +594,6 @@
 		"/C/Users/Uki/darcade-api/database/factories/GameFactory.php",
 		"/C/Users/Uki/darcade-api/database/factories/WishFactory.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/LibraryController.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
-		"/C/Users/Uki/darcade-api/app/User.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreCart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PurchaseController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
@@ -645,9 +638,7 @@
 		"/C/Users/Uki/darcade-api/app/Role.php",
 		"/C/Users/Uki/darcade-api/app/Purchase.php",
 		"/C/Users/Uki/darcade-api/app/Publisher.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/PublisherController.php",
-		"/C/Users/Uki/darcade-api/app/Order.php",
-		"/C/Users/Uki/darcade-api/app/Library.php"
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/PublisherController.php"
 	],
 	"find":
 	{
@@ -665,6 +656,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"game_id",
 			"UT",
 			"games",
 			"sale_price",
@@ -755,8 +747,8 @@
 						"selection":
 						[
 							[
-								1148,
-								1148
+								98,
+								98
 							]
 						],
 						"settings":
@@ -764,7 +756,7 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 216.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -772,49 +764,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/Http/Controllers/CartController.php",
+					"file": "app/Http/Controllers/PurchaseController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5496,
+						"buffer_size": 1934,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2133,
-								2133
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1836.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Http/Resources/CartResource.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 624,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								602,
-								602
+								38,
+								38
 							]
 						],
 						"settings":
@@ -831,20 +793,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "app/User.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1917,
+						"buffer_size": 1940,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1568,
-								1568
+								21,
+								21
 							]
 						],
 						"settings":
@@ -854,10 +816,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1260.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -911,6 +873,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"purchaseres",
+				"app\\Http\\Resources\\PurchaseResource.php"
+			],
+			[
+				"purchasec",
+				"app\\Http\\Controllers\\PurchaseController.php"
+			],
 			[
 				"cart.",
 				"app\\Cart.php"
@@ -1260,10 +1230,6 @@
 				"app\\Http\\Controllers\\UserController.php"
 			],
 			[
-				"purchasec",
-				"app\\Http\\Controllers\\PurchaseController.php"
-			],
-			[
 				"publisherc",
 				"app\\Http\\Controllers\\PublisherController.php"
 			],
@@ -1418,10 +1384,6 @@
 			[
 				"role.",
 				"app\\Role.php"
-			],
-			[
-				"reviewpo",
-				"app\\Policies\\ReviewPolicy.php"
 			]
 		],
 		"width": 0.0
