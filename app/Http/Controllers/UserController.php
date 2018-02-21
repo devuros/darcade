@@ -9,6 +9,7 @@ use App\User;
 use App\Http\Resources\UserResource;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use App\Http\Requests\StoreUser;
 
@@ -18,7 +19,7 @@ class UserController extends ApiController
     public function __construct()
     {
 
-        $this->middleware('auth:api')->except('store');
+        $this->middleware('auth:api')->except(['store', 'authenticate']);
 
     }
 
@@ -160,4 +161,45 @@ class UserController extends ApiController
         }
 
     }
+
+    /**
+     * Validate user's credentials
+     */
+    public function authenticate(Request $request)
+    {
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = \DB::table('users')
+            ->where('email', '=', $email)
+            ->first();
+
+        if (Hash::check($password, $user->password)) {
+
+            $user_model = User::find($user->id);
+
+            $personal_access_token = $user_model->createToken('name')->accessToken;
+
+            return $this->respondCustom([
+
+                'token'=> $personal_access_token,
+                'user_id'=> $user->id,
+                'user_name'=> $user->name
+
+            ]);
+
+        }
+        else {
+
+            return $this->respondCustom([
+
+                'login'=> 'Credentials missmatch, check your input'
+
+            ]);
+
+        }
+
+    }
+
 }

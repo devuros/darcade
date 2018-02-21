@@ -2,6 +2,7 @@
 
 Route::apiResource('users', 'UserController')->only(['index', 'show', 'store', 'destroy']);
 Route::get('user', 'UserController@showCurrentUser');
+Route::post('auth', 'UserController@authenticate');
 
 Route::apiResource('games', 'GameController');
 Route::get('genres/{id}/games', 'GameController@showGenreGames')->name('genre.games');
