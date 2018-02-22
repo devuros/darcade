@@ -14,6 +14,9 @@ Route::post('game-genre', 'GameController@attachGenre');
 Route::get('games/under/10/{limit?}', 'GameController@showGamesUT');
 Route::get('games/under/25/{limit?}', 'GameController@showGamesUTF');
 Route::get('games/specials/sale/{limit?}', 'GameController@specials');
+Route::get('games/specials/featured', 'GameController@featured');
+Route::get('games/specials/new-releases', 'GameController@newReleases');
+Route::get('games/specials/top-sellers', 'GameController@topSellers');
 
 Route::apiResource('developers', 'DeveloperController');
 Route::get('games/{id}/developer', 'DeveloperController@showGameDeveloper')->name('game.developer');

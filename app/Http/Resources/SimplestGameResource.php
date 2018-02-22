@@ -4,9 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class SimpleGameResource extends Resource
+class SimplestGameResource extends Resource
 {
-
     public function toArray($request)
     {
 
@@ -18,10 +17,9 @@ class SimpleGameResource extends Resource
             'base_price'=> $this->base_price,
             'sale_price'=> $this->sale_price,
             'is_on_sale'=> $this->is_on_sale,
-            'genres'=> GenreResource::collection($this->genres)
+            'count'=> $this->count
 
         ];
 
     }
-
 }

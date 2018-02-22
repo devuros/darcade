@@ -13,6 +13,7 @@ use App\Genre;
 use App\Game;
 use App\GameGenre;
 use App\Http\Resources\SimpleGameResource;
+use App\Http\Resources\SimplestGameResource;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
 use App\Http\Resources\DeveloperResource;
@@ -355,7 +356,7 @@ class GameController extends ApiController
     /**
      * Get games priced under 10
      */
-    public function showGamesUT($limit = 10)
+    public function showGamesUT($limit = 12)
     {
 
         $games = Game::UnderTen()
@@ -369,31 +370,54 @@ class GameController extends ApiController
     /**
      * Get games priced under 25
      */
-    public function showGamesUTF($limit = 10)
+    public function showGamesUTF($limit = 12)
     {
-
         $games = Game::UnderTwentyFive()
             ->limit($limit)
             ->orderBy('base_price', 'desc')
             ->get();
 
         return SimpleGameResource::collection($games);
-
     }
 
     /**
      * Get games that are on sale
      */
-    public function specials($limit = 10)
+    public function specials($limit = 15)
     {
-
         $games = Game::OnSale()
             ->limit($limit)
             ->inRandomOrder()
             ->get();
 
         return SimpleGameResource::collection($games);
+    }
 
+    public function featured()
+    {
+        $games = Game::whereIn('id', [3, 14, 51])->get();
+
+        return GameResource::collection($games);
+    }
+
+    public function newReleases()
+    {
+        $games = Game::NewRelease()->get();
+
+        return GameResource::collection($games);
+    }
+
+    public function topSellers()
+    {
+        $top_sellers = \DB::table('purchases')
+            ->select('game_id', \DB::raw('count(game_id) as count'), 'games.*')
+            ->join('games', 'games.id', '=', 'purchases.game_id')
+            ->groupBy('game_id')
+            ->orderBy('count', 'desc')
+            ->limit(12)
+            ->get();
+
+        return SimplestGameResource::collection($top_sellers);
     }
 
 }

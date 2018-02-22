@@ -67,12 +67,12 @@ class Game extends Model
     }
 
     /**
-     * Get games which are max one month old
+     * Get games which are max five month old
      */
     public function scopeNewRelease($query)
     {
         $now = Carbon::now();
-        $month = Carbon::now()->subMonths(1);
+        $month = Carbon::now()->subMonths(5);
 
         return $query->whereBetween('release_date', [$month, $now]);
     }

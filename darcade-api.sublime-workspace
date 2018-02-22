@@ -335,16 +335,34 @@
 			"file": "routes/api.php",
 			"settings":
 			{
-				"buffer_size": 2868,
+				"buffer_size": 3167,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/ApiController.php",
+			"file": "app/Http/Controllers/GameController.php",
 			"settings":
 			{
-				"buffer_size": 3699,
+				"buffer_size": 10238,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Resources/SimplestGameResource.php",
+			"settings":
+			{
+				"buffer_size": 522,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Game.php",
+			"settings":
+			{
+				"buffer_size": 1745,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -511,22 +529,26 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Uki/darcade-api/app/Http/Resources/SimpleGameResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/SimplestGameResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/PurchaseResource.php",
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+		"/C/Users/Uki/darcade-api/app/Purchase.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/app/User.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/ApiController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/UserController.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/passport/src/ApiTokenCookieFactory.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
 		"/C/Users/Uki/darcade-api/database/factories/UserFactory.php",
 		"/C/Users/Uki/darcade-api/app/Game.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/passport/src/PersonalAccessClient.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/CartResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
-		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/ScreenshotResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ScreenshotController.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/ApiController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PurchaseController.php",
-		"/C/Users/Uki/darcade-api/app/Http/Resources/PurchaseResource.php",
 		"/C/Users/Uki/darcade-api/app/Cart.php",
 		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/Auth/LoginController.php",
@@ -634,15 +656,11 @@
 		"/C/Users/Uki/darcade-api/app/Http/Resources/ReviewResource.php",
 		"/C/Users/Uki/darcade-api/app/GameGenre.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGameGenre.php",
-		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php",
-		"/C/Users/Uki/darcade-api/app/Policies/GamePolicy.php",
-		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGame.php",
-		"/C/Users/Uki/darcade-api/app/Screenshot.php",
-		"/C/Users/Uki/darcade-api/app/Role.php"
+		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Pivot.php"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -656,6 +674,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cart_content",
+			"featured",
+			"newReleases",
+			"under",
 			"email",
 			"authenticate",
 			"email",
@@ -745,15 +767,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2868,
+						"buffer_size": 3167,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								438,
-								438
+								1181,
+								1181
 							]
 						],
 						"settings":
@@ -761,39 +783,100 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/Http/Controllers/ApiController.php",
+					"file": "app/Http/Controllers/GameController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3699,
+						"buffer_size": 10238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								108,
-								108
+								9808,
+								9808
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7111.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Resources/SimplestGameResource.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								500,
+								500
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Game.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1486,
+								1486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -848,6 +931,46 @@
 		"selected_items":
 		[
 			[
+				"simplest",
+				"app\\Http\\Resources\\SimplestGameResource.php"
+			],
+			[
+				"purchaseres",
+				"app\\Http\\Resources\\PurchaseResource.php"
+			],
+			[
+				"purchase",
+				"app\\Purchase.php"
+			],
+			[
+				"cartco",
+				"app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"user.php",
+				"app\\User.php"
+			],
+			[
+				"gameresou",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"simplegame",
+				"app\\Http\\Resources\\SimpleGameResource.php"
+			],
+			[
+				"gameres",
+				"app\\Http\\Resources\\GameResource.php"
+			],
+			[
+				"game.php",
+				"app\\Game.php"
+			],
+			[
+				"gamec",
+				"app\\Http\\Controllers\\GameController.php"
+			],
+			[
 				"reviewcon",
 				"app\\Http\\Controllers\\ReviewController.php"
 			],
@@ -856,16 +979,8 @@
 				"database\\factories\\UserFactory.php"
 			],
 			[
-				"game.php",
-				"app\\Game.php"
-			],
-			[
 				"cartc",
 				"app\\Http\\Controllers\\CartController.php"
-			],
-			[
-				"user.php",
-				"app\\User.php"
 			],
 			[
 				"personalacess",
@@ -880,14 +995,6 @@
 				"app\\Http\\Resources\\CartResource.php"
 			],
 			[
-				"gameres",
-				"app\\Http\\Resources\\GameResource.php"
-			],
-			[
-				"gamec",
-				"app\\Http\\Controllers\\GameController.php"
-			],
-			[
 				"reviewc",
 				"app\\Http\\Controllers\\ReviewController.php"
 			],
@@ -898,10 +1005,6 @@
 			[
 				"screenshotc",
 				"app\\Http\\Controllers\\ScreenshotController.php"
-			],
-			[
-				"purchaseres",
-				"app\\Http\\Resources\\PurchaseResource.php"
 			],
 			[
 				"purchasec",
@@ -1208,10 +1311,6 @@
 				"app\\Http\\Requests\\StoreGameGenre.php"
 			],
 			[
-				"gameresou",
-				"app\\Http\\Resources\\GameResource.php"
-			],
-			[
 				"publisherc",
 				"app\\Http\\Controllers\\PublisherController.php"
 			],
@@ -1230,10 +1329,6 @@
 			[
 				"developerc",
 				"app\\Http\\Controllers\\DeveloperController.php"
-			],
-			[
-				"cartco",
-				"app\\Http\\Controllers\\CartController.php"
 			],
 			[
 				"user.ph",
@@ -1346,18 +1441,6 @@
 			[
 				"storeuser",
 				"app\\Http\\Requests\\StoreUser.php"
-			],
-			[
-				"userres",
-				"app\\Http\\Resources\\UserResource.php"
-			],
-			[
-				"roleres",
-				"app\\Http\\Resources\\RoleResource.php"
-			],
-			[
-				"rolepol",
-				"app\\Policies\\RolePolicy.php"
 			]
 		],
 		"width": 0.0
