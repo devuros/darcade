@@ -389,6 +389,7 @@ class GameController extends ApiController
 
         $games = Game::OnSale()
             ->limit($limit)
+            ->inRandomOrder()
             ->get();
 
         return SimpleGameResource::collection($games);
