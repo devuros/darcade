@@ -10,12 +10,7 @@ use App\Http\Resources\PublisherResource;
 
 class GameResource extends Resource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
+
     public function toArray($request)
     {
 

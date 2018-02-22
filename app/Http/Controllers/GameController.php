@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use App\Screenshot;
 use App\Publisher;
@@ -10,13 +12,11 @@ use App\Developer;
 use App\Genre;
 use App\Game;
 use App\GameGenre;
+use App\Http\Resources\SimpleGameResource;
 use App\Http\Resources\GameResource;
 use App\Http\Resources\GameCollection;
 use App\Http\Resources\DeveloperResource;
 use App\Http\Resources\PublisherResource;
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
@@ -25,51 +25,34 @@ use App\Http\Requests\UpdateGameIsOnSale;
 
 class GameController extends ApiController
 {
-
     public function __construct()
     {
-
         $this->middleware('auth:api')->only(['store', 'update', 'destroy', 'updateGameIsOnSale', 'attachGenre']);
-
     }
 
-    /**
-     * Get all games
-     */
     public function index()
     {
-
         $games = Game::all();
 
         return GameResource::collection($games);
-
     }
 
-    /**
-     * Store a newly created game
-     */
     public function store(StoreGame $request)
     {
 
         if (Auth::user()->cant('create', 'App\Game'))
         {
-
             return $this->respondForbidden('You dont have the permissions');
-
         }
 
         if (!$request->hasFile('image'))
         {
-
             return $this->respondInternalError('No image uploaded');
-
         }
 
         if (!$request->file('image')->isValid())
         {
-
             return $this->respondInternalError('Selected image is not valid');
-
         }
 
         \DB::beginTransaction();
@@ -101,19 +84,13 @@ class GameController extends ApiController
         }
         catch (\Throwable $e)
         {
-
             \DB::rollback();
 
             return $this->respondInternalError('Something went wrong, action could not be completed');
-
         }
 
     }
 
-
-    /**
-     * Get one game
-     */
     public function show($id)
     {
 
@@ -121,18 +98,13 @@ class GameController extends ApiController
 
         if (empty($game))
         {
-
             return $this->respondNotFound('Sorry, the requested game was not found');
-
         }
 
         return new GameResource($game);
 
     }
 
-    /**
-     * Update the specified game
-     */
     public function update(UpdateGame $request, $id)
     {
 
@@ -140,75 +112,56 @@ class GameController extends ApiController
 
         if (empty($game))
         {
-
             return $this->respondNotFound('Sorry, the requested game was not found');
-
         }
 
         if (Auth::user()->cant('update', $game))
         {
-
             return $this->respondForbidden('You dont have the permissions');
-
         }
 
         \DB::beginTransaction();
 
         try
         {
-
             // check whether the user wants to change the game's image
 
             $action = '';
 
             if ($request->has('image'))
             {
-
                 if ($request->hasFile('image'))
                 {
-
                     $action = 'image field is present';
 
                     if ($request->file('image')->isValid())
                     {
-
                         $action = 'image field is present and valid';
 
                         if (Storage::disk('public')->exists($game->image))
                         {
-
                             Storage::disk('public')->delete($game->image);
 
                             $path = $request->image->store('games', 'public');
 
                             $action = 'old image was deleted, new one is uploaded';
-
                         }
                         else
                         {
-
                             return $this->respondConflict('old image could not be found on disk');
-
                         }
-
                     }
                     else
                     {
-
                         return $this->respondInternalError('Selected image is not valid');
-
                     }
-
                 }
-
             }
             else
             {
-
                 $path = $game->image;
 
                 $action = 'image field is not present';
-
             }
 
             $game->title = $request->title;
@@ -230,18 +183,13 @@ class GameController extends ApiController
         }
         catch (\Throwable $e)
         {
-
             \DB::rollback();
 
             return $this->respondInternalError('Something went wrong, action could not be completed');
-
         }
 
     }
 
-    /**
-     * Remove the specified game
-     */
     public function destroy($id)
     {
 
@@ -249,16 +197,12 @@ class GameController extends ApiController
 
         if (empty($game))
         {
-
             return $this->respondNotFound('Sorry, the requested game was not found');
-
         }
 
         if (Auth::user()->cant('delete', $game))
         {
-
             return $this->respondForbidden('You dont have the permissions');
-
         }
 
         \DB::beginTransaction();
@@ -272,22 +216,16 @@ class GameController extends ApiController
 
             return $this->respondSuccess('Game successfully removed');
 
-
         }
         catch (\Throwable $e)
         {
-
             \DB::rollback();
 
             return $this->respondInternalError('Something went wrong, action could not be completed');
-
         }
 
     }
 
-    /**
-     * Get the requested genre games
-     */
     public function showGenreGames($id)
     {
 
@@ -295,27 +233,20 @@ class GameController extends ApiController
 
         if (empty($genre))
         {
-
             return $this->respondNotFound('Requested genre not found');
-
         }
 
         $games = $genre->games;
 
         if ($games->isEmpty())
         {
-
             return $this->respondSuccess('There are no games');
-
         }
 
         return GameResource::collection($games);
 
     }
 
-    /**
-     * Get the requested developer's games
-     */
     public function showDeveloperGames($id)
     {
 
@@ -323,28 +254,20 @@ class GameController extends ApiController
 
         if (empty($developer))
         {
-
             return $this->respondNotFound('Requested developer not found');
-
         }
 
         $games = $developer->games;
 
         if ($games->isEmpty())
         {
-
-            // return $this->respondSuccess('There are no games');
             return new DeveloperResource($developer);
-
         }
 
         return GameResource::collection($games);
 
     }
 
-    /**
-     * Get the requested publisher's games
-     */
     public function showPublisherGames($id)
     {
 
@@ -352,28 +275,20 @@ class GameController extends ApiController
 
         if (empty($publisher))
         {
-
             return $this->respondNotFound('Requested publisher not found');
-
         }
 
         $games = $publisher->games;
 
         if ($games->isEmpty())
         {
-
-            // return $this->respondSuccess('There are no games');
             return new PublisherResource($publisher);
-
         }
 
         return GameResource::collection($games);
 
     }
 
-    /**
-     * Get the requested screenshot game
-     */
     public function showScreenshotGame($id)
     {
 
@@ -381,27 +296,20 @@ class GameController extends ApiController
 
         if (empty($screenshot))
         {
-
             return $this->respondNotFound('Requested screenshot not found');
-
         }
 
         $game = $screenshot->game;
 
         if (empty($game))
         {
-
             return $this->respondSuccess('There is no game');
-
         }
 
         return new GameResource($game);
 
     }
 
-    /**
-     * Change if the game is on sale or not
-     */
     public function updateGameIsOnSale(UpdateGameIsOnSale $request, $id)
     {
 
@@ -409,16 +317,12 @@ class GameController extends ApiController
 
         if (empty($game))
         {
-
             return $this->respondNotFound('Sorry, the requested game was not found');
-
         }
 
         if (Auth::user()->cant('update', $game))
         {
-
             return $this->respondForbidden('You dont have the permissions');
-
         }
 
         $game->is_on_sale = $request->is_on_sale;
@@ -429,17 +333,12 @@ class GameController extends ApiController
 
     }
 
-    /**
-     * Attach a genre to the game
-     */
     public function attachGenre(StoreGameGenre $request)
     {
 
         if (Auth::user()->cant('create', 'App\Game'))
         {
-
             return $this->respondForbidden('You dont have the permissions');
-
         }
 
         $game_genre = new GameGenre;
@@ -453,39 +352,46 @@ class GameController extends ApiController
 
     }
 
-    //
-
     /**
      * Get games priced under 10
      */
-    public function showGamesUT()
+    public function showGamesUT($limit = 10)
     {
 
-        $games = Game::UnderTen()->get();
+        $games = Game::UnderTen()
+            ->limit($limit)
+            ->get();
 
-        return GameResource::collection($games);
+        return SimpleGameResource::collection($games);
 
     }
 
     /**
      * Get games priced under 25
      */
-    public function showGamesUTF()
+    public function showGamesUTF($limit = 10)
     {
 
-        $games = Game::UnderTwentyFive()->get();
+        $games = Game::UnderTwentyFive()
+            ->limit($limit)
+            ->orderBy('base_price', 'desc')
+            ->get();
 
-        return GameResource::collection($games);
+        return SimpleGameResource::collection($games);
 
     }
 
     /**
      * Get games that are on sale
      */
-    public function specials()
+    public function specials($limit = 10)
     {
 
-        //
+        $games = Game::OnSale()
+            ->limit($limit)
+            ->get();
+
+        return SimpleGameResource::collection($games);
 
     }
 
