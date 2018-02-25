@@ -152,7 +152,7 @@ class ReviewController extends ApiController
             return $this->respondNotFound('Requested game not found');
         }
 
-        $reviews = $game->reviews;
+        $reviews = $game->reviewsWithUsers;
 
         if ($reviews->isEmpty())
         {
@@ -176,8 +176,7 @@ class ReviewController extends ApiController
         if ($game_reviews == 0)
         {
             return $this->respondCustom([
-                'count'=> null,
-                'positive_percentage'=> null
+                'stats'=> 'There are no reviews'
             ]);
         }
 
@@ -186,16 +185,14 @@ class ReviewController extends ApiController
         if ($recommended_game_reviews == 0)
         {
             return $this->respondCustom([
-                'count'=> $game_reviews,
-                'positive_percentage'=> null
+                'stats'=> '0% positive ('.$game_reviews.' total)'
             ]);
         }
 
         $positive_percentage = round($recommended_game_reviews/$game_reviews, 2)*100;
 
         return $this->respondCustom([
-            'count'=> $game_reviews,
-            'positive_percentage'=> $positive_percentage
+            'stats'=> $positive_percentage.'% positive ('.$game_reviews.' total)'
         ]);
     }
 

@@ -40,6 +40,13 @@ class Game extends Model
         return $this->hasMany('App\Review');
     }
 
+    public function reviewsWithUsers()
+    {
+        return $this->reviews()
+            ->join('users', 'reviews.user_id', '=', 'users.id')
+            ->select('reviews.*', 'users.name');
+    }
+
     public function scopeOnSale($query)
     {
         return $query->where('is_on_sale', '1');

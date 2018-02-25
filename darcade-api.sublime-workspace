@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"positive_percentage"
+			],
+			[
 				"peron",
 				"personal_access_token"
 			],
@@ -339,23 +343,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "app/Http/Controllers/GameController.php",
-			"settings":
-			{
-				"buffer_size": 10205,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/UserController.php",
-			"settings":
-			{
-				"buffer_size": 3584,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -516,12 +503,19 @@
 	"expanded_folders":
 	[
 		"/C/Users/Uki/darcade-api",
-		"/C/Users/Uki/darcade-api/database"
+		"/C/Users/Uki/darcade-api/app",
+		"/C/Users/Uki/darcade-api/app/Http",
+		"/C/Users/Uki/darcade-api/app/Http/Resources"
 	],
 	"file_history":
 	[
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/UserReviewResource.php",
 		"/C/Users/Uki/darcade-api/app/Game.php",
+		"/C/Users/Uki/darcade-api/app/User.php",
+		"/C/Users/Uki/darcade-api/app/Http/Resources/UserResource.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/GameController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Controllers/UserController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/UpdateGame.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGame.php",
@@ -529,10 +523,8 @@
 		"/C/Users/Uki/darcade-api/database/migrations/2018_02_25_113310_alter_games_table.php",
 		"/C/Users/Uki/darcade-api/database/migrations/2017_12_27_220513_create_games_table.php",
 		"/C/Users/Uki/darcade-api/database/migrations/2018_01_16_192527_alter_games_table.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/UserController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ScreenshotController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/RoleController.php",
-		"/C/Users/Uki/darcade-api/app/Http/Controllers/ReviewController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PurchaseController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/PublisherController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/LibraryController.php",
@@ -585,8 +577,6 @@
 		"/C/Users/Uki/darcade-api/database/factories/DeveloperFactory.php",
 		"/C/Users/Uki/darcade-api/database/factories/CartFactory.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/WishResource.php",
-		"/C/Users/Uki/darcade-api/app/Http/Resources/UserResource.php",
-		"/C/Users/Uki/darcade-api/app/Http/Resources/UserReviewResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/SimplestGameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/SimpleGameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/ScreenshotResource.php",
@@ -633,7 +623,6 @@
 		"/C/Users/Uki/darcade-api/app/Policies/CartPolicy.php",
 		"/C/Users/Uki/darcade-api/app/Policies/DeveloperPolicy.php",
 		"/C/Users/Uki/darcade-api/app/Wish.php",
-		"/C/Users/Uki/darcade-api/app/User.php",
 		"/C/Users/Uki/darcade-api/app/Screenshot.php",
 		"/C/Users/Uki/darcade-api/app/Role.php",
 		"/C/Users/Uki/darcade-api/app/Review.php",
@@ -665,6 +654,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"games",
+			"PublisherResource",
+			"developer",
 			"games",
 			"cart_content",
 			"is_on_sale",
@@ -754,7 +746,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -770,8 +762,8 @@
 						"selection":
 						[
 							[
-								152,
-								152
+								98,
+								98
 							]
 						],
 						"settings":
@@ -780,66 +772,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/GameController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10205,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								690,
-								690
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Http/Controllers/UserController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3584,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2992,
-								2992
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1881.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -897,6 +829,14 @@
 		"selected_items":
 		[
 			[
+				"user.php",
+				"app\\User.php"
+			],
+			[
+				"reviewcon",
+				"app\\Http\\Controllers\\ReviewController.php"
+			],
+			[
 				"gamec",
 				"app\\Http\\Controllers\\GameController.php"
 			],
@@ -933,10 +873,6 @@
 				"app\\Http\\Controllers\\CartController.php"
 			],
 			[
-				"user.php",
-				"app\\User.php"
-			],
-			[
 				"gameresou",
 				"app\\Http\\Resources\\GameResource.php"
 			],
@@ -951,10 +887,6 @@
 			[
 				"game.php",
 				"app\\Game.php"
-			],
-			[
-				"reviewcon",
-				"app\\Http\\Controllers\\ReviewController.php"
 			],
 			[
 				"userfa",
