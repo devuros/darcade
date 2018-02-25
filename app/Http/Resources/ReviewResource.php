@@ -9,11 +9,12 @@ class ReviewResource extends Resource
     public function toArray($request)
     {
         return [
-            'image'=> $this->image,
+            'image'=> 'http://localhost:8000/storage/'.$this->image,
             'title'=> $this->title,
             'recommended'=> $this->recommended,
             'body'=> $this->body,
-            'created'=> $this->created_at
+            'created'=> $this->created_at,
+            'game_id'=> $this->game_id
         ];
     }
 
