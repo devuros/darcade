@@ -116,6 +116,13 @@ class UserController extends ApiController
             ->where('email', '=', $email)
             ->first();
 
+        if (count($user) != 1)
+        {
+            return $this->respondCustom([
+                'login'=> 'Credentials missmatch, check your input'
+            ]);
+        }
+
         if (Hash::check($password, $user->password))
         {
             $user_model = User::find($user->id);
