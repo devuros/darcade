@@ -12,64 +12,30 @@ class WishPolicy
 
     public function before($user, $ability)
     {
-
         if ($user->isAdmin())
         {
-
             return true;
-
         }
-
     }
 
-    /**
-     * Determine whether the user can view the wish.
-     *
-     * @param  \App\User  $user
-     * @param  \App\Wish  $wish
-     * @return mixed
-     */
     public function view(User $user, Wish $wish)
     {
         //
     }
 
-    /**
-     * Determine whether the user can create wishes.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
     public function create(User $user)
     {
-
         return true;
-
     }
 
-    /**
-     * Determine whether the user can update the wish.
-     *
-     * @param  \App\User  $user
-     * @param  \App\Wish  $wish
-     * @return mixed
-     */
     public function update(User $user, Wish $wish)
     {
         //
     }
 
-    /**
-     * Determine whether the user can delete the wish.
-     *
-     * @param  \App\User  $user
-     * @param  \App\Wish  $wish
-     * @return mixed
-     */
     public function delete(User $user, Wish $wish)
     {
-
         return $user->id === $wish->user_id;
-
     }
+
 }

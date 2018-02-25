@@ -14,9 +14,7 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     protected $casts = ['created_at'=> 'string'];
 
@@ -55,9 +53,6 @@ class User extends Authenticatable
         return $this->hasManyThrough('App\Purchase', 'App\Order');
     }
 
-    /**
-     * Get all purchases for all orders made by the user
-     */
     public function userPurchases()
     {
         return $this->purchases()

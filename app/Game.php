@@ -9,7 +9,6 @@ use Carbon\Carbon;
 
 class Game extends Model
 {
-
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
@@ -66,9 +65,6 @@ class Game extends Model
             });
     }
 
-    /**
-     * Get games which are max five month old
-     */
     public function scopeNewRelease($query)
     {
         $now = Carbon::now();
