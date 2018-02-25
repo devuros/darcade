@@ -73,6 +73,11 @@ class Game extends Model
         return $query->whereBetween('release_date', [$month, $now]);
     }
 
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', '1');
+    }
+
     public function scopeDeletedGames($query)
     {
         return $query->onlyTrashed();

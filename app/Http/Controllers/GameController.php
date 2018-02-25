@@ -70,6 +70,7 @@ class GameController extends ApiController
             $game->base_price = $request->base_price;
             $game->sale_price = $request->sale_price;
             $game->is_on_sale = $request->is_on_sale;
+            $game->is_featured = false;
             $game->save();
 
             \DB::commit();
@@ -348,7 +349,12 @@ class GameController extends ApiController
 
     public function featured()
     {
-        $games = Game::whereIn('id', [3, 14, 51])->get();
+        $games = Game::Featured()->get();
+
+        if (count($games) < 1)
+        {
+            return $this->respondNotFound('Sorry, no featured games found');
+        }
 
         return GameResource::collection($games);
     }
