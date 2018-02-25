@@ -93,7 +93,6 @@ class ReviewController extends ApiController
 
         $review->recommended = $request->recommended;
         $review->body = $request->body;
-
         $review->save();
 
         return $this->respondSuccess('Review updated successfully');
@@ -177,10 +176,8 @@ class ReviewController extends ApiController
         if ($game_reviews == 0)
         {
             return $this->respondCustom([
-
                 'count'=> null,
                 'positive_percentage'=> null
-
             ]);
         }
 
@@ -189,20 +186,16 @@ class ReviewController extends ApiController
         if ($recommended_game_reviews == 0)
         {
             return $this->respondCustom([
-
                 'count'=> $game_reviews,
                 'positive_percentage'=> null
-
             ]);
         }
 
         $positive_percentage = round($recommended_game_reviews/$game_reviews, 2)*100;
 
         return $this->respondCustom([
-
             'count'=> $game_reviews,
             'positive_percentage'=> $positive_percentage
-
         ]);
     }
 

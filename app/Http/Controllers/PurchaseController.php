@@ -47,14 +47,4 @@ class PurchaseController extends ApiController
         return new PurchaseResource($purchase);
     }
 
-    public function update(Request $request, $id)
-    {
-        // route disabled
-    }
-
-    public function destroy($id)
-    {
-        // route disabled
-    }
-
 }

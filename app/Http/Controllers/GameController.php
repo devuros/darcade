@@ -82,7 +82,6 @@ class GameController extends ApiController
 
             return $this->respondInternalError('Something went wrong, action could not be completed');
         }
-
     }
 
     public function show($id)

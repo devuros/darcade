@@ -31,16 +31,6 @@ class LibraryController extends ApiController
         // route disabled
     }
 
-    public function show($id)
-    {
-        // route disabled
-    }
-
-    public function update(Request $request, $id)
-    {
-        // route disabled
-    }
-
     public function showUserLibrary($id)
     {
         $user = User::find($id);
