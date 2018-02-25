@@ -105,6 +105,7 @@ class WishController extends ApiController
         $wishes_with_date = Wish::where('user_id', $id)
             ->join('games', 'wishes.game_id', '=' , 'games.id')
             ->select('games.*', 'wishes.id as wish', 'wishes.created_at as created')
+            ->orderBy('created', 'desc')
             ->get();
 
         return WishResource::collection($wishes_with_date);
