@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Role;
 use App\User;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\SimpleUserResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUser;
@@ -14,7 +15,7 @@ class UserController extends ApiController
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['store', 'authenticate']);
+        $this->middleware('auth:api')->except(['show', 'store', 'authenticate']);
     }
 
     public function showCurrentUser()
@@ -54,11 +55,6 @@ class UserController extends ApiController
 
     public function show($id)
     {
-        if (Auth::user()->cant('show', 'App\User'))
-        {
-            return $this->respondForbidden('You dont have the permissions');
-        }
-
         $user = User::find($id);
 
         if (empty($user))
@@ -66,7 +62,7 @@ class UserController extends ApiController
             return $this->respondNotFound('Sorry, the requested user was not found');
         }
 
-        return new UserResource($user);
+        return new SimpleUserResource($user);
     }
 
     public function update(Request $request, $id)
