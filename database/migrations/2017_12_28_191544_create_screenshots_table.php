@@ -6,32 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateScreenshotsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('screenshots', function (Blueprint $table) {
-
+        Schema::create('screenshots', function (Blueprint $table)
+        {
             $table->increments('id');
-
             $table->string('path');
             $table->unsignedInteger('game_id');
-
             $table->timestamps();
-
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('screenshots');
     }
+
 }

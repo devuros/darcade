@@ -6,31 +6,19 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePublishersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('publishers', function (Blueprint $table) {
-
+        Schema::create('publishers', function (Blueprint $table)
+        {
             $table->increments('id');
-
             $table->string('publisher');
-
             $table->timestamps();
-
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('publishers');
     }
+
 }

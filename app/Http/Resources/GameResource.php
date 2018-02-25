@@ -3,19 +3,15 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
-
 use App\Http\Resources\GenreResource;
 use App\Http\Resources\DeveloperResource;
 use App\Http\Resources\PublisherResource;
 
 class GameResource extends Resource
 {
-
     public function toArray($request)
     {
-
         return [
-
             'id'=> $this->id,
             'title'=> $this->title,
             'image'=> 'http://localhost:8000/storage/'.$this->image,
@@ -28,8 +24,7 @@ class GameResource extends Resource
             'sale_price'=> $this->sale_price,
             'is_on_sale'=> $this->is_on_sale,
             'genres'=> GenreResource::collection($this->genres)
-
         ];
-
     }
+
 }

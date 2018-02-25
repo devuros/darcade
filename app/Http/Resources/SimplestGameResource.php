@@ -8,9 +8,7 @@ class SimplestGameResource extends Resource
 {
     public function toArray($request)
     {
-
         return [
-
             'id'=> $this->id,
             'title'=> $this->title,
             'image'=> 'http://localhost:8000/storage/'.$this->image,
@@ -18,8 +16,7 @@ class SimplestGameResource extends Resource
             'sale_price'=> $this->sale_price,
             'is_on_sale'=> $this->is_on_sale,
             'count'=> $this->count
-
         ];
-
     }
+
 }

@@ -6,32 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateWishesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('wishes', function (Blueprint $table) {
-
+        Schema::create('wishes', function (Blueprint $table)
+        {
             $table->increments('id');
-
             $table->unsignedInteger('game_id');
             $table->unsignedInteger('user_id');
-
             $table->timestamps();
-
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('wishes');
     }
+
 }

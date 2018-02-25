@@ -2,12 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Developer::class, function (Faker $faker) {
-
+$factory->define(App\Developer::class, function (Faker $faker)
+{
     return [
-
         'developer'=> $faker->company()
-
     ];
-
 });

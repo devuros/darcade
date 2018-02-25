@@ -6,35 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class RenameGameOrderTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         if (Schema::hasTable('game_order'))
         {
-
             Schema::rename('game_order', 'purchases');
-
         }
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-
         if (Schema::hasTable('purchases'))
         {
-
             Schema::rename('purchases', 'game_order');
-
         }
-
     }
+
 }

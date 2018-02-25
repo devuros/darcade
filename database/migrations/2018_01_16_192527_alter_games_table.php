@@ -6,35 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class AlterGamesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-
-        Schema::table('games', function ($table) {
-
+        Schema::table('games', function ($table)
+        {
             $table->softDeletes();
-
         });
-
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-
-        Schema::table('games', function ($table) {
-
+        Schema::table('games', function ($table)
+        {
             $table->dropSoftDeletes();
-
         });
-
     }
+
 }
