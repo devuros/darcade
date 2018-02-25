@@ -8,17 +8,11 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class GameTest extends TestCase
 {
-    /**
-     * Test game Skeleton RPG exists
-     */
     public function testSkeletonGameExists()
     {
-
     	$this->assertDatabaseHas('games', [
-
         	'title'=> 'Skeleton RPG'
-
         ]);
-
     }
+
 }

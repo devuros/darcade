@@ -51,7 +51,6 @@ class DatabaseSeeder extends Seeder
         //     WishesTableSeeder::class,
         //     ReviewsTableSeeder::class
         // ]);
-
     }
 
     public function cleanDatabase()

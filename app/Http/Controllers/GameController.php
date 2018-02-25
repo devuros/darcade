@@ -57,7 +57,6 @@ class GameController extends ApiController
 
         try
         {
-
             $path = $request->image->store('games', 'public');
 
             $game = new Game;

@@ -47,7 +47,6 @@ class UserController extends ApiController
             $timestamp = \Carbon\Carbon::now();
 
             $user->roles()->attach(1, ['created_at'=> $timestamp, 'updated_at'=> $timestamp]);
-
         });
 
         return $this->respondCreated('User successfully created');
