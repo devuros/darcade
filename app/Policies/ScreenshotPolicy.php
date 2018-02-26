@@ -20,24 +20,4 @@ class ScreenshotPolicy
         return false;
     }
 
-    public function view(User $user, Screenshot $screenshot)
-    {
-        //
-    }
-
-    public function create(User $user)
-    {
-        //
-    }
-
-    public function update(User $user, Screenshot $screenshot)
-    {
-        //
-    }
-
-    public function delete(User $user, Screenshot $screenshot)
-    {
-        //
-    }
-
 }

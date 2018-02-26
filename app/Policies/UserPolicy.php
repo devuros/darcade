@@ -15,35 +15,7 @@ class UserPolicy
         {
             return true;
         }
-    }
 
-    public function index(User $user)
-    {
-        return false;
-    }
-
-    public function show(User $user)
-    {
-        return false;
-    }
-
-    public function view(User $user, User $model)
-    {
-        //
-    }
-
-    public function store(User $user)
-    {
-        return false;
-    }
-
-    public function update(User $user, User $model)
-    {
-        return false;
-    }
-
-    public function delete(User $user, User $model)
-    {
         return false;
     }
 

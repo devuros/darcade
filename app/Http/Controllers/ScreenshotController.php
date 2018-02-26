@@ -104,7 +104,6 @@ class ScreenshotController extends ApiController
             if (Storage::disk('public')->exists($screenshot->path))
             {
                 Storage::disk('public')->delete($screenshot->path);
-
                 $screenshot->delete();
 
                 \DB::commit();

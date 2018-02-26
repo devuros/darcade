@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
 use Carbon\Carbon;
 
 class Game extends Model
@@ -12,7 +11,6 @@ class Game extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-
     protected $casts = ['is_on_sale'=> 'boolean'];
 
     public function developer()

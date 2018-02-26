@@ -16,35 +16,7 @@ class RolePolicy
         {
             return true;
         }
-    }
 
-    public function index(User $user)
-    {
-        return false;
-    }
-
-    public function showUserRoles(User $user)
-    {
-        return false;
-    }
-
-    public function view(User $user, Role $role)
-    {
-        return false;
-    }
-
-    public function create(User $user)
-    {
-        return false;
-    }
-
-    public function update(User $user, Role $role)
-    {
-        return false;
-    }
-
-    public function delete(User $user, Role $role)
-    {
         return false;
     }
 
