@@ -32,16 +32,6 @@ class RoleController extends ApiController
         return RoleResource::collection($roles);
     }
 
-    public function store(Request $request)
-    {
-        // route disabled
-    }
-
-    public function destroy($id)
-    {
-        // route disabled
-    }
-
     public function showUserRoles($id)
     {
         if (Auth::user()->cant('showUserRoles', 'App\Role'))

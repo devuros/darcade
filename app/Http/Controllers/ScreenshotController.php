@@ -78,11 +78,6 @@ class ScreenshotController extends ApiController
         return new ScreenshotResource($screenshot);
     }
 
-    public function update(Request $request, $id)
-    {
-        // route disabled
-    }
-
     public function destroy($id)
     {
         $screenshot = Screenshot::find($id);

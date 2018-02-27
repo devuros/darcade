@@ -24,7 +24,6 @@ class CartController extends ApiController
     public function index(Request $request)
     {
         $user_id = Auth::id();
-
         $cart_content = Cart::where('user_id', '=', $user_id)
             ->join('games', 'carts.game_id', '=', 'games.id')
             ->select('games.*', 'carts.id as cart_id')
@@ -66,11 +65,6 @@ class CartController extends ApiController
         $cart->save();
 
         return $this->respondCreated('Game successfully added to cart');
-    }
-
-    public function show($id)
-    {
-        // route disabled
     }
 
     public function destroy($id)

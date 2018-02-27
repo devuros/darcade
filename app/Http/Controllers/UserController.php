@@ -65,11 +65,6 @@ class UserController extends ApiController
         return new SimpleUserResource($user);
     }
 
-    public function update(Request $request, $id)
-    {
-        // route disabled
-    }
-
     public function destroy($id)
     {
         $user = User::find($id);

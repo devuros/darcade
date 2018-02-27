@@ -26,11 +26,6 @@ class LibraryController extends ApiController
         return GameResource::collection($library);
     }
 
-    public function index()
-    {
-        // route disabled
-    }
-
     public function showUserLibrary($id)
     {
         $user = User::find($id);

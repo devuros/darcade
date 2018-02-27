@@ -34,11 +34,6 @@ class WishController extends ApiController
         return WishResource::collection($wishes_with_date);
     }
 
-    public function index()
-    {
-        // route disabled
-    }
-
     public function store(StoreWish $request)
     {
         if (Auth::user()->cant('create', 'App\Wish'))

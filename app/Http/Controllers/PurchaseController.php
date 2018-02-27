@@ -29,11 +29,6 @@ class PurchaseController extends ApiController
         return PurchaseResource::collection($purchases);
     }
 
-    public function store(Request $request)
-    {
-        // route disabled
-    }
-
     public function show($id)
     {
         $user_id = Auth::id();

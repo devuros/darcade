@@ -36,11 +36,6 @@ class ReviewController extends ApiController
         return ReviewResource::collection($reviews);
     }
 
-    public function index()
-    {
-        // route disabled
-    }
-
     public function store(StoreReview $request)
     {
         if (Auth::user()->cant('store', 'App\Review'))

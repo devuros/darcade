@@ -503,11 +503,31 @@
 	"expanded_folders":
 	[
 		"/C/Users/Uki/darcade-api",
-		"/C/Users/Uki/darcade-api/app"
+		"/C/Users/Uki/darcade-api/resources",
+		"/C/Users/Uki/darcade-api/resources/views",
+		"/C/Users/Uki/darcade-api/resources/views/auth",
+		"/C/Users/Uki/darcade-api/resources/views/layouts"
 	],
 	"file_history":
 	[
-		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreCart.php",
+		"/C/Users/Uki/darcade-api/resources/views/home.blade.php",
+		"/C/Users/Uki/darcade-api/resources/views/layouts/app.blade.php",
+		"/C/Users/Uki/darcade-api/resources/views/auth/register.blade.php",
+		"/C/Users/Uki/darcade-api/resources/views/auth/login.blade.php",
+		"/C/Users/Uki/darcade-api/app/Wish.php",
+		"/C/Users/Uki/darcade-api/app/User.php",
+		"/C/Users/Uki/darcade-api/app/Screenshot.php",
+		"/C/Users/Uki/darcade-api/app/Role.php",
+		"/C/Users/Uki/darcade-api/app/Review.php",
+		"/C/Users/Uki/darcade-api/app/Purchase.php",
+		"/C/Users/Uki/darcade-api/app/Publisher.php",
+		"/C/Users/Uki/darcade-api/app/Order.php",
+		"/C/Users/Uki/darcade-api/app/Library.php",
+		"/C/Users/Uki/darcade-api/app/Genre.php",
+		"/C/Users/Uki/darcade-api/app/GameGenre.php",
+		"/C/Users/Uki/darcade-api/app/Game.php",
+		"/C/Users/Uki/darcade-api/app/Developer.php",
+		"/C/Users/Uki/darcade-api/app/Cart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/WishController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/UserController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ScreenshotController.php",
@@ -523,6 +543,7 @@
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/Controller.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/CartController.php",
 		"/C/Users/Uki/darcade-api/app/Http/Controllers/ApiController.php",
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreCart.php",
 		"/C/Users/Uki/darcade-api/app/Policies/UserPolicy.php",
 		"/C/Users/Uki/darcade-api/app/Policies/WishPolicy.php",
 		"/C/Users/Uki/darcade-api/app/Policies/ScreenshotPolicy.php",
@@ -533,20 +554,6 @@
 		"/C/Users/Uki/darcade-api/app/Policies/GamePolicy.php",
 		"/C/Users/Uki/darcade-api/app/Policies/DeveloperPolicy.php",
 		"/C/Users/Uki/darcade-api/app/Policies/CartPolicy.php",
-		"/C/Users/Uki/darcade-api/app/Wish.php",
-		"/C/Users/Uki/darcade-api/app/User.php",
-		"/C/Users/Uki/darcade-api/app/Screenshot.php",
-		"/C/Users/Uki/darcade-api/app/Role.php",
-		"/C/Users/Uki/darcade-api/app/Review.php",
-		"/C/Users/Uki/darcade-api/app/Purchase.php",
-		"/C/Users/Uki/darcade-api/app/Publisher.php",
-		"/C/Users/Uki/darcade-api/app/Order.php",
-		"/C/Users/Uki/darcade-api/app/Library.php",
-		"/C/Users/Uki/darcade-api/app/Genre.php",
-		"/C/Users/Uki/darcade-api/app/GameGenre.php",
-		"/C/Users/Uki/darcade-api/app/Game.php",
-		"/C/Users/Uki/darcade-api/app/Developer.php",
-		"/C/Users/Uki/darcade-api/app/Cart.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/ReviewResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/GameResource.php",
 		"/C/Users/Uki/darcade-api/app/Http/Resources/WishResource.php",
@@ -630,11 +637,7 @@
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreScreenshot.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreReview.php",
 		"/C/Users/Uki/darcade-api/app/Http/Requests/StorePublisher.php",
-		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGameGenre.php",
-		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreDeveloper.php",
-		"/C/Users/Uki/darcade-api/app/Providers/AppServiceProvider.php",
-		"/C/Users/Uki/darcade-api/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
-		"/C/Users/Uki/darcade-api/vendor/laravel/passport/src/ApiTokenCookieFactory.php"
+		"/C/Users/Uki/darcade-api/app/Http/Requests/StoreGameGenre.php"
 	],
 	"find":
 	{
@@ -827,6 +830,10 @@
 		"selected_items":
 		[
 			[
+				"userc",
+				"app\\Http\\Controllers\\UserController.php"
+			],
+			[
 				"gameres",
 				"app\\Http\\Resources\\GameResource.php"
 			],
@@ -849,10 +856,6 @@
 			[
 				"userres",
 				"app\\Http\\Resources\\UserResource.php"
-			],
-			[
-				"userc",
-				"app\\Http\\Controllers\\UserController.php"
 			],
 			[
 				"user.php",
