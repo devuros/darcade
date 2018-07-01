@@ -1,3 +1,3 @@
 # darcade
-Bachelor thesis
-To be continued...
+## Bachelor thesis
+Web API for a game store
